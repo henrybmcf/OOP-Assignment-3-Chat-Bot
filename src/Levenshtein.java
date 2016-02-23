@@ -13,8 +13,8 @@ public class Levenshtein {
         boolean [] counter = new boolean[hayLen];
         int count = 0;
 
-        needle.toLowerCase();
-        haystack.toLowerCase();
+        needle = needle.toLowerCase();
+        haystack = haystack.toLowerCase();
 
         Matrix med = new Matrix(needLen, hayLen);
 

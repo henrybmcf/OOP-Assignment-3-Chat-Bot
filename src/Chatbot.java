@@ -8,6 +8,7 @@ import java.util.Random;
 public class Chatbot {
     public static String uInput;
     public static String bOutput;
+    public static boolean exit;
 
     static String[] knowledge = {
             "I heard you!",
@@ -18,10 +19,10 @@ public class Chatbot {
     };
 
     static String[] goodbye = {
-            "Bye",
-            "Goodbye",
-            "See you later",
-            "I have to go"
+            "bye",
+            "goodbye",
+            "see you later",
+            "i have to go"
     };
 
     public static void main(String[] args) {
@@ -29,9 +30,19 @@ public class Chatbot {
         do {
             System.out.print("> ");
             Scanner scanner = new Scanner(System.in);
-            String uInput = scanner.nextLine();
+            uInput = scanner.nextLine().toLowerCase();
 
-            if (uInput.equalsIgnoreCase("bye")) {
+            // Check user input against goodbye strings to see if program should exit
+            int i = 0;
+            while (i != goodbye.length) {
+                if (Levenshtein.MinimumEditDistance(uInput, goodbye[i]) < 2) {
+                    exit = true;
+                    break;
+                }
+                i++;
+            }
+
+            if (exit) {
                 System.out.println("Goodbye, it was nice talking to you.");
                 break;
             }
@@ -41,7 +52,6 @@ public class Chatbot {
                 bOutput = knowledge[response];
                 System.out.println(bOutput);
             }
-
         }
         while (true);
     }
