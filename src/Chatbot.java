@@ -11,6 +11,9 @@ public class Chatbot {
     public static boolean respond;
     public static boolean exit;
 
+    // List of punctuations marks
+    final static String punctuation = "?!.;";
+
     // First line is the key word/phrase
     // The rest are the responses
     static String[][][] knowledge = {
@@ -41,6 +44,7 @@ public class Chatbot {
 
             // Default responses for when no keyword matches
             {
+                    {},
                     {
                             "I heard you!",
                             "So, you are talking to me.",
@@ -66,7 +70,9 @@ public class Chatbot {
         do {
             System.out.print("> ");
             Scanner scanner = new Scanner(System.in);
-            uInput = scanner.nextLine().toLowerCase();
+            uInput = scanner.nextLine();
+            // Remove unwanted white space and punctuation and convert to lower case
+            uInput = Clean(uInput);
 
             // Check user input against goodbye strings to see if program should exit
             int i = 0;
@@ -106,6 +112,32 @@ public class Chatbot {
             }
         }
         while (true);
+    }
+
+    // Clean up user input: Remove white space and punctuation & convert to lower case
+    public static String Clean(String str) {
+            StringBuilder cleaning = new StringBuilder(str.length());
+
+            char prevChar = 0;
+
+            for(int i = 0; i < str.length(); i++) {
+                if((str.charAt(i) == ' ' && prevChar == ' ') || !isPunc(str.charAt(i))) {
+                    cleaning.append(str.charAt(i));
+                    prevChar = str.charAt(i);
+                }
+                else if(prevChar != ' ' && isPunc(str.charAt(i))) {
+                    cleaning.append(' ');
+                }
+
+            }
+            str = cleaning.toString().toLowerCase();
+            return str;
+    }
+
+    // indexOf returns -1 if the character does not occur in the string
+    // If ch is not in punctuation, -1 will be returned (true)
+    static boolean isPunc(char ch) {
+        return punctuation.indexOf(ch) != -1;
     }
 
     // Capitalise first letter of string
