@@ -17,6 +17,13 @@ public class Chatbot {
             "Please, tell me more.."
     };
 
+    static String[] goodbye = {
+            "Bye",
+            "Goodbye",
+            "See you later",
+            "I have to go"
+    };
+
     public static void main(String[] args) {
         System.out.println("Hello!");
         do {
