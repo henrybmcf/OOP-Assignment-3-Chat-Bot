@@ -4,8 +4,8 @@
 
 public class Matrix {
     private float[][] elements;
-    private int rows;
-    private int cols;
+    int rows;
+    int cols;
 
     public Matrix(int rows, int cols)
     {
