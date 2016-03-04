@@ -7,9 +7,9 @@ import java.util.*;
 import java.util.Random;
 
 
-// TODO Introduce time feature, so if user is idle for x seconds, generate prompt, ex: "Are you still there?"
+// TODO Introduce timer feature, so if user is idle for x seconds, generate prompt, ex: "Are you still there?"
 
-public class Chatbot {
+public class ChatBot {
     public static String uInput;
     public static String bOutput;
 
@@ -31,6 +31,8 @@ public class Chatbot {
 
     public final static String transposeList[][] = {
             {"i'm", "you're"},
+            {"i am", "you are"},
+            {"you are", "i am"},
             {"am", "are"},
             {"were", "was"},
             {"me", "you"},
@@ -148,10 +150,10 @@ public class Chatbot {
             // TODO loop through string, splitting into number of elements of string to be replaced (i.e. You = 3), see if these match the string.
             // TODO then do the split and concat
 
-            boolean goForSplit = false;
             // Need this?
             uInputBackup = uInput;
 
+            checkWithin:
             for (int i = 0; i < transposeList.length; i++) {
                 // Split input backup when match to transpose list item found
                 // TODO Need to change to make sure ' ' (space) before and after transposition
@@ -166,7 +168,7 @@ public class Chatbot {
                 for (int j = 0; j < uInputBackup.length(); j++) {
 
                     if (j + transposeList[i][0].length() + 2 < uInputBackup.length()) {
-                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length() + 2));
+                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length()));
 
                         // checking.insert(checking.length() + 1, " ");
 
@@ -184,15 +186,17 @@ public class Chatbot {
 
                     // Convert back to string to check if contains transposeList item
                     String check = checking.toString();
+
                     // Trim removes white space at start and end
                     if (check.trim().equals(transposeList[i][0])) {
                         // If contains, then call function to split up input.
+
+                        // j is position within input
+
                         splitInput(uInputBackup, i);
-                        break;
+                        break checkWithin;
                     }
                 }
-
-
             }
 
             // If input hasn't been transposed
@@ -210,24 +214,23 @@ public class Chatbot {
     }
 
     public static void splitInput(String str, int index) {
-        System.out.println("\nSplitting\n");
-       // String[] tokens = str.split(transposeList[index][0]);
+        String[] tokens = str.split(transposeList[index][0]);
 
         // If backup has been split (more then 1 element)
-//        if (tokens.length > 1) {
-//            str = "";
-//
-//            // For each token (section of input backup), add it + new transposition to input backup
-//            for (String token : tokens) {
-//                str = token.concat(transposeList[i][1]);
-//            }
-//
-//            bOutput = str;
-//            transposition = true;
-//        }
+        if (tokens.length > 1) {
+            str = "";
+
+            // For each token (section of input backup), add it + new transposition to input backup
+            for (String token : tokens) {
+                str = transposeList[index][1].concat(token);
+            }
+
+            bOutput = str;
+            transposition = true;
+        }
     }
 
-    // First line is the key word/phrase
+    // First of each set is the key words/phrases
     // The rest are the responses
     private static String[][][] setKnowledge() {
         knowledge = new String[][][]{
@@ -266,6 +269,8 @@ public class Chatbot {
                                 "life is amazing, so am I"
                         },
                 },
+
+                // TODO Put default responses into separate string array
 
                 // Default responses for when no keyword matches
                 {
@@ -342,6 +347,4 @@ public class Chatbot {
         int z = rand.nextInt(range);
         return knowledge[x][y][z];
     }
-
-
 }
