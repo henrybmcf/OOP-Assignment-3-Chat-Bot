@@ -1,11 +1,13 @@
 /**
- * Created by HenryBallingerMcFarlane on 23/02/2016.
+ * Assignment 3 - Object Orientated Programming - ChatBot
+ * Team: Henry Ballinger McFarlane & Lok-Woon Wan
  */
-
-import com.sun.deploy.util.StringUtils;
 
 import java.util.*;
 import java.util.Random;
+
+
+// TODO Introduce time feature, so if user is idle for x seconds, generate prompt, ex: "Are you still there?"
 
 public class Chatbot {
     public static String uInput;
@@ -41,7 +43,6 @@ public class Chatbot {
             {"i'd", "you'd"},
             {"dad", "father"},
             {"mum", "mother"},
-            {"dreams", "dream"},
             {"myself", "yourself"}
     };
 
@@ -101,9 +102,11 @@ public class Chatbot {
     // Search knowledge database for match to user input
     public static void searchKeyword() {
         int j, k;
+
         search:
-        for (j = 0; j < knowledge.length - 1; j++) {
-            for (k = 0; k < knowledge[j][0].length; k++) {
+        for (j = 0; j < knowledge.length - 1; ++j) {
+            for (k = 0; k < knowledge[j][0].length; ++k) {
+
                 // Find the closest matching keyword (that with the smallest edit distance)
                 float x = EditDistance.MinimumEditDistance(uInput, knowledge[j][0][k]);
                 float s = EditDistance.MinimumEditDistance(uInput, knowledge[small1][0][small2]);
@@ -112,28 +115,22 @@ public class Chatbot {
                 if (x < s) {
                     small1 = j;
                     small2 = k;
+
+                    // If keyword exact match, set variables and break from both loops
+                    if (s == 0) {
+                        break search;
+                    }
                 }
-                // If keyword exact match, set variables and break from both loops
-                if (s == 0) {
-                    small1 = j;
-                    small2 = k;
-                    understand = true;
-                    break search;
-                }
+
             }
         }
 
         // Check to see if closest matching keyword is close enough match
-        if (EditDistance.MinimumEditDistance(uInput, knowledge[small1][0][small2]) < 3 && !understand)
-            understand = true;
-        else
-            understand = false;
+        understand = (EditDistance.MinimumEditDistance(uInput, knowledge[small1][0][small2]) <= 1) && !understand;
     }
 
     // Check to see if bot is repeating itself
     public static void checkRepeat() {
-
-        // TODO Check if input matches any keywords, if not, check to see if the input has any sub strings that match the transposition list. If not, then go to default responses
 
         if (understand) {
             bOutput = assignResponse(small1, 1, knowledge[small1][1].length);
@@ -159,49 +156,43 @@ public class Chatbot {
                 // Split input backup when match to transpose list item found
                 // TODO Need to change to make sure ' ' (space) before and after transposition
 
+                StringBuilder checking = new StringBuilder(transposeList[i][0].length());
+
+                // Add space at start
+                checking.insert(0, " ");
+                // Add space at end
+//                checking.insert(checking.length() + 1, " ");
+
                 for (int j = 0; j < uInputBackup.length(); j++) {
-                    StringBuilder checking = new StringBuilder(transposeList[i][0].length());
-                    // TODO Add whitespace at start of check
-                    checking.insert(0, " ");
 
                     if (j + transposeList[i][0].length() + 2 < uInputBackup.length()) {
                         checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length() + 2));
+
+                        // checking.insert(checking.length() + 1, " ");
+
                        // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 2);
                     }
-                    else if (j + transposeList[i][0].length() + 1 < uInputBackup.length()) {
-                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length() + 1));
-                       // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 1);
-                    }
+//                    else if (j + transposeList[i][0].length() + 1 < uInputBackup.length()) {
+//                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length() + 1));
+//
+//                        checking.insert(checking.length() + 1, " ");
+//                       // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 1);
+//                    }
                     else if (j + transposeList[i][0].length() > uInputBackup.length()) {
                         break;
                     }
 
+                    // Convert back to string to check if contains transposeList item
                     String check = checking.toString();
-                    //if (check.contains(transposeList[i][0]) && check.charAt(0) == ' ' && check .charAt(check.length() - 1) == ' ') {
                     // Trim removes white space at start and end
                     if (check.trim().equals(transposeList[i][0])) {
-                        goForSplit = true;
+                        // If contains, then call function to split up input.
+                        splitInput(uInputBackup, i);
                         break;
                     }
                 }
 
-                if (goForSplit) {
-                    String[] tokens = uInputBackup.split(transposeList[i][0]);
 
-                    // If backup has been split (more then 1 element)
-                    if (tokens.length > 1) {
-                        uInputBackup = "";
-
-                        // For each token (section of input backup), add it + new transposition to input backup
-                        for (String token : tokens) {
-                            uInputBackup = token.concat(transposeList[i][1]);
-                        }
-
-                        bOutput = uInputBackup;
-                        transposition = true;
-                        break;
-                    }
-                }
             }
 
             // If input hasn't been transposed
@@ -218,11 +209,82 @@ public class Chatbot {
         }
     }
 
-/*
-    public static String transpose(String input, String replacement, int el) {;
-        return uInput.replace("re", transposeList[1][1]);
+    public static void splitInput(String str, int index) {
+        System.out.println("\nSplitting\n");
+       // String[] tokens = str.split(transposeList[index][0]);
+
+        // If backup has been split (more then 1 element)
+//        if (tokens.length > 1) {
+//            str = "";
+//
+//            // For each token (section of input backup), add it + new transposition to input backup
+//            for (String token : tokens) {
+//                str = token.concat(transposeList[i][1]);
+//            }
+//
+//            bOutput = str;
+//            transposition = true;
+//        }
     }
-*/
+
+    // First line is the key word/phrase
+    // The rest are the responses
+    private static String[][][] setKnowledge() {
+        knowledge = new String[][][]{
+                {
+                        {
+                                "what is your name",
+                                "what's your name",
+                                "your name"
+                        },
+                        {
+                                "what would you like my name to be?",
+                                "why do you want to know?",
+                                "you can call me Jarvis",
+                        }
+                },
+
+                {
+                        {
+                                "hello",
+                                "hi"
+                        },
+                        {
+                                "hello",
+                                "hi, how are you?",
+                                "nice to meet you",
+                        }
+                },
+
+                {
+                        {
+                                "how are you"
+                        },
+                        {
+                                "i'm good thank you, how are you?",
+                                "fantastic",
+                                "life is amazing, so am I"
+                        },
+                },
+
+                // Default responses for when no keyword matches
+                {
+                        {},
+                        {
+                                "I heard you!",
+                                "So, you are talking to me",
+                                "Continue, I'm listening",
+                                "Very interesting conversation",
+                                "Please, tell me more.."
+                        }
+                },
+        };
+        return knowledge;
+    }
+
+//    public static String transpose(String input, String replacement, int el) {;
+//        return uInput.replace("re", transposeList[1][1]);
+//    }
 
     // Clean up user input: Remove white space and punctuation & convert to lower case
     public static String clean(String str) {
@@ -281,58 +343,5 @@ public class Chatbot {
         return knowledge[x][y][z];
     }
 
-    // First line is the key word/phrase
-    // The rest are the responses
-    private static String[][][] setKnowledge() {
-        knowledge = new String[][][]{
-                {
-                        {
-                                "what is your name",
-                                "what's your name",
-                                "your name"
-                        },
-                        {
-                                "what would you like my name to be?",
-                                "why do you want to know?",
-                                "you can call me Jarvis",
-                        }
-                },
 
-                {
-                        {
-                                "hello",
-                                "hi"
-                        },
-                        {
-                                "hello",
-                                "hi, how are you?",
-                                "nice to meet you",
-                        }
-                },
-
-                {
-                        {
-                                "how are you"
-                        },
-                        {
-                                "i'm good thank you, how are you?",
-                                "fantastic",
-                                "life is amazing, so am I"
-                        },
-                },
-
-                // Default responses for when no keyword matches
-                {
-                        {},
-                        {
-                                "I heard you!",
-                                "So, you are talking to me",
-                                "Continue, I'm listening",
-                                "Very interesting conversation",
-                                "Please, tell me more.."
-                        }
-                },
-        };
-        return knowledge;
-    }
 }
