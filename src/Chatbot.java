@@ -5,7 +5,7 @@
 
 import java.util.*;
 import java.util.Random;
-
+import java.io.*;
 
 // TODO Introduce timer feature, so if user is idle for x seconds, generate prompt, ex: "Are you still there?"
 
@@ -29,24 +29,24 @@ public class ChatBot {
     // Set up the knowledge database
     public static String[][][] knowledge = setKnowledge();
 
-    public final static String transposeList[][] = {
-            {"i'm", "you're"},
-            {"i am", "you are"},
-            {"you are", "i am"},
-            {"am", "are"},
-            {"were", "was"},
-            {"me", "you"},
-            {"yours", "mine"},
-            {"your", "my"},
-            {"i've", "you've"},
-            {"i", "you"},
-            {"aren't", "am not"},
-            {"weren't", "wasn't"},
-            {"i'd", "you'd"},
-            {"dad", "father"},
-            {"mum", "mother"},
-            {"myself", "yourself"}
-    };
+//    public final static String transposeList[][] = {
+//            {"i'm", "you're"},
+//            {"i am", "you are"},
+//            {"you are", "i am"},
+//            {"am", "are"},
+//            {"were", "was"},
+//            {"me", "you"},
+//            {"yours", "mine"},
+//            {"your", "my"},
+//            {"i've", "you've"},
+//            {"i", "you"},
+//            {"aren't", "am not"},
+//            {"weren't", "wasn't"},
+//            {"i'd", "you'd"},
+//            {"dad", "father"},
+//            {"mum", "mother"},
+//            {"myself", "yourself"}
+//    };
 
     protected final static String[] salutations = {
             "Hello",
@@ -63,17 +63,28 @@ public class ChatBot {
             "see ya"
     };
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Date dateUF = new Date();
+        String date = dateUF.toString().replace(":", "_");
+        File log = new File("Conversation Logs" + File.separator + date + ".txt");
+        FileWriter conLog = new FileWriter(log, true);
+        conLog.write(dateUF.toString() + "\n");
+
         bOutput = assignSalutation();
         saveResponse(bOutput);
         System.out.println(bOutput);
 
         do {
+            // Write the bot's response to the conversation log file
+            saveLog(conLog, "Bot: ", bOutput);
             System.out.print("> ");
             Scanner scanner = new Scanner(System.in);
             uInput = scanner.nextLine();
             // Remove unwanted white space and punctuation and convert to lower case
             uInput = clean(uInput);
+
+            // Write the user's response to the conversation log file
+            saveLog(conLog, "User: ", uInput);
 
             // Check user input against goodbye strings to see if program should exit
             int i = 0;
@@ -99,6 +110,14 @@ public class ChatBot {
             }
         }
         while (true);
+
+        conLog.write("\n\n---- End of conversation ----");
+        conLog.flush();
+        conLog.close();
+    }
+
+    public static void saveLog(FileWriter log, String ID, String str) throws IOException {
+        log.write(ID + str + "\n");
     }
 
     // Search knowledge database for match to user input
@@ -151,53 +170,53 @@ public class ChatBot {
             // TODO then do the split and concat
 
             // Need this?
-            uInputBackup = uInput;
-
-            checkWithin:
-            for (int i = 0; i < transposeList.length; i++) {
-                // Split input backup when match to transpose list item found
-                // TODO Need to change to make sure ' ' (space) before and after transposition
-
-                StringBuilder checking = new StringBuilder(transposeList[i][0].length());
-
-                // Add space at start
-                checking.insert(0, " ");
-                // Add space at end
-//                checking.insert(checking.length() + 1, " ");
-
-                for (int j = 0; j < uInputBackup.length(); j++) {
-
-                    if (j + transposeList[i][0].length() + 2 < uInputBackup.length()) {
-                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length()));
-
-                        // checking.insert(checking.length() + 1, " ");
-
-                       // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 2);
-                    }
-//                    else if (j + transposeList[i][0].length() + 1 < uInputBackup.length()) {
-//                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length() + 1));
+//            uInputBackup = uInput;
 //
-//                        checking.insert(checking.length() + 1, " ");
-//                       // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 1);
+//            checkWithin:
+//            for (int i = 0; i < transposeList.length; i++) {
+//                // Split input backup when match to transpose list item found
+//                // TODO Need to change to make sure ' ' (space) before and after transposition
+//
+//                StringBuilder checking = new StringBuilder(transposeList[i][0].length());
+//
+//                // Add space at start
+//                checking.insert(0, " ");
+//                // Add space at end
+////                checking.insert(checking.length() + 1, " ");
+//
+//                for (int j = 0; j < uInputBackup.length(); j++) {
+//
+//                    if (j + transposeList[i][0].length() + 2 < uInputBackup.length()) {
+//                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length()));
+//
+//                        // checking.insert(checking.length() + 1, " ");
+//
+//                        // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 2);
 //                    }
-                    else if (j + transposeList[i][0].length() > uInputBackup.length()) {
-                        break;
-                    }
-
-                    // Convert back to string to check if contains transposeList item
-                    String check = checking.toString();
-
-                    // Trim removes white space at start and end
-                    if (check.trim().equals(transposeList[i][0])) {
-                        // If contains, then call function to split up input.
-
-                        // j is position within input
-
-                        splitInput(uInputBackup, i);
-                        break checkWithin;
-                    }
-                }
-            }
+////                    else if (j + transposeList[i][0].length() + 1 < uInputBackup.length()) {
+////                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length() + 1));
+////
+////                        checking.insert(checking.length() + 1, " ");
+////                       // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 1);
+////                    }
+//                    else if (j + transposeList[i][0].length() > uInputBackup.length()) {
+//                        break;
+//                    }
+//
+//                    // Convert back to string to check if contains transposeList item
+//                    String check = checking.toString();
+//
+//                    // Trim removes white space at start and end
+//                    if (check.trim().equals(transposeList[i][0])) {
+//                        // If contains, then call function to split up input.
+//
+//                        // j is position within input
+//
+//                        splitInput(uInputBackup, i);
+//                        break checkWithin;
+//                    }
+//                }
+//            }
 
             // If input hasn't been transposed
             if (!transposition) {
@@ -213,22 +232,22 @@ public class ChatBot {
         }
     }
 
-    public static void splitInput(String str, int index) {
-        String[] tokens = str.split(transposeList[index][0]);
-
-        // If backup has been split (more then 1 element)
-        if (tokens.length > 1) {
-            str = "";
-
-            // For each token (section of input backup), add it + new transposition to input backup
-            for (String token : tokens) {
-                str = transposeList[index][1].concat(token);
-            }
-
-            bOutput = str;
-            transposition = true;
-        }
-    }
+//    public static void splitInput(String str, int index) {
+//        String[] tokens = str.split(transposeList[index][0]);
+//
+//        // If backup has been split (more then 1 element)
+//        if (tokens.length > 1) {
+//            str = "";
+//
+//            // For each token (section of input backup), add it + new transposition to input backup
+//            for (String token : tokens) {
+//                str = transposeList[index][1].concat(token);
+//            }
+//
+//            bOutput = str;
+//            transposition = true;
+//        }
+//    }
 
     // First of each set is the key words/phrases
     // The rest are the responses
@@ -286,10 +305,6 @@ public class ChatBot {
         };
         return knowledge;
     }
-
-//    public static String transpose(String input, String replacement, int el) {;
-//        return uInput.replace("re", transposeList[1][1]);
-//    }
 
     // Clean up user input: Remove white space and punctuation & convert to lower case
     public static String clean(String str) {
