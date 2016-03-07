@@ -16,8 +16,7 @@ public class ChatBot {
     public static String uInputBackup = "";
 
     public static String bPrevious = "";
-
-    public static int small1 = 0, small2 = 0;
+    public static String userPrev = "";
 
     public static boolean understand;
     public static boolean transposition = false;
@@ -25,9 +24,6 @@ public class ChatBot {
 
     // List of punctuations marks
     final static String punctuation = "?!.;";
-
-    // Set up the knowledge database
-    public static String[][][] knowledge = setKnowledge();
 
 //    public final static String transposeList[][] = {
 //            {"i'm", "you're"},
@@ -49,7 +45,7 @@ public class ChatBot {
 //    };
 
     protected final static String[] salutations = {
-            "Hello",
+            "Hello there!",
             "Hi, how are you?",
             "Such a nice day today!"
     };
@@ -62,6 +58,18 @@ public class ChatBot {
             "i have to go",
             "see ya"
     };
+
+    protected final static ArrayList<String> userRepition = setURepeat();
+
+    public static ArrayList<String> setURepeat() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Why are you repeating yourself?");
+        list.add("You just said that");
+        list.add("Stop repeating yourself");
+        list.add("Sounds awful familiar to what you just said");
+        list.add("Didn't you just say that?");
+        return list;
+    }
 
     public static void main(String[] args) throws IOException {
         Date dateUF = new Date();
@@ -101,11 +109,16 @@ public class ChatBot {
                 break;
             }
             else {
-                checkRepeat(searchKeyword());
+                if (checkUserRepetition())
+                    assignResponse(userRepition);
+                else
+                    checkRepeat(searchKeyword());
 
                 bOutput = initCap(bOutput);
                 saveResponse(bOutput);
                 System.out.println(bOutput);
+
+                saveUserResponse(uInput);
             }
         }
         while (true);
@@ -121,7 +134,6 @@ public class ChatBot {
 
     // Search knowledge database for match to user input
     public static int searchKeyword() {
-
         String line;
         String smallest = " ";
         int lineCount = 0;
@@ -307,106 +319,6 @@ public class ChatBot {
 //        }
 //    }
 
-    // First of each set is the key words/phrases
-    // The rest are the responses
-    private static String[][][] setKnowledge() {
-//        try {
-//            FileReader fileReader = new FileReader(filename);
-//            BufferedReader bufferedReader = new BufferedReader(fileReader);
-//
-//            int i, j, k;
-//            i = j = -1;
-//            k = 0;
-//
-//            while((line = bufferedReader.readLine()) != null) {
-//
-//                switch(line.charAt(0)) {
-//                    // Outer
-//                    case '#':
-//                        i++;
-//                        System.out.println("i = " + i);
-//                        break;
-//
-//                    // Inner 1 or 2
-//                    case '!':
-//                        j++;
-//                        System.out.println("j = " + j);
-//                        break;
-//
-//                    case 'K':
-//                       // knowledge[i][j][k] = line;
-//                        k++;
-//                        break;
-//
-//                    case 'R':
-//                      //  knowledge[i][j][k] = line;
-//                        k++;
-//                        break;
-//                }
-//                k = 0;
-//                j = -1;
-//            }
-//
-//            bufferedReader.close();
-//        }
-
-        /*knowledge = new String[][][] {
-                // Outer
-                {
-                        // Inner 1
-                        {
-                                "what is your name",
-                                "what's your name",
-                                "your name"
-                        },
-                        // Inner 2
-                        {
-                                "what would you like my name to be?",
-                                "why do you want to know?",
-                                "you can call me Jarvis",
-                        }
-                },
-
-                {
-                        {
-                                "hello",
-                                "hi"
-                        },
-                        {
-                                "hello",
-                                "hi, how are you?",
-                                "nice to meet you",
-                        }
-                },
-
-                {
-                        {
-                                "how are you"
-                        },
-                        {
-                                "i'm good thank you, how are you?",
-                                "fantastic",
-                                "life is amazing, so am I"
-                        },
-                },
-
-                // TODO Put default responses into separate string array
-
-                // Default responses for when no keyword matches
-                {
-                        {},
-                        {
-                                "I heard you!",
-                                "So, you are talking to me",
-                                "Continue, I'm listening",
-                                "Very interesting conversation",
-                                "Please, tell me more.."
-                        }
-                },
-        };*/
-        return knowledge;
-    }
-
     // Clean up user input: Remove white space and punctuation & convert to lower case
     public static String clean(String str) {
             StringBuilder cleaning = new StringBuilder(str.length());
@@ -448,8 +360,6 @@ public class ChatBot {
 
     // Return true is previous bot response exists and is same as current response
     public static boolean bRepeating() {
-        System.out.println("Prev = " + bPrevious);
-        System.out.println("Out = " + bOutput);
         return bPrevious.length() > 0 && bOutput.equalsIgnoreCase(bPrevious);
     }
 
@@ -459,5 +369,15 @@ public class ChatBot {
         return salutations[rand.nextInt(salutations.length)];
     }
 
+    public static void checkUserBotSame() {
 
+    }
+
+    public static void saveUserResponse(String current) {
+        userPrev = current;
+    }
+
+    public static boolean checkUserRepetition() {
+        return userPrev.length() > 0 && EditDistance.MinimumEditDistance(uInput, userPrev) <= 2;
+    }
 }

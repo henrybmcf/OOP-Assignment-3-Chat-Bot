@@ -1,7 +1,0 @@
-Mon Mar 07 11:31:05 GMT 2016
-
-Bot: Such a nice day today!
-User: bye
-
-
----- End of conversation ----

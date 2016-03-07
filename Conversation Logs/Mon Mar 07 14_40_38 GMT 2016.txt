@@ -1,9 +1,0 @@
-Mon Mar 07 14:40:38 GMT 2016
-
-Bot: Hello
-User: dasjkda
-Bot: Very interesting conversation
-User: bye
-
-
----- End of conversation ----

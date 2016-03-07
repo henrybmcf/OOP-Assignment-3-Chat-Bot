@@ -1,0 +1,11 @@
+Mon Mar 07 15:08:33 GMT 2016
+
+Bot: Such a nice day today!
+User: hello
+Bot: Stop repeating yourself
+User: hello
+Bot: Why are you repeating yourself?
+User: bye
+
+
+---- End of conversation ----

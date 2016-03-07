@@ -1,9 +1,0 @@
-Mon Mar 07 14:24:28 GMT 2016
-
-Bot: Hello
-User: hello
-Bot: #
-User: bye
-
-
----- End of conversation ----
