@@ -68,7 +68,7 @@ public class ChatBot {
         String date = dateUF.toString().replace(":", "_");
         File log = new File("Conversation Logs" + File.separator + date + ".txt");
         FileWriter conLog = new FileWriter(log, true);
-        conLog.write(dateUF.toString() + "\n");
+        conLog.write(dateUF.toString() + "\n\n");
 
         bOutput = assignSalutation();
         saveResponse(bOutput);
@@ -101,8 +101,7 @@ public class ChatBot {
                 break;
             }
             else {
-                searchKeyword();
-                checkRepeat();
+                checkRepeat(searchKeyword());
 
                 bOutput = initCap(bOutput);
                 saveResponse(bOutput);
@@ -121,48 +120,90 @@ public class ChatBot {
     }
 
     // Search knowledge database for match to user input
-    public static void searchKeyword() {
-        int j, k;
+    public static int searchKeyword() {
 
-        search:
-        for (j = 0; j < knowledge.length - 1; ++j) {
-            for (k = 0; k < knowledge[j][0].length; ++k) {
+        String line;
+        String smallest = " ";
+        int lineCount = 0;
 
-                // Find the closest matching keyword (that with the smallest edit distance)
-                float x = EditDistance.MinimumEditDistance(uInput, knowledge[j][0][k]);
-                float s = EditDistance.MinimumEditDistance(uInput, knowledge[small1][0][small2]);
+        try {
+            FileReader fileReader = new FileReader("Responses" + File.separator + "KnowledgeBase.txt");
+            BufferedReader buffRead = new BufferedReader(fileReader);
 
-                // If keyword search reveals a closer matching keyword, set locators
-                if (x < s) {
-                    small1 = j;
-                    small2 = k;
+            // Skip to second line (First keyword)
+            //line = buffRead.readLine();
+           // System.out.println("line 1 = " + line);
 
-                    // If keyword exact match, set variables and break from both loops
-                    if (s == 0) {
-                        break search;
-                    }
+            //lineCount++;
+           // smallest = line;
+
+            float small = EditDistance.MinimumEditDistance(uInput, buffRead.readLine().substring(1));
+
+            searching:
+            while((line = buffRead.readLine()) != null) {
+                lineCount++;
+                switch(line.charAt(0)) {
+                    case 'K':
+                      //  System.out.println("this line = " + line);
+                       // System.out.println(lineCount);
+                        line = line.substring(1);
+                        float dist = EditDistance.MinimumEditDistance(uInput, line);
+                        if (dist < small) {
+                            smallest = line;
+
+                            if (dist == 0)
+                                break searching;
+                        }
+                        break;
+
+                    default:
+                        break;
                 }
-
             }
-        }
 
-        // Check to see if closest matching keyword is close enough match
-        understand = (EditDistance.MinimumEditDistance(uInput, knowledge[small1][0][small2]) <= 1) && !understand;
+            // Check to see if closest matching keyword is close enough match
+            understand = (EditDistance.MinimumEditDistance(uInput, smallest) <= 1) && !understand;
+
+            buffRead.close();
+        }
+        catch(FileNotFoundException ex) { System.out.println("Unable to open file"); }
+        catch(IOException ex) { System.out.println("Error reading file"); }
+
+        return lineCount;
+    }
+
+    public static void fileErrorMessage() {
+        bOutput = "I seem to be having some trouble accessing my knowledge....";
     }
 
     // Check to see if bot is repeating itself
-    public static void checkRepeat() {
-
+    public static void checkRepeat(int lineIndex) throws IOException {
         if (understand) {
-            bOutput = assignResponse(small1, 1, knowledge[small1][1].length);
+            ArrayList<String> responses = new ArrayList<>();
+            String line = " ";
 
-            // If bot's response if the same as previous, keep changing until different
-            if (bRepeating()) {
-                do {
-                    bOutput = assignResponse(small1, 1, knowledge[small1][1].length);
+            try {
+                FileReader fileReader = new FileReader("Responses" + File.separator + "KnowledgeBase.txt");
+                BufferedReader buffRead = new BufferedReader(fileReader);
+
+                // Skip through all lines up to keyword line
+                for (int i = 0; i <= lineIndex; i++)
+                    line = buffRead.readLine();
+
+                // Skip through anymore keywords
+                while((line.charAt(0)) != 'R')
+                    line = buffRead.readLine();
+
+                // Go through all the responses
+                while((line.charAt(0)) != '#') {
+                    responses.add(line);
+                    line = buffRead.readLine();
                 }
-                while (bRepeating());
-            }
+
+                buffRead.close();
+            } catch(IOException ex) { fileErrorMessage(); }
+
+            assignResponse(responses);
         }
         else {
             // TODO split string when substring found, replace substring, concat string back together
@@ -220,16 +261,33 @@ public class ChatBot {
 
             // If input hasn't been transposed
             if (!transposition) {
-                bOutput = assignResponse(knowledge.length - 1, 1, knowledge[knowledge.length - 1].length);
+                ArrayList<String> responses = new ArrayList<>();
 
-                if (bRepeating()) {
-                    do {
-                        bOutput = assignResponse(knowledge.length - 1, 1, knowledge[knowledge.length - 1].length);
+                try {
+                    FileReader fileReader = new FileReader("Responses" + File.separator + "Default Responses.txt");
+                    BufferedReader buffRead = new BufferedReader(fileReader);
+
+                    String line = buffRead.readLine();
+                    while(line != null) {
+                        responses.add(line);
+                        line = buffRead.readLine();
                     }
-                    while (bRepeating());
-                }
+
+                    buffRead.close();
+                } catch(IOException ex) { fileErrorMessage(); }
+
+                assignResponse(responses);
             }
         }
+    }
+
+    // Select random bot response
+    public static void assignResponse(ArrayList<String> responsesList) {
+        do {
+            Collections.shuffle(responsesList);
+            bOutput = responsesList.get(0);
+        }
+        while (bRepeating());
     }
 
 //    public static void splitInput(String str, int index) {
@@ -252,13 +310,56 @@ public class ChatBot {
     // First of each set is the key words/phrases
     // The rest are the responses
     private static String[][][] setKnowledge() {
-        knowledge = new String[][][]{
+//        try {
+//            FileReader fileReader = new FileReader(filename);
+//            BufferedReader bufferedReader = new BufferedReader(fileReader);
+//
+//            int i, j, k;
+//            i = j = -1;
+//            k = 0;
+//
+//            while((line = bufferedReader.readLine()) != null) {
+//
+//                switch(line.charAt(0)) {
+//                    // Outer
+//                    case '#':
+//                        i++;
+//                        System.out.println("i = " + i);
+//                        break;
+//
+//                    // Inner 1 or 2
+//                    case '!':
+//                        j++;
+//                        System.out.println("j = " + j);
+//                        break;
+//
+//                    case 'K':
+//                       // knowledge[i][j][k] = line;
+//                        k++;
+//                        break;
+//
+//                    case 'R':
+//                      //  knowledge[i][j][k] = line;
+//                        k++;
+//                        break;
+//                }
+//                k = 0;
+//                j = -1;
+//            }
+//
+//            bufferedReader.close();
+//        }
+
+        /*knowledge = new String[][][] {
+                // Outer
                 {
+                        // Inner 1
                         {
                                 "what is your name",
                                 "what's your name",
                                 "your name"
                         },
+                        // Inner 2
                         {
                                 "what would you like my name to be?",
                                 "why do you want to know?",
@@ -302,7 +403,7 @@ public class ChatBot {
                                 "Please, tell me more.."
                         }
                 },
-        };
+        };*/
         return knowledge;
     }
 
@@ -347,6 +448,8 @@ public class ChatBot {
 
     // Return true is previous bot response exists and is same as current response
     public static boolean bRepeating() {
+        System.out.println("Prev = " + bPrevious);
+        System.out.println("Out = " + bOutput);
         return bPrevious.length() > 0 && bOutput.equalsIgnoreCase(bPrevious);
     }
 
@@ -356,10 +459,5 @@ public class ChatBot {
         return salutations[rand.nextInt(salutations.length)];
     }
 
-    // Select random bot response
-    public static String assignResponse(int x, int y, int range) {
-        Random rand = new Random();
-        int z = rand.nextInt(range);
-        return knowledge[x][y][z];
-    }
+
 }

@@ -1,0 +1,19 @@
+Mon Mar 07 12:03:54 GMT 2016
+
+Bot: Hi, how are you?
+User: hello
+Bot: Hi, how are you?
+User: how are you
+Bot: Hi, how are you?
+User: what is your name
+Bot: Hi, how are you?
+User: dbksa
+Bot: Hi, how are you?
+User: nfdjaksks
+Bot: Hi, how are you?
+User: jkdasfds
+Bot: Hi, how are you?
+User: bye
+
+
+---- End of conversation ----

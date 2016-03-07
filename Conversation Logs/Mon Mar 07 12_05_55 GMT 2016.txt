@@ -1,0 +1,11 @@
+Mon Mar 07 12:05:55 GMT 2016
+
+Bot: Hello
+User: hello
+Bot: Hello
+User: how are you
+Bot: Hello
+User: bye
+
+
+---- End of conversation ----

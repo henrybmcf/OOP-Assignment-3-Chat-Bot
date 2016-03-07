@@ -26,20 +26,16 @@
       <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39186692">
-              <caret line="67" column="58" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
+            <state vertical-scroll-proportion="-1.3692946">
+              <caret line="289" column="29" selection-start-line="289" selection-start-column="29" selection-end-line="289" selection-end-column="29" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#816#870#0" expanded="false" />
-                <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-                <element signature="e#5383#5472#0" expanded="false" />
-                <element signature="e#8399#8459#0" expanded="false" />
-                <element signature="method#setKnowledge#0;class#ChatBot#0" expanded="false" />
-                <element signature="e#11838#11839#0" expanded="true" />
-                <element signature="e#11890#11891#0" expanded="true" />
-                <element signature="e#12403#12404#0" expanded="true" />
-                <element signature="e#12487#12488#0" expanded="true" />
+                <element signature="e#5625#5626#0" expanded="true" />
+                <element signature="e#5712#5713#0" expanded="true" />
+                <element signature="e#6837#6926#0" expanded="false" />
+                <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -632,7 +628,7 @@
       <workItem from="1456741433586" duration="4952000" />
       <workItem from="1457032801461" duration="3442000" />
       <workItem from="1457097444100" duration="5000" />
-      <workItem from="1457098000872" duration="4556000" />
+      <workItem from="1457098000872" duration="14286000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -650,7 +646,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33039000" />
+    <option name="totallyTimeSpent" value="42769000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,7 +668,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28628495" sideWeight="0.50646204" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24234354" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2436751" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16882068" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -682,7 +678,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39946738" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -734,7 +730,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -751,14 +747,10 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#816#870#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5383#5472#0" expanded="false" />
-            <element signature="e#8399#8459#0" expanded="false" />
-            <element signature="method#setKnowledge#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#11838#11839#0" expanded="true" />
-            <element signature="e#11890#11891#0" expanded="true" />
-            <element signature="e#12403#12404#0" expanded="true" />
-            <element signature="e#12487#12488#0" expanded="true" />
+            <element signature="e#5625#5626#0" expanded="true" />
+            <element signature="e#5712#5713#0" expanded="true" />
+            <element signature="e#6837#6926#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -789,14 +781,10 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#816#870#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5383#5472#0" expanded="false" />
-            <element signature="e#8399#8459#0" expanded="false" />
-            <element signature="method#setKnowledge#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#11838#11839#0" expanded="true" />
-            <element signature="e#11890#11891#0" expanded="true" />
-            <element signature="e#12403#12404#0" expanded="true" />
-            <element signature="e#12487#12488#0" expanded="true" />
+            <element signature="e#5625#5626#0" expanded="true" />
+            <element signature="e#5712#5713#0" expanded="true" />
+            <element signature="e#6837#6926#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -827,14 +815,10 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#816#870#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5383#5472#0" expanded="false" />
-            <element signature="e#8399#8459#0" expanded="false" />
-            <element signature="method#setKnowledge#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#11838#11839#0" expanded="true" />
-            <element signature="e#11890#11891#0" expanded="true" />
-            <element signature="e#12403#12404#0" expanded="true" />
-            <element signature="e#12487#12488#0" expanded="true" />
+            <element signature="e#5625#5626#0" expanded="true" />
+            <element signature="e#5712#5713#0" expanded="true" />
+            <element signature="e#6837#6926#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -865,14 +849,10 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#816#870#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5383#5472#0" expanded="false" />
-            <element signature="e#8399#8459#0" expanded="false" />
-            <element signature="method#setKnowledge#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#11838#11839#0" expanded="true" />
-            <element signature="e#11890#11891#0" expanded="true" />
-            <element signature="e#12403#12404#0" expanded="true" />
-            <element signature="e#12487#12488#0" expanded="true" />
+            <element signature="e#5625#5626#0" expanded="true" />
+            <element signature="e#5712#5713#0" expanded="true" />
+            <element signature="e#6837#6926#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -935,22 +915,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://JAVA/ChatBot">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>ChatBot</OriginalElement>
+          <nodes>
+            <node x="" y="">ChatBot</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="40.5" y="14.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39186692">
-          <caret line="67" column="58" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
+        <state vertical-scroll-proportion="-1.3692946">
+          <caret line="289" column="29" selection-start-line="289" selection-start-column="29" selection-end-line="289" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#816#870#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5383#5472#0" expanded="false" />
-            <element signature="e#8399#8459#0" expanded="false" />
-            <element signature="method#setKnowledge#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#11838#11839#0" expanded="true" />
-            <element signature="e#11890#11891#0" expanded="true" />
-            <element signature="e#12403#12404#0" expanded="true" />
-            <element signature="e#12487#12488#0" expanded="true" />
+            <element signature="e#5625#5626#0" expanded="true" />
+            <element signature="e#5712#5713#0" expanded="true" />
+            <element signature="e#6837#6926#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>

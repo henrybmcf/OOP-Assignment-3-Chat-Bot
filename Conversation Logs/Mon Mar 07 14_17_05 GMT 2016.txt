@@ -1,0 +1,9 @@
+Mon Mar 07 14:17:05 GMT 2016
+
+Bot: Such a nice day today!
+User: hello
+Bot: Rhi, how are you
+User: bye
+
+
+---- End of conversation ----

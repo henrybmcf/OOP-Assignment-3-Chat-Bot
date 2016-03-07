@@ -1,0 +1,9 @@
+Mon Mar 07 14:25:39 GMT 2016
+
+Bot: Hello
+User: hello
+Bot: Rnice to meet you
+User: bye
+
+
+---- End of conversation ----

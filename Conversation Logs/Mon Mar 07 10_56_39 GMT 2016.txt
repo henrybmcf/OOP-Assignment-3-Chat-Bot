@@ -1,0 +1,7 @@
+Mon Mar 07 10:56:39 GMT 2016
+
+Bot: Hi, how are you?
+User: bye
+
+
+---- End of conversation ----
