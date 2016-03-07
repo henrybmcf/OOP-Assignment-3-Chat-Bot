@@ -2,6 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_14_44 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_16_50 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_18_02 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_19_37 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_20_01 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_22_09 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_22_33 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_24_03 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_25_07 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_26_34 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_28_01 GMT 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Mon Mar 07 15_30_41 GMT 2016.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Responses/KnowledgeBase.txt" afterPath="$PROJECT_DIR$/Responses/KnowledgeBase.txt" />
     </list>
     <ignored path="Chatbot.iws" />
@@ -28,20 +40,22 @@
       <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.7385893">
-              <caret line="151" column="12" selection-start-line="151" selection-start-column="12" selection-end-line="151" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.3360996">
+              <caret line="152" column="28" selection-start-line="152" selection-start-column="28" selection-end-line="152" selection-end-column="28" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#712#766#0" expanded="false" />
-                <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-                <element signature="e#7646#7735#0" expanded="false" />
-                <element signature="e#11263#11323#0" expanded="false" />
-                <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
-                <element signature="e#13298#13299#0" expanded="true" />
-                <element signature="e#13382#13383#0" expanded="true" />
-                <element signature="e#13838#13839#0" expanded="true" />
-                <element signature="e#13872#13873#0" expanded="true" />
+                <element signature="e#753#807#0" expanded="false" />
+                <element signature="e#5989#5990#0" expanded="true" />
+                <element signature="e#6076#6077#0" expanded="true" />
+                <element signature="e#7201#7290#0" expanded="false" />
+                <element signature="e#11569#11629#0" expanded="false" />
+                <element signature="e#13039#13040#0" expanded="true" />
+                <element signature="e#13091#13092#0" expanded="true" />
+                <element signature="e#13604#13605#0" expanded="true" />
+                <element signature="e#13688#13689#0" expanded="true" />
+                <element signature="e#14144#14145#0" expanded="true" />
+                <element signature="e#14178#14179#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -634,7 +648,7 @@
       <workItem from="1456741433586" duration="4952000" />
       <workItem from="1457032801461" duration="3442000" />
       <workItem from="1457097444100" duration="5000" />
-      <workItem from="1457098000872" duration="17490000" />
+      <workItem from="1457098000872" duration="24261000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -652,7 +666,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45973000" />
+    <option name="totallyTimeSpent" value="52744000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -674,14 +688,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28628495" sideWeight="0.50646204" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2436751" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2916112" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15185784" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39946738" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -736,14 +750,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ChatBot.java</url>
-          <line>312</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
@@ -760,15 +766,17 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#712#766#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#7646#7735#0" expanded="false" />
-            <element signature="e#11263#11323#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13298#13299#0" expanded="true" />
-            <element signature="e#13382#13383#0" expanded="true" />
-            <element signature="e#13838#13839#0" expanded="true" />
-            <element signature="e#13872#13873#0" expanded="true" />
+            <element signature="e#753#807#0" expanded="false" />
+            <element signature="e#5989#5990#0" expanded="true" />
+            <element signature="e#6076#6077#0" expanded="true" />
+            <element signature="e#7201#7290#0" expanded="false" />
+            <element signature="e#11569#11629#0" expanded="false" />
+            <element signature="e#13039#13040#0" expanded="true" />
+            <element signature="e#13091#13092#0" expanded="true" />
+            <element signature="e#13604#13605#0" expanded="true" />
+            <element signature="e#13688#13689#0" expanded="true" />
+            <element signature="e#14144#14145#0" expanded="true" />
+            <element signature="e#14178#14179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -798,15 +806,17 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#712#766#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#7646#7735#0" expanded="false" />
-            <element signature="e#11263#11323#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13298#13299#0" expanded="true" />
-            <element signature="e#13382#13383#0" expanded="true" />
-            <element signature="e#13838#13839#0" expanded="true" />
-            <element signature="e#13872#13873#0" expanded="true" />
+            <element signature="e#753#807#0" expanded="false" />
+            <element signature="e#5989#5990#0" expanded="true" />
+            <element signature="e#6076#6077#0" expanded="true" />
+            <element signature="e#7201#7290#0" expanded="false" />
+            <element signature="e#11569#11629#0" expanded="false" />
+            <element signature="e#13039#13040#0" expanded="true" />
+            <element signature="e#13091#13092#0" expanded="true" />
+            <element signature="e#13604#13605#0" expanded="true" />
+            <element signature="e#13688#13689#0" expanded="true" />
+            <element signature="e#14144#14145#0" expanded="true" />
+            <element signature="e#14178#14179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -836,15 +846,17 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#712#766#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#7646#7735#0" expanded="false" />
-            <element signature="e#11263#11323#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13298#13299#0" expanded="true" />
-            <element signature="e#13382#13383#0" expanded="true" />
-            <element signature="e#13838#13839#0" expanded="true" />
-            <element signature="e#13872#13873#0" expanded="true" />
+            <element signature="e#753#807#0" expanded="false" />
+            <element signature="e#5989#5990#0" expanded="true" />
+            <element signature="e#6076#6077#0" expanded="true" />
+            <element signature="e#7201#7290#0" expanded="false" />
+            <element signature="e#11569#11629#0" expanded="false" />
+            <element signature="e#13039#13040#0" expanded="true" />
+            <element signature="e#13091#13092#0" expanded="true" />
+            <element signature="e#13604#13605#0" expanded="true" />
+            <element signature="e#13688#13689#0" expanded="true" />
+            <element signature="e#14144#14145#0" expanded="true" />
+            <element signature="e#14178#14179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -874,15 +886,17 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#712#766#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#7646#7735#0" expanded="false" />
-            <element signature="e#11263#11323#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13298#13299#0" expanded="true" />
-            <element signature="e#13382#13383#0" expanded="true" />
-            <element signature="e#13838#13839#0" expanded="true" />
-            <element signature="e#13872#13873#0" expanded="true" />
+            <element signature="e#753#807#0" expanded="false" />
+            <element signature="e#5989#5990#0" expanded="true" />
+            <element signature="e#6076#6077#0" expanded="true" />
+            <element signature="e#7201#7290#0" expanded="false" />
+            <element signature="e#11569#11629#0" expanded="false" />
+            <element signature="e#13039#13040#0" expanded="true" />
+            <element signature="e#13091#13092#0" expanded="true" />
+            <element signature="e#13604#13605#0" expanded="true" />
+            <element signature="e#13688#13689#0" expanded="true" />
+            <element signature="e#14144#14145#0" expanded="true" />
+            <element signature="e#14178#14179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -963,22 +977,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/src.zip!/java/util/TimerTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24896266">
+          <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7385893">
-          <caret line="151" column="12" selection-start-line="151" selection-start-column="12" selection-end-line="151" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.3360996">
+          <caret line="152" column="28" selection-start-line="152" selection-start-column="28" selection-end-line="152" selection-end-column="28" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#712#766#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#7646#7735#0" expanded="false" />
-            <element signature="e#11263#11323#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13298#13299#0" expanded="true" />
-            <element signature="e#13382#13383#0" expanded="true" />
-            <element signature="e#13838#13839#0" expanded="true" />
-            <element signature="e#13872#13873#0" expanded="true" />
+            <element signature="e#753#807#0" expanded="false" />
+            <element signature="e#5989#5990#0" expanded="true" />
+            <element signature="e#6076#6077#0" expanded="true" />
+            <element signature="e#7201#7290#0" expanded="false" />
+            <element signature="e#11569#11629#0" expanded="false" />
+            <element signature="e#13039#13040#0" expanded="true" />
+            <element signature="e#13091#13092#0" expanded="true" />
+            <element signature="e#13604#13605#0" expanded="true" />
+            <element signature="e#13688#13689#0" expanded="true" />
+            <element signature="e#14144#14145#0" expanded="true" />
+            <element signature="e#14178#14179#0" expanded="true" />
           </folding>
         </state>
       </provider>

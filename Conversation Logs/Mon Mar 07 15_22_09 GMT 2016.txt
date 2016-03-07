@@ -1,9 +1,0 @@
-Mon Mar 07 15:22:09 GMT 2016
-
-Bot: Such a nice day today!
-User: ello
-Bot: Rhello
-User: bye
-
-
----- End of conversation ----

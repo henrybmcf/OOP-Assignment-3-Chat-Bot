@@ -3,8 +3,9 @@
  * Team: Henry Ballinger McFarlane & Lok-Woon Wan
  */
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import java.util.*;
-import java.util.Random;
 import java.io.*;
 
 // TODO Introduce timer feature, so if user is idle for x seconds, generate prompt, ex: "Are you still there?"
@@ -13,7 +14,7 @@ public class ChatBot {
     public static String uInput;
     public static String bOutput;
 
-    public static String uInputBackup = "";
+    //public static String uInputBackup = "";
 
     public static String bPrevious = "";
     public static String userPrev = "";
@@ -61,16 +62,6 @@ public class ChatBot {
 
     protected final static ArrayList<String> userRepetition = setURepeat();
 
-    public static ArrayList<String> setURepeat() {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Why are you repeating yourself?");
-        list.add("You just said that");
-        list.add("Stop repeating yourself");
-        list.add("Sounds awful familiar to what you just said");
-        list.add("Didn't you just say that?");
-        return list;
-    }
-
     public static void main(String[] args) throws IOException {
         Date dateUF = new Date();
         String date = dateUF.toString().replace(":", "_");
@@ -86,8 +77,12 @@ public class ChatBot {
             // Write the bot's response to the conversation log file
             saveLog(conLog, "Bot:\t", bOutput);
             System.out.print("> ");
+
             Scanner scanner = new Scanner(System.in);
             uInput = scanner.nextLine();
+
+
+
             // Remove unwanted white space and punctuation and convert to lower case
             uInput = clean(uInput);
 
@@ -119,6 +114,7 @@ public class ChatBot {
                 System.out.println(bOutput);
 
                 saveUserResponse(uInput);
+                uInput = "";
             }
         }
         while (true);
@@ -149,7 +145,7 @@ public class ChatBot {
         try {
             FileReader fileReader = new FileReader("Responses" + File.separator + "KnowledgeBase.txt");
             BufferedReader buffRead = new BufferedReader(fileReader);
-            
+
             float small = EditDistance.MinimumEditDistance(uInput, buffRead.readLine().substring(1));
 
             searching:
@@ -157,8 +153,6 @@ public class ChatBot {
                 lineCount++;
                 switch(line.charAt(0)) {
                     case 'K':
-                      //  System.out.println("this line = " + line);
-                       // System.out.println(lineCount);
                         line = line.substring(1);
                         float dist = EditDistance.MinimumEditDistance(uInput, line);
                         if (dist < small) {
@@ -278,6 +272,22 @@ public class ChatBot {
 
             // If input hasn't been transposed
             if (!transposition) {
+                // Loop through words file, to see if input is a word
+                try {
+                    FileReader fileReader = new FileReader("Words.txt");
+                    BufferedReader buffRead = new BufferedReader(fileReader);
+                    String word = buffRead.readLine();
+
+                    while (word != null) {
+                        word = buffRead.readLine();
+                        // If match found, call function to get user to input phrases and responses
+                        if (word.equalsIgnoreCase(uInput)) {
+                            setupNewKeyword();
+                            break;
+                        }
+                    }
+                } catch(IOException ex) { fileErrorMessage(); }
+
                 ArrayList<String> responses = new ArrayList<>();
 
                 try {
@@ -285,7 +295,7 @@ public class ChatBot {
                     BufferedReader buffRead = new BufferedReader(fileReader);
 
                     String line = buffRead.readLine();
-                    while(line != null) {
+                    while (line != null) {
                         responses.add(line);
                         line = buffRead.readLine();
                     }
@@ -391,5 +401,58 @@ public class ChatBot {
 
     public static boolean checkUserRepetition() {
         return userPrev.length() > 0 && EditDistance.MinimumEditDistance(uInput, userPrev) <= 2;
+    }
+
+    public static ArrayList<String> setURepeat() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Why are you repeating yourself?");
+        list.add("You just said that");
+        list.add("Stop repeating yourself");
+        list.add("Sounds awful familiar to what you just said");
+        list.add("Didn't you just say that?");
+        return list;
+    }
+
+    public static void setupNewKeyword() throws IOException {
+        System.out.println("Hmm, I don't think I know this keyword.\nCould you give me a few example phrases and responses so I know in the future?");
+        System.out.print("Yes or no will do :)\n> ");
+        Scanner scanner = new Scanner(System.in);
+//        String confirm = scanner.nextLine();
+        ArrayList<String> keys = new ArrayList<>();
+        ArrayList<String> responses = new ArrayList<>();
+        String confirm = checkConfirm();
+
+        if (confirm.equalsIgnoreCase("yes")) {
+            do {
+                System.out.print("What would be a typical phrase/question?\n> ");
+                keys.add(clean(scanner.nextLine()));
+                System.out.print("And a response?\n> ");
+                responses.add(clean(scanner.nextLine()));
+                System.out.print("Anymore?\n> ");
+
+                confirm = checkConfirm();
+            }
+            while (confirm.equalsIgnoreCase("yes"));
+
+            File log = new File("Responses" + File.separator + "KnowledgeBase.txt");
+            FileWriter conLog = new FileWriter(log, true);
+            for (String key : keys)
+                conLog.write("\nK" + key);
+            for (String resp : responses)
+                conLog.write("\nR" + resp);
+            conLog.write("\n#");
+            conLog.flush();
+            conLog.close();
+        }
+    }
+
+    public static String checkConfirm() {
+        Scanner scanner = new Scanner(System.in);
+        String check = scanner.nextLine();
+        while(!check.equalsIgnoreCase("yes") && !check.equalsIgnoreCase("no")) {
+            System.out.print("No comprende amigo. Yes or no please.\n> ");
+            check = scanner.nextLine();
+        }
+        return check;
     }
 }

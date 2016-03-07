@@ -1,0 +1,9 @@
+Start:	Mon Mar 07 18:02:00 GMT 2016
+
+Bot:	Such a nice day today!
+User:	apple
+Bot:	Very interesting conversation
+User:	goodbye
+
+
+End	Mon Mar 07 18:02:14 GMT 2016

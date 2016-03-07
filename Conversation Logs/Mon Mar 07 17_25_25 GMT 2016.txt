@@ -1,0 +1,9 @@
+Start:	Mon Mar 07 17:25:25 GMT 2016
+
+Bot:	Hello there!
+User:	hello
+Bot:	Hello
+User:	bye
+
+
+End	Mon Mar 07 17:25:39 GMT 2016
