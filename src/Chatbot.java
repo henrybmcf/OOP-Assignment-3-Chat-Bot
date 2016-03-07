@@ -59,7 +59,7 @@ public class ChatBot {
             "see ya"
     };
 
-    protected final static ArrayList<String> userRepition = setURepeat();
+    protected final static ArrayList<String> userRepetition = setURepeat();
 
     public static ArrayList<String> setURepeat() {
         ArrayList<String> list = new ArrayList<>();
@@ -76,7 +76,7 @@ public class ChatBot {
         String date = dateUF.toString().replace(":", "_");
         File log = new File("Conversation Logs" + File.separator + date + ".txt");
         FileWriter conLog = new FileWriter(log, true);
-        conLog.write(dateUF.toString() + "\n\n");
+        conLog.write("Start:\t" + dateUF.toString() + "\n\n");
 
         bOutput = assignSalutation();
         saveResponse(bOutput);
@@ -84,7 +84,7 @@ public class ChatBot {
 
         do {
             // Write the bot's response to the conversation log file
-            saveLog(conLog, "Bot: ", bOutput);
+            saveLog(conLog, "Bot:\t", bOutput);
             System.out.print("> ");
             Scanner scanner = new Scanner(System.in);
             uInput = scanner.nextLine();
@@ -92,7 +92,7 @@ public class ChatBot {
             uInput = clean(uInput);
 
             // Write the user's response to the conversation log file
-            saveLog(conLog, "User: ", uInput);
+            saveLog(conLog, "User:\t", uInput);
 
             // Check user input against goodbye strings to see if program should exit
             int i = 0;
@@ -110,8 +110,8 @@ public class ChatBot {
             }
             else {
                 if (checkUserRepetition())
-                    assignResponse(userRepition);
-                else
+                    assignResponse(userRepetition);
+                else if (!checkUserBotSame())
                     checkRepeat(searchKeyword());
 
                 bOutput = initCap(bOutput);
@@ -123,9 +123,16 @@ public class ChatBot {
         }
         while (true);
 
-        conLog.write("\n\n---- End of conversation ----");
+        Date dateEnd = new Date();
+        conLog.write("\n\nEnd\t" + dateEnd.toString());
         conLog.flush();
         conLog.close();
+    }
+
+    public static String cleanOutput() {
+        String str;
+        str = bOutput.substring(1);
+        return str;
     }
 
     public static void saveLog(FileWriter log, String ID, String str) throws IOException {
@@ -137,18 +144,12 @@ public class ChatBot {
         String line;
         String smallest = " ";
         int lineCount = 0;
+        int smallLine = 0;
 
         try {
             FileReader fileReader = new FileReader("Responses" + File.separator + "KnowledgeBase.txt");
             BufferedReader buffRead = new BufferedReader(fileReader);
-
-            // Skip to second line (First keyword)
-            //line = buffRead.readLine();
-           // System.out.println("line 1 = " + line);
-
-            //lineCount++;
-           // smallest = line;
-
+            
             float small = EditDistance.MinimumEditDistance(uInput, buffRead.readLine().substring(1));
 
             searching:
@@ -162,7 +163,7 @@ public class ChatBot {
                         float dist = EditDistance.MinimumEditDistance(uInput, line);
                         if (dist < small) {
                             smallest = line;
-
+                            smallLine = lineCount;
                             if (dist == 0)
                                 break searching;
                         }
@@ -174,14 +175,18 @@ public class ChatBot {
             }
 
             // Check to see if closest matching keyword is close enough match
-            understand = (EditDistance.MinimumEditDistance(uInput, smallest) <= 1) && !understand;
+            if ((EditDistance.MinimumEditDistance(uInput, smallest) <= 1) && !understand) {
+                // In case strings aren't the exact same, assign keyword to input to allow exact searching for repetition checking
+                uInput = smallest;
+                understand = true;
+            }
 
             buffRead.close();
         }
         catch(FileNotFoundException ex) { System.out.println("Unable to open file"); }
         catch(IOException ex) { System.out.println("Error reading file"); }
 
-        return lineCount;
+        return smallLine;
     }
 
     public static void fileErrorMessage() {
@@ -300,6 +305,9 @@ public class ChatBot {
             bOutput = responsesList.get(0);
         }
         while (bRepeating());
+
+        if (understand)
+            bOutput = cleanOutput();
     }
 
 //    public static void splitInput(String str, int index) {
@@ -369,8 +377,12 @@ public class ChatBot {
         return salutations[rand.nextInt(salutations.length)];
     }
 
-    public static void checkUserBotSame() {
-
+    public static boolean checkUserBotSame() {
+        if (uInput.equalsIgnoreCase(bOutput)) {
+            bOutput = "That's what I said";
+            return true;
+        }
+        return false;
     }
 
     public static void saveUserResponse(String current) {

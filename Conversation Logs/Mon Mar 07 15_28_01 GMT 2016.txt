@@ -1,0 +1,23 @@
+Start:	Mon Mar 07 15:28:01 GMT 2016
+
+Bot:	Such a nice day today!
+User:	hello
+Bot:	Hello
+User:	how are you
+Bot:	Life is amazing, so am I
+User:	what's your na,e
+Bot:	Continue, I'm listening
+User:	what's your name
+Bot:	Sounds awful familiar to what you just said
+User:	aksfjn,a
+Bot:	Please, tell me more..
+User:	what is your na,e
+Bot:	Continue, I'm listening
+User:	nalksfas
+Bot:	Please, tell me more..
+User:	what is your name
+Bot:	You can call me Jarvis
+User:	bye
+
+
+End	Mon Mar 07 15:28:35 GMT 2016
