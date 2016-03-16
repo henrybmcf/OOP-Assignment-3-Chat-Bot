@@ -96,7 +96,6 @@ public class ChatBot extends PApplet {
         log.write(ID + str + "\n");
     }
 
-
     public static void main(String[] args) {
         PApplet.main("ChatBot");
 

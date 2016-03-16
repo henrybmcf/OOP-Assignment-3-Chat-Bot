@@ -3,14 +3,24 @@
  * Team: Henry Ballinger McFarlane & Lok-Woon Wan
  */
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
 import java.util.*;
 import java.io.*;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 
 // TODO Introduce timer feature, so if user is idle for x seconds, generate prompt, ex: "Are you still there?"
 
 public class ChatBot {
+  //  private static final String VOICENAME_kevin = "kevin16";
+
+//    public static void speak(String text) {
+//        Voice voice;
+//        VoiceManager voiceManager = VoiceManager.getInstance();
+//        voice = voiceManager.getVoice(VOICENAME_kevin);
+//        voice.allocate();
+//        voice.speak(text);
+//    }
+
     public static String uInput;
     public static String bOutput;
 
@@ -62,32 +72,34 @@ public class ChatBot {
 
     protected final static ArrayList<String> userRepetition = setURepeat();
 
+    @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) throws IOException {
+        Speech speaking = new Speech("kevin16");
+
         Date dateUF = new Date();
         String date = dateUF.toString().replace(":", "_");
-        File log = new File("Conversation Logs" + File.separator + date + ".txt");
-        FileWriter conLog = new FileWriter(log, true);
-        conLog.write("Start:\t" + dateUF.toString() + "\n\n");
+        //File log = new File("Conversation Logs" + File.separator + date + ".txt");
+        //FileWriter conLog = new FileWriter(log, true);
+        //conLog.write("Start:\t" + dateUF.toString() + "\n\n");
 
         bOutput = assignSalutation();
         saveResponse(bOutput);
         System.out.println(bOutput);
+        speaking.speak(bOutput);
 
         do {
             // Write the bot's response to the conversation log file
-            saveLog(conLog, "Bot:\t", bOutput);
+            //saveLog(conLog, "Bot:\t", bOutput);
             System.out.print("> ");
 
             Scanner scanner = new Scanner(System.in);
             uInput = scanner.nextLine();
 
-
-
             // Remove unwanted white space and punctuation and convert to lower case
             uInput = clean(uInput);
 
             // Write the user's response to the conversation log file
-            saveLog(conLog, "User:\t", uInput);
+            //saveLog(conLog, "User:\t", uInput);
 
             // Check user input against goodbye strings to see if program should exit
             int i = 0;
@@ -100,7 +112,9 @@ public class ChatBot {
             }
 
             if (exit) {
-                System.out.println("Goodbye, it was nice talking to you.");
+                String goodbyeMessage = "Goodbye, it was nice talking to you.";
+                System.out.println(goodbyeMessage);
+                speaking.speak(bOutput);
                 break;
             }
             else {
@@ -112,6 +126,7 @@ public class ChatBot {
                 bOutput = initCap(bOutput);
                 saveResponse(bOutput);
                 System.out.println(bOutput);
+                speaking.speak(bOutput);
 
                 saveUserResponse(uInput);
                 uInput = "";
@@ -120,9 +135,9 @@ public class ChatBot {
         while (true);
 
         Date dateEnd = new Date();
-        conLog.write("\n\nEnd\t" + dateEnd.toString());
-        conLog.flush();
-        conLog.close();
+        //conLog.write("\n\nEnd\t" + dateEnd.toString());
+        //conLog.flush();
+        //conLog.close();
     }
 
     public static String cleanOutput() {
@@ -132,7 +147,7 @@ public class ChatBot {
     }
 
     public static void saveLog(FileWriter log, String ID, String str) throws IOException {
-        log.write(ID + str + "\n");
+        //log.write(ID + str + "\n");
     }
 
     // Search knowledge database for match to user input
