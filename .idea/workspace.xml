@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/cmu_time_awb.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/cmu_us_kal.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/cmudict04.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/cmulex.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/cmutimelex.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/en_us.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/freetts-jsapi10.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/freetts.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jsapi.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mbrola.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/cmu_time_awb.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Speech.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/Chatbot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/Chatbot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatBot.iml" afterPath="$PROJECT_DIR$/ChatBot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/ProcessingChatBot.java" afterPath="$PROJECT_DIR$/Testing/ProcessingChatBot.java" />
-    </list>
+    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="" />
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -726,7 +708,7 @@
       <workItem from="1457797815929" duration="2025000" />
       <workItem from="1458129153878" duration="520000" />
       <workItem from="1458129865167" duration="150000" />
-      <workItem from="1458130026234" duration="308000" />
+      <workItem from="1458130026234" duration="850000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -744,7 +726,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55747000" />
+    <option name="totallyTimeSpent" value="56289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
