@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/Chatbot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/Chatbot.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Chatbot.iws" />
@@ -28,21 +29,32 @@
       <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6016598">
-              <caret line="301" column="4" selection-start-line="301" selection-start-column="4" selection-end-line="301" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.6566092">
+              <caret line="287" column="61" selection-start-line="287" selection-start-column="61" selection-end-line="287" selection-end-column="61" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#1012#1066#0" expanded="false" />
+                <element signature="e#2076#2123#0" expanded="true" />
                 <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-                <element signature="e#5963#6052#0" expanded="false" />
+                <element signature="e#5962#6051#0" expanded="false" />
+                <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-                <element signature="e#13604#13664#0" expanded="false" />
+                <element signature="e#14063#14123#0" expanded="false" />
+                <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditDistance.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -186,20 +198,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Responses" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Chatbot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChatBot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -707,7 +705,7 @@
       <workItem from="1458130026234" duration="3128000" />
       <workItem from="1458248872339" duration="598000" />
       <workItem from="1458588125494" duration="44000" />
-      <workItem from="1459084728035" duration="3849000" />
+      <workItem from="1459084728035" duration="4546000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -727,11 +725,17 @@
       <option name="project" value="LOCAL" />
       <updated>1459091178083</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Replacing apostrophe with is (what's -&gt; what is, etc.)">
+      <created>1459092168924</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1459092168924</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63058000" />
+    <option name="totallyTimeSpent" value="63755000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -812,7 +816,8 @@
     <MESSAGE value="Error fixing: Fixed basic input checking against knowledge base." />
     <MESSAGE value="Work on transposition." />
     <MESSAGE value="Favourites file and response method (integrated into search keyowrd)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Favourites file and response method (integrated into search keyowrd)" />
+    <MESSAGE value="Replacing apostrophe with is (what's -&gt; what is, etc.)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replacing apostrophe with is (what's -&gt; what is, etc.)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -833,14 +838,15 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -881,14 +887,15 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -929,14 +936,15 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -977,14 +985,15 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1005,14 +1014,15 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1033,14 +1043,15 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1061,14 +1072,15 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1081,49 +1093,15 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1012#1066#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1151,14 +1129,15 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1186,14 +1165,51 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
+            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1231,14 +1247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1310,22 +1318,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6016598">
-          <caret line="301" column="4" selection-start-line="301" selection-start-column="4" selection-end-line="301" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.6566092">
+          <caret line="287" column="61" selection-start-line="287" selection-start-column="61" selection-end-line="287" selection-end-column="61" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1012#1066#0" expanded="false" />
+            <element signature="e#2076#2123#0" expanded="true" />
             <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkRepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#5963#6052#0" expanded="false" />
+            <element signature="e#5962#6051#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#13604#13664#0" expanded="false" />
+            <element signature="e#14063#14123#0" expanded="false" />
+            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
