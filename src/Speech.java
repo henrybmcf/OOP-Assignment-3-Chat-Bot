@@ -2,11 +2,10 @@ import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 
 public class Speech {
-
     private static String voiceName;
 
     public Speech(String voice) {
-        this.voiceName = voice;
+        voiceName = voice;
     }
 
     public void speak(String text) {

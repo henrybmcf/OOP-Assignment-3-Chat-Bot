@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
+    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="Organising into classes">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cleaning.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RepeatCheck.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SetupKeyword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/Chatbot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/Chatbot.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EditDistance.java" afterPath="$PROJECT_DIR$/src/EditDistance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Speech.java" afterPath="$PROJECT_DIR$/src/Speech.java" />
     </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,33 +31,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68049794">
-              <caret line="514" column="46" selection-start-line="514" selection-start-column="46" selection-end-line="514" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="313" column="5" selection-start-line="313" selection-start-column="5" selection-end-line="313" selection-end-column="5" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#1081#1135#0" expanded="false" />
-                <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-                <element signature="e#6716#6805#0" expanded="false" />
+                <element signature="e#2145#2192#0" expanded="true" />
+                <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+                <element signature="e#4400#4436#0" expanded="false" />
+                <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+                <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-                <element signature="e#14601#14661#0" expanded="false" />
-                <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-                <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RepeatCheck.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RepeatCheck.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="139" column="105" selection-start-line="139" selection-start-column="105" selection-end-line="139" selection-end-column="105" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1309#1398#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SetupKeyword.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SetupKeyword.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#setupNewKeyword#0;class#SetupKeyword#0" expanded="false" />
+                <element signature="method#checkConfirm#0;class#SetupKeyword#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cleaning.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cleaning.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="86" selection-start-line="1" selection-start-column="86" selection-end-line="1" selection-end-column="86" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,21 +101,24 @@
         <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#88#89#0" expanded="true" />
+                <element signature="e#143#144#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Speech.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Speech.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Speech.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.4509018">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#175#176#0" expanded="true" />
-                <element signature="e#213#214#0" expanded="true" />
+                <element signature="e#174#175#0" expanded="true" />
+                <element signature="e#207#208#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,8 +148,12 @@
         <option value="$PROJECT_DIR$/src/Levenshtein.java" />
         <option value="$PROJECT_DIR$/src/Chatbot.java" />
         <option value="$PROJECT_DIR$/Testing/ProcessingChatBot.java" />
-        <option value="$PROJECT_DIR$/src/Speech.java" />
+        <option value="$PROJECT_DIR$/src/EditDistance.java" />
+        <option value="$PROJECT_DIR$/src/Cleaning.java" />
+        <option value="$PROJECT_DIR$/src/SetupKeyword.java" />
+        <option value="$PROJECT_DIR$/src/RepeatCheck.java" />
         <option value="$PROJECT_DIR$/src/ChatBot.java" />
+        <option value="$PROJECT_DIR$/src/Speech.java" />
       </list>
     </option>
   </component>
@@ -698,7 +746,7 @@
       <workItem from="1458130026234" duration="3128000" />
       <workItem from="1458248872339" duration="598000" />
       <workItem from="1458588125494" duration="44000" />
-      <workItem from="1459084728035" duration="6149000" />
+      <workItem from="1459084728035" duration="7831000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -730,11 +778,17 @@
       <option name="project" value="LOCAL" />
       <updated>1459092850218</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Compress conversation logs to save space">
+      <created>1459097337442</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1459097337442</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65358000" />
+    <option name="totallyTimeSpent" value="67040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -751,7 +805,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25166446" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29826897" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29826897" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28628495" sideWeight="0.50646204" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -817,11 +871,13 @@
     <MESSAGE value="Favourites file and response method (integrated into search keyowrd)" />
     <MESSAGE value="Replacing apostrophe with is (what's -&gt; what is, etc.)" />
     <MESSAGE value="Method for when user asks date or time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Method for when user asks date or time." />
+    <MESSAGE value="Compress conversation logs to save space" />
+    <MESSAGE value="Organising into classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Organising into classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -838,23 +894,21 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -873,8 +927,8 @@
           <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#175#176#0" expanded="true" />
-            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -895,23 +949,21 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -930,8 +982,8 @@
           <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#175#176#0" expanded="true" />
-            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -952,23 +1004,21 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -987,8 +1037,8 @@
           <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#175#176#0" expanded="true" />
-            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1009,23 +1059,21 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1046,23 +1094,21 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1083,23 +1129,21 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1120,23 +1164,21 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1149,67 +1191,21 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1237,23 +1233,21 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1281,23 +1275,63 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1081#1135#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1378,18 +1412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Speech.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#175#176#0" expanded="true" />
-            <element signature="e#213#214#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Responses/KnowledgeBase.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14482759">
@@ -1409,36 +1431,80 @@
     <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#88#89#0" expanded="true" />
+            <element signature="e#143#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cleaning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="86" selection-start-line="1" selection-start-column="86" selection-end-line="1" selection-end-column="86" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SetupKeyword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setupNewKeyword#0;class#SetupKeyword#0" expanded="false" />
+            <element signature="method#checkConfirm#0;class#SetupKeyword#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RepeatCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="105" selection-start-line="139" selection-start-column="105" selection-end-line="139" selection-end-column="105" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1309#1398#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68049794">
-          <caret line="514" column="46" selection-start-line="514" selection-start-column="46" selection-end-line="514" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="313" column="5" selection-start-line="313" selection-start-column="5" selection-end-line="313" selection-end-column="5" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="method#cleanOutput#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#6716#6805#0" expanded="false" />
+            <element signature="e#2145#2192#0" expanded="true" />
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#4400#4436#0" expanded="false" />
+            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
             <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#14601#14661#0" expanded="false" />
-            <element signature="method#clean#0;class#ChatBot#0" expanded="false" />
             <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
             <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#ChatBot#0" expanded="false" />
             <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#ChatBot#0" expanded="false" />
-            <marker date="1459097230000" expanded="true" signature="2315:2557" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Speech.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4509018">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
           </folding>
         </state>
       </provider>
