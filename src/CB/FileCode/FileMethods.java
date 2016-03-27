@@ -1,3 +1,7 @@
+package CB.FileCode;
+
+import CB.Master.*;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;

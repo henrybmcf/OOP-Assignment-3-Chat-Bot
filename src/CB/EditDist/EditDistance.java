@@ -1,3 +1,5 @@
+package CB.EditDist;
+
 public class EditDistance {
     public static float min3 (float f1, float f2, float f3) {
         return (Math.min(f1, Math.min(f2, f3)));

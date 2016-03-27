@@ -1,3 +1,7 @@
+package CB.Master;
+
+import CB.Master.Cleaning;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

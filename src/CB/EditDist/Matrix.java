@@ -1,3 +1,5 @@
+package CB.EditDist;
+
 public class Matrix {
     private float[][] elements;
     int rows;

@@ -1,3 +1,9 @@
+package CB.Master;
+
+import CB.EditDist.EditDistance;
+import CB.FileCode.FileMethods;
+import CB.Master.ChatBot;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

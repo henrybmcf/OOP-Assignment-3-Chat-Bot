@@ -1,7 +1,14 @@
-/**
+ /**
  * Assignment 3 - Object Orientated Programming - ChatBot
  * Team: Henry Ballinger McFarlane & Lok-Woon Wan
  */
+
+package CB.Master;
+
+
+import CB.EditDist.EditDistance;
+import CB.FileCode.FileMethods;
+import CB.Speech.TextSpeech;
 
 import java.util.*;
 import java.io.*;

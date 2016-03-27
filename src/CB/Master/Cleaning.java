@@ -1,3 +1,7 @@
+package CB.Master;
+
+import CB.Master.ChatBot;
+
 public class Cleaning {
     // Clean up user input: Remove white space and punctuation & convert to lower case
     public static String cleanInput(String str) {
