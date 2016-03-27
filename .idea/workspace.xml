@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="Organising into classes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cleaning.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RepeatCheck.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SetupKeyword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/Chatbot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/Chatbot.class" />
+    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Cleaning.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EditDistance.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Matrix.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/RepeatCheck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SetupKeyword.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Speech.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EditDistance.java" afterPath="$PROJECT_DIR$/src/EditDistance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Speech.java" afterPath="$PROJECT_DIR$/src/Speech.java" />
     </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,95 +31,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
+      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="313" column="5" selection-start-line="313" selection-start-column="5" selection-end-line="313" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.22821577">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#1081#1135#0" expanded="false" />
-                <element signature="e#2145#2192#0" expanded="true" />
-                <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-                <element signature="e#4400#4436#0" expanded="false" />
-                <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-                <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepeatCheck.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RepeatCheck.java">
+      <file leaf-file-name="FileMethods.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="139" column="105" selection-start-line="139" selection-start-column="105" selection-end-line="139" selection-end-column="105" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1309#1398#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SetupKeyword.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SetupKeyword.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#setupNewKeyword#0;class#SetupKeyword#0" expanded="false" />
-                <element signature="method#checkConfirm#0;class#SetupKeyword#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cleaning.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Cleaning.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="86" selection-start-line="1" selection-start-column="86" selection-end-line="1" selection-end-column="86" />
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditDistance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#88#89#0" expanded="true" />
-                <element signature="e#143#144#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Speech.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Speech.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4509018">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#174#175#0" expanded="true" />
-                <element signature="e#207#208#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -149,11 +78,22 @@
         <option value="$PROJECT_DIR$/src/Chatbot.java" />
         <option value="$PROJECT_DIR$/Testing/ProcessingChatBot.java" />
         <option value="$PROJECT_DIR$/src/EditDistance.java" />
-        <option value="$PROJECT_DIR$/src/Cleaning.java" />
         <option value="$PROJECT_DIR$/src/SetupKeyword.java" />
+        <option value="$PROJECT_DIR$/src/Speech.java" />
+        <option value="$PROJECT_DIR$/src/FileMethods.java" />
+        <option value="$PROJECT_DIR$/src/Cleaning.java" />
         <option value="$PROJECT_DIR$/src/RepeatCheck.java" />
         <option value="$PROJECT_DIR$/src/ChatBot.java" />
-        <option value="$PROJECT_DIR$/src/Speech.java" />
+        <option value="$PROJECT_DIR$/src/Speech/Speech.java" />
+        <option value="$PROJECT_DIR$/src/EditDist/EditDistance.java" />
+        <option value="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" />
+        <option value="$PROJECT_DIR$/src/CB/EditDist/Matrix.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
+        <option value="$PROJECT_DIR$/src/CB/Speech/Speech.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
+        <option value="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
       </list>
     </option>
   </component>
@@ -225,6 +165,98 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chatbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChatBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Speech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chatbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChatBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chatbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChatBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FileCode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chatbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChatBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EditDist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -746,7 +778,7 @@
       <workItem from="1458130026234" duration="3128000" />
       <workItem from="1458248872339" duration="598000" />
       <workItem from="1458588125494" duration="44000" />
-      <workItem from="1459084728035" duration="7831000" />
+      <workItem from="1459084728035" duration="9278000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -784,11 +816,17 @@
       <option name="project" value="LOCAL" />
       <updated>1459097337442</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Organising into classes">
+      <created>1459102558440</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1459102558440</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67040000" />
+    <option name="totallyTimeSpent" value="68487000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -805,7 +843,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25166446" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29826897" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29826897" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28628495" sideWeight="0.50646204" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -877,7 +915,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -886,30 +924,19 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
+    <entry file="file://$PROJECT_DIR$/Responses/KnowledgeBase.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/ProcessingChatBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -921,50 +948,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Speech.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/ProcessingChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -976,15 +964,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Speech.java">
+    <entry file="file://$PROJECT_DIR$/Testing/ProcessingChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-          </folding>
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -996,53 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Responses/KnowledgeBase.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Speech.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/ProcessingChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1051,303 +988,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Testing/ProcessingChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Testing/ProcessingChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/ProcessingChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1362,13 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33211008">
           <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1428,83 +1066,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditDistance.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/EditDist/EditDistance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#88#89#0" expanded="true" />
-            <element signature="e#143#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cleaning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="86" selection-start-line="1" selection-start-column="86" selection-end-line="1" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.33195022">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SetupKeyword.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/EditDist/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setupNewKeyword#0;class#SetupKeyword#0" expanded="false" />
-            <element signature="method#checkConfirm#0;class#SetupKeyword#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.373444">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RepeatCheck.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="105" selection-start-line="139" selection-start-column="105" selection-end-line="139" selection-end-column="105" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1309#1398#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.062240664">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatBot.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="313" column="5" selection-start-line="313" selection-start-column="5" selection-end-line="313" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1135#0" expanded="false" />
-            <element signature="e#2145#2192#0" expanded="true" />
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="e#4400#4436#0" expanded="false" />
-            <element signature="method#zipLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveLog#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#aposReplace#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#initCap#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#saveResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#ChatBot#0" expanded="false" />
-          </folding>
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Speech.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/Speech/Speech.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4509018">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.33195022">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/SetupKeyword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.099585064">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22821577">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
           </folding>
         </state>
       </provider>
