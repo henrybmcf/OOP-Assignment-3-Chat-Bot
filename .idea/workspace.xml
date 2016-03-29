@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="Packages &amp; Classes">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CB/Master/ConvContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Responses/Favourites.txt" afterPath="$PROJECT_DIR$/Responses/Favourites.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Responses/KnowledgeBase.txt" afterPath="$PROJECT_DIR$/Responses/KnowledgeBase.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" afterPath="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" afterPath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" afterPath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" afterPath="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" afterPath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
     </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,18 +29,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2351314">
-              <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="98" column="56" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="56" />
               <folding>
-                <element signature="e#0#10177#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#1327#1381#0" expanded="false" />
-                <element signature="e#4767#4803#0" expanded="false" />
-                <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+                <element signature="e#1041#1095#0" expanded="false" />
                 <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
+                <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+                <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
+                <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileMethods.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="119" selection-start-line="32" selection-start-column="119" selection-end-line="32" selection-end-column="119" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#fileErrorMessage#0;class#FileMethods#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cleaning.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7095436">
+              <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+              <folding>
+                <element signature="method#cleanOutput#0;class#Cleaning#0" expanded="false" />
+                <element signature="method#aposReplace#0;class#Cleaning#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConvContext.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/ConvContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#contextChecks#0;class#ConvContext#0" expanded="false" />
+                <element signature="method#checkContextWordMatch#0;class#ConvContext#0" expanded="false" />
+                <element signature="e#2173#2174#0" expanded="true" />
+                <element signature="e#2215#2216#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,7 +132,6 @@
         <option value="$PROJECT_DIR$/src/CB/EditDist/Matrix.java" />
         <option value="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" />
         <option value="$PROJECT_DIR$/src/CB/Speech/Speech.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
         <option value="$PROJECT_DIR$/src/CB/EditDistance.java" />
         <option value="$PROJECT_DIR$/src/CB/ChatBot.java" />
         <option value="$PROJECT_DIR$/src/CB/TextSpeech.java" />
@@ -101,11 +140,13 @@
         <option value="$PROJECT_DIR$/src/Matrix.java" />
         <option value="$PROJECT_DIR$/src/RepeatCheck.java" />
         <option value="$PROJECT_DIR$/src/ChatBot.java" />
-        <option value="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
         <option value="$PROJECT_DIR$/src/CB/Speech/TextSpeech.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/ConvContext.java" />
+        <option value="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
       </list>
     </option>
   </component>
@@ -792,7 +833,7 @@
       <workItem from="1458588125494" duration="44000" />
       <workItem from="1459084728035" duration="9402000" />
       <workItem from="1459104161900" duration="1863000" />
-      <workItem from="1459246416411" duration="3358000" />
+      <workItem from="1459246416411" duration="6766000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -846,7 +887,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73832000" />
+    <option name="totallyTimeSpent" value="77240000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -950,12 +991,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10177#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1327#1381#0" expanded="false" />
-            <element signature="e#4767#4803#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#1041#1095#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -973,12 +1014,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10177#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1327#1381#0" expanded="false" />
-            <element signature="e#4767#4803#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#1041#1095#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -994,6 +1035,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,6 +1050,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,6 +1065,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,6 +1073,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,6 +1081,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,6 +1089,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,6 +1143,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.2965517">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1129,16 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.062068965">
@@ -1152,9 +1190,19 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#setupNewKeyword#0;class#SetupKeyword#0" expanded="false" />
             <element signature="method#checkConfirm#0;class#SetupKeyword#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="119" selection-start-line="32" selection-start-column="119" selection-end-line="32" selection-end-column="119" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#fileErrorMessage#0;class#FileMethods#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1169,25 +1217,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.63095236">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="56" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1041#1095#0" expanded="false" />
+            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ConvContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2351314">
-          <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10177#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1327#1381#0" expanded="false" />
-            <element signature="e#4767#4803#0" expanded="false" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#contextChecks#0;class#ConvContext#0" expanded="false" />
+            <element signature="method#checkContextWordMatch#0;class#ConvContext#0" expanded="false" />
+            <element signature="e#2173#2174#0" expanded="true" />
+            <element signature="e#2215#2216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7095436">
+          <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+          <folding>
+            <element signature="method#cleanOutput#0;class#Cleaning#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#Cleaning#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -30,9 +30,7 @@ public class FileMethods {
         } catch(IOException ex){ ex.printStackTrace(); }
     }
 
-    public static void saveLog(FileWriter log, String ID, String str) throws IOException {
-        log.write(ID + str + "\n");
-    }
+    public static void saveLog(FileWriter log, String ID, String str) throws IOException { log.write(ID + str + "\n"); }
 
     public static void fileErrorMessage() {
         ChatBot.bOutput = "I seem to be having some trouble accessing my knowledge....";

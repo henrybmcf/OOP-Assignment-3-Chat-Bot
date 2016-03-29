@@ -5,11 +5,9 @@
 
 package CB.Master;
 
-
 import CB.EditDist.EditDistance;
 import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
-import com.sun.tools.javac.util.StringUtils;
 
 import java.util.*;
 import java.io.*;
@@ -31,21 +29,12 @@ public class ChatBot {
     public static String uInput;
     public static String bOutput;
 
-    //public static String uInputBackup = "";
-
     public static String bPrevious = "";
     public static String userPrev = "";
 
     public static boolean understand;
     public static boolean transposition = false;
     public static boolean exit;
-
-    // List of punctuations marks
-    final static String punctuation = "?!.;";
-
-
-    final static String context = "Why like";
-    final static String contextSubj = "it this that them that";
 
 //    public final static String transposeList[][] = {
 //            {"i'm", "you're"},
@@ -67,9 +56,8 @@ public class ChatBot {
 //    };
 
     protected final static String[] salutations = {
-            "Hello there!",
-            "Hi, how are you?",
-            "Such a nice day today!"
+            "how are you?",
+            "such a nice day today!"
     };
 
     // List of possible user inputs to end the conversation
@@ -92,9 +80,29 @@ public class ChatBot {
 //        FileWriter conLog = new FileWriter(log, true);
 //        conLog.write("Start:\t" + date + "\n\n");
 
-        bOutput = assignSalutation();
-        RepeatCheck.saveResponse(bOutput);
+        bOutput = "Hello, what is your full name?";
         System.out.println(bOutput);
+        System.out.print("> ");
+        Scanner scanner = new Scanner(System.in);
+        uInput = scanner.nextLine();
+        uInput = Cleaning.cleanInput(uInput);
+        String name = Cleaning.toName(uInput);
+
+        File prof = new File("Profiles" + File.separator + name + ".txt");
+
+        if (prof.exists() && !prof.isDirectory())
+            bOutput = "Welcome back " + name + ", " + assignSalutation();
+        else
+            bOutput = "Oo, a new person! Hello " + name + ", " + assignSalutation();
+
+        System.out.println(bOutput);
+        FileWriter profile = new FileWriter(prof, true);
+        profile.write("Profile:\t" + name + "\n\n");
+
+
+        //bOutput = assignSalutation();
+        RepeatCheck.saveResponse(bOutput);
+        //System.out.println(bOutput);
         //speaking.speak(bOutput);
 
         do {
@@ -102,11 +110,11 @@ public class ChatBot {
             //FileMethods.saveLog(conLog, "Bot:\t", bOutput);
             System.out.print("> ");
 
-            Scanner scanner = new Scanner(System.in);
+            //Scanner scanner = new Scanner(System.in);
+            scanner = new Scanner(System.in);
             uInput = scanner.nextLine();
 
             // Remove unwanted white space and punctuation and convert to lower case
-            //uInput = clean(uInput);
             uInput = Cleaning.cleanInput(uInput);
 
             // Write the user's response to the conversation log file
@@ -131,7 +139,7 @@ public class ChatBot {
             else {
                 if (RepeatCheck.checkUserRepetition())
                     assignResponse(userRepetition);
-                else if (!RepeatCheck.checkUserBotSame() && !contextChecks())
+                else if (!RepeatCheck.checkUserBotSame() && !ConvContext.contextChecks())
                     RepeatCheck.checkRepeat(searchKeyword("KnowledgeBase", 1));
 
                 bOutput = Cleaning.initCap(bOutput);
@@ -151,65 +159,9 @@ public class ChatBot {
 //        conLog.close();
 //        FileMethods.zipLog("Conversation Logs" + File.separator + date);
 //        log.delete();
-    }
 
-    public static boolean contextChecks() {
-        if (checkContextWordMatch()) {
-            inContext();
-            return true;
-        }
-        return false;
-    }
-    public static boolean checkContextWordMatch() {
-        int matchCounter = 0;
-        int subCounter = 0;
-        String[] inTokens = splitString(uInput, " ");
-        String[] conTokens = splitString(context, " ");
-        String[] subTokens = splitString(contextSubj, " ");
-        for (String conToken : conTokens) {
-            for (String inToken : inTokens) {
-                if (conToken.equalsIgnoreCase(inToken))
-                    matchCounter++;
-            }
-        }
-
-        for (String inToken : inTokens) {
-            for (String subToken : subTokens) {
-                if (subToken.equalsIgnoreCase(inToken))
-                    subCounter++;
-            }
-        }
-
-        if (matchCounter == 2 && subCounter >= 1)
-            return true;
-        return false;
-    }
-
-    public static void inContext() {
-        if (userPrev.contains("favourite")) {
-            String line;
-            try {
-                BufferedReader buffRead = new BufferedReader(new FileReader("Responses" + File.separator + "Favourites.txt"));
-
-                while ((line = buffRead.readLine()) != null) {
-                    line = line.substring(1);
-                    
-                    if (userPrev.contains(line)) {
-                        buffRead.readLine();
-                        buffRead.readLine();
-                        bOutput = buffRead.readLine().substring(1);
-                        return;
-                    }
-                }
-            }
-            catch (IOException ex) { FileMethods.fileErrorMessage(); }
-        }
-
-        bOutput = "What are you talking about??";
-    }
-
-    public static String[] splitString(String str, String splitter) {
-        return str.split(splitter);
+        profile.flush();
+        profile.close();
     }
 
     // Select random salutation from array
