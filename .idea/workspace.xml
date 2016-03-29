@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/cmu_time_awb1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChatBot/Chatbot.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChatBot/Cleaning.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChatBot/EditDistance.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChatBot/FileMethods.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChatBot/Matrix.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChatBot/RepeatCheck.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChatBot/SetupKeyword.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChatBot/TextSpeech.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Chatbot.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Cleaning.java" afterPath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/EditDistance.java" afterPath="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FileMethods.java" afterPath="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Matrix.java" afterPath="$PROJECT_DIR$/src/CB/EditDist/Matrix.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RepeatCheck.java" afterPath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SetupKeyword.java" afterPath="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/TextSpeech.java" afterPath="$PROJECT_DIR$/src/CB/Speech/TextSpeech.java" />
+    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="Packages &amp; Classes">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatBot.iml" afterPath="$PROJECT_DIR$/ChatBot.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Responses/Favourites.txt" afterPath="$PROJECT_DIR$/Responses/Favourites.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Responses/KnowledgeBase.txt" afterPath="$PROJECT_DIR$/Responses/KnowledgeBase.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" afterPath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" afterPath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" afterPath="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
     </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,22 +34,28 @@
       <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41493776">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2351314">
+              <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
               <folding>
-                <element signature="e#0#8104#0" expanded="true" />
+                <element signature="e#0#10177#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#1327#1381#0" expanded="false" />
+                <element signature="e#4767#4803#0" expanded="false" />
+                <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+                <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextSpeech.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
+      <file leaf-file-name="RepeatCheck.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-              <folding />
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,8 +92,6 @@
         <option value="$PROJECT_DIR$/src/CB/EditDist/Matrix.java" />
         <option value="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" />
         <option value="$PROJECT_DIR$/src/CB/Speech/Speech.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
         <option value="$PROJECT_DIR$/src/CB/EditDistance.java" />
         <option value="$PROJECT_DIR$/src/CB/ChatBot.java" />
@@ -112,6 +103,8 @@
         <option value="$PROJECT_DIR$/src/ChatBot.java" />
         <option value="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
         <option value="$PROJECT_DIR$/src/CB/Speech/TextSpeech.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
       </list>
     </option>
@@ -150,8 +143,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -296,18 +290,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.CVS" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mbrola.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Visuals" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -798,7 +791,8 @@
       <workItem from="1458248872339" duration="598000" />
       <workItem from="1458588125494" duration="44000" />
       <workItem from="1459084728035" duration="9402000" />
-      <workItem from="1459104161900" duration="1547000" />
+      <workItem from="1459104161900" duration="1863000" />
+      <workItem from="1459246416411" duration="3358000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -852,7 +846,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70158000" />
+    <option name="totallyTimeSpent" value="73832000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -877,9 +871,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2916112" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20113085" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18901454" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288948" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -890,6 +883,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288948" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -956,8 +950,35 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#8104#0" expanded="true" />
+            <element signature="e#0#10177#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1327#1381#0" expanded="false" />
+            <element signature="e#4767#4803#0" expanded="false" />
+            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10177#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1327#1381#0" expanded="false" />
+            <element signature="e#4767#4803#0" expanded="false" />
+            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -973,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -988,7 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,7 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,7 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,7 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1081,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.2965517">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,24 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/SetupKeyword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,17 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-          <folding>
-            <element signature="method#checkRepeat#0;class#RepeatCheck#0" expanded="false" />
-            <element signature="e#1755#1844#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1156,19 +1141,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.062068965">
           <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/SetupKeyword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setupNewKeyword#0;class#SetupKeyword#0" expanded="false" />
+            <element signature="method#checkConfirm#0;class#SetupKeyword#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.63095236">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41493776">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2351314">
+          <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
           <folding>
-            <element signature="e#0#8104#0" expanded="true" />
+            <element signature="e#0#10177#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1327#1381#0" expanded="false" />
+            <element signature="e#4767#4803#0" expanded="false" />
+            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -9,6 +9,7 @@ package CB.Master;
 import CB.EditDist.EditDistance;
 import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
+import com.sun.tools.javac.util.StringUtils;
 
 import java.util.*;
 import java.io.*;
@@ -41,6 +42,10 @@ public class ChatBot {
 
     // List of punctuations marks
     final static String punctuation = "?!.;";
+
+
+    final static String context = "Why like";
+    final static String contextSubj = "it this that them that";
 
 //    public final static String transposeList[][] = {
 //            {"i'm", "you're"},
@@ -126,7 +131,7 @@ public class ChatBot {
             else {
                 if (RepeatCheck.checkUserRepetition())
                     assignResponse(userRepetition);
-                else if (!RepeatCheck.checkUserBotSame())
+                else if (!RepeatCheck.checkUserBotSame() && !contextChecks())
                     RepeatCheck.checkRepeat(searchKeyword("KnowledgeBase", 1));
 
                 bOutput = Cleaning.initCap(bOutput);
@@ -144,9 +149,67 @@ public class ChatBot {
 //        conLog.write("\n\nEnd\t" + dateEnd.toString());
 //        conLog.flush();
 //        conLog.close();
-//
 //        FileMethods.zipLog("Conversation Logs" + File.separator + date);
 //        log.delete();
+    }
+
+    public static boolean contextChecks() {
+        if (checkContextWordMatch()) {
+            inContext();
+            return true;
+        }
+        return false;
+    }
+    public static boolean checkContextWordMatch() {
+        int matchCounter = 0;
+        int subCounter = 0;
+        String[] inTokens = splitString(uInput, " ");
+        String[] conTokens = splitString(context, " ");
+        String[] subTokens = splitString(contextSubj, " ");
+        for (String conToken : conTokens) {
+            for (String inToken : inTokens) {
+                if (conToken.equalsIgnoreCase(inToken))
+                    matchCounter++;
+            }
+        }
+
+        for (String inToken : inTokens) {
+            for (String subToken : subTokens) {
+                if (subToken.equalsIgnoreCase(inToken))
+                    subCounter++;
+            }
+        }
+
+        if (matchCounter == 2 && subCounter >= 1)
+            return true;
+        return false;
+    }
+
+    public static void inContext() {
+        if (userPrev.contains("favourite")) {
+            String line;
+            try {
+                BufferedReader buffRead = new BufferedReader(new FileReader("Responses" + File.separator + "Favourites.txt"));
+
+                while ((line = buffRead.readLine()) != null) {
+                    line = line.substring(1);
+                    
+                    if (userPrev.contains(line)) {
+                        buffRead.readLine();
+                        buffRead.readLine();
+                        bOutput = buffRead.readLine().substring(1);
+                        return;
+                    }
+                }
+            }
+            catch (IOException ex) { FileMethods.fileErrorMessage(); }
+        }
+
+        bOutput = "What are you talking about??";
+    }
+
+    public static String[] splitString(String str, String splitter) {
+        return str.split(splitter);
     }
 
     // Select random salutation from array
@@ -230,6 +293,7 @@ public class ChatBot {
 
         return smallLine;
     }
+
     // Select random bot response
     public static void assignResponse(ArrayList<String> responsesList) {
         do {
