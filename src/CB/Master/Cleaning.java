@@ -77,4 +77,8 @@ public class Cleaning {
 
         return str;
     }
+
+    public static String firstName(String name) {
+        return ConvContext.splitString(name, " ")[0];
+    }
 }

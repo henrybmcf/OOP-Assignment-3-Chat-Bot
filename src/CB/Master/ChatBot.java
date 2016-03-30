@@ -8,6 +8,8 @@ package CB.Master;
 import CB.EditDist.EditDistance;
 import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
+import com.sun.xml.internal.fastinfoset.algorithm.BooleanEncodingAlgorithm;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 import java.util.*;
 import java.io.*;
@@ -35,6 +37,8 @@ public class ChatBot {
     public static boolean understand;
     public static boolean transposition = false;
     public static boolean exit;
+
+    public static String name;
 
 //    public final static String transposeList[][] = {
 //            {"i'm", "you're"},
@@ -86,19 +90,20 @@ public class ChatBot {
         Scanner scanner = new Scanner(System.in);
         uInput = scanner.nextLine();
         uInput = Cleaning.cleanInput(uInput);
-        String name = Cleaning.toName(uInput);
+        name = Cleaning.toName(uInput);
 
         File prof = new File("Profiles" + File.separator + name + ".txt");
 
+        String firstName = Cleaning.firstName(name);
+
         if (prof.exists() && !prof.isDirectory())
-            bOutput = "Welcome back " + name + ", " + assignSalutation();
+            bOutput = "Welcome back " + firstName + ", " + assignSalutation();
         else
-            bOutput = "Oo, a new person! Hello " + name + ", " + assignSalutation();
+            bOutput = "Oo, a new person! Hello " + firstName + ", " + assignSalutation();
 
         System.out.println(bOutput);
         FileWriter profile = new FileWriter(prof, true);
         profile.write("Profile:\t" + name + "\n\n");
-
 
         //bOutput = assignSalutation();
         RepeatCheck.saveResponse(bOutput);
@@ -218,13 +223,26 @@ public class ChatBot {
                                 break;
 
                             case 2:
+                                Boolean check = true;
                                 if (uInput.contains(line)) {
-                                    bOutput = buffRead.readLine().substring(1);
+                                    String fave;
+                                    if ((Boolean) checkFave(line)) {
+                                        fave = ", I think yours is " + checkFave(line);
+                                        check = false;
+                                    }
+                                    else {
+                                        fave = ", what is yours?";
+                                    }
+                                    bOutput = buffRead.readLine().substring(1) + fave;
+                                    bOutput = Cleaning.initCap(bOutput);
+                                    RepeatCheck.saveResponse(bOutput);
+                                    System.out.println(bOutput);
+                                    if (check)
+                                        saveNewFave(line);
                                     break searching;
                                 }
                                 break;
                         }
-
                         break;
 
                     default:
@@ -257,4 +275,55 @@ public class ChatBot {
         if (understand)
             bOutput = Cleaning.cleanOutput();
     }
+
+    public static Object checkFave(String favourite) {
+        try {
+            BufferedReader buffRead = new BufferedReader(new FileReader("Responses" + File.separator + name + ".txt"));
+            String line;
+
+            while ((line = buffRead.readLine()) != null) {
+                String splitLine[] = ConvContext.splitString(line, ",");
+                if (splitLine[0].equalsIgnoreCase(favourite))
+                    return splitLine[1];
+            }
+        }
+        catch (IOException ex) { return false; }
+
+        return false;
+    }
+
+    public static void saveNewFave(String faveObject) throws IOException {
+        System.out.print("> ");
+        Scanner scanner = new Scanner(System.in);
+        uInput = scanner.nextLine();
+       // uInput = Cleaning.cleanInput(uInput);
+
+        System.out.println("This far 1");
+
+        try {
+            FileWriter profile = new FileWriter(new File("Profiles" + File.separator + name + ".txt"), true);
+            profile.write("\n" + faveObject + "," + uInput);
+
+            System.out.println("This far 2");
+            profile.flush();
+            profile.close();
+        }
+        catch (IOException ex) { FileMethods.fileErrorMessage(); }
+    }
+
+//    public static String loadProfFave(String favourite) {
+//        try {
+//            BufferedReader buffRead = new BufferedReader(new FileReader("Responses" + File.separator + name + ".txt"));
+//            String line;
+//
+//            while ((line = buffRead.readLine()) != null) {
+//                String splitLine[] = ConvContext.splitString(line, ",");
+//                if (splitLine[0].equalsIgnoreCase(favourite))
+//                    return splitLine[1];
+//            }
+//        }
+//        catch (IOException ex) { FileMethods.fileErrorMessage(); }
+//
+//        return null;
+//    }
 }
