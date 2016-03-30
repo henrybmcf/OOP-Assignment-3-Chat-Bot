@@ -1,0 +1,7 @@
+Profile:	Jane Doe
+*
+film,get a job
+sport,cycling
+food,salad
+place,paris
+album,wilder mind
