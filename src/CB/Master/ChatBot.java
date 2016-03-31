@@ -8,8 +8,6 @@ package CB.Master;
 import CB.EditDist.EditDistance;
 import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
-import com.sun.xml.internal.fastinfoset.algorithm.BooleanEncodingAlgorithm;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 import java.util.*;
 import java.io.*;
@@ -199,6 +197,7 @@ public class ChatBot {
         return false;
     }
 
+    @SuppressWarnings("ConstantConditions")
     public static int searchKeyword(String fileName, int source) {
         String line;
         String smallest = " ";
@@ -232,13 +231,12 @@ public class ChatBot {
                                 Boolean check = true;
                                 if (uInput.contains(line)) {
                                     String fave;
-                                    if (checkFave(line)) {
-                                        fave = ", I think yours is " + loadFave(line);
+                                    if (Boolean.parseBoolean(checkLoadFavourite(line, 0).toString())) {
+                                        fave = ", I think yours is " + checkLoadFavourite(line, 1).toString();
                                         check = false;
                                     }
-                                    else {
+                                    else
                                         fave = ", what is yours?";
-                                    }
 
                                     bOutput = buffRead.readLine().substring(1) + fave;
 
@@ -285,22 +283,7 @@ public class ChatBot {
             bOutput = Cleaning.cleanOutput();
     }
 
-    public static boolean checkFave(String favourite) {
-        try {
-            BufferedReader buffRead = new BufferedReader(new FileReader("Profiles" + File.separator + name + ".txt"));
-            String line;
-
-            while ((line = buffRead.readLine()) != null) {
-                if (ConvContext.splitString(line, ",")[0].equalsIgnoreCase(favourite))
-                    return true;
-            }
-        }
-        catch (IOException ex) { return false; }
-
-        return false;
-    }
-
-    public static String loadFave(String favourite) {
+    public static Object checkLoadFavourite(String favourite, int source) {
         try {
             BufferedReader buffRead = new BufferedReader(new FileReader("Profiles" + File.separator + name + ".txt"));
             String line;
@@ -308,13 +291,20 @@ public class ChatBot {
             while ((line = buffRead.readLine()) != null) {
                 String splitLine[] = ConvContext.splitString(line, ",");
 
-                if (splitLine[0].equalsIgnoreCase(favourite))
-                    return splitLine[1];
+                if (splitLine[0].equalsIgnoreCase(favourite)) {
+                    if (source == 0)
+                        return true;
+                    else if (source == 1)
+                        return splitLine[1];
+                }
             }
         }
         catch (IOException ex) { FileMethods.fileErrorMessage(); }
 
-        return null;
+        if (source == 0)
+            return false;
+        else
+            return null;
     }
 
     public static void saveNewFave(String faveObject) throws IOException {
@@ -333,20 +323,4 @@ public class ChatBot {
         }
         catch (IOException ex) { FileMethods.fileErrorMessage(); }
     }
-
-//    public static String loadProfFave(String favourite) {
-//        try {
-//            BufferedReader buffRead = new BufferedReader(new FileReader("Responses" + File.separator + name + ".txt"));
-//            String line;
-//
-//            while ((line = buffRead.readLine()) != null) {
-//                String splitLine[] = ConvContext.splitString(line, ",");
-//                if (splitLine[0].equalsIgnoreCase(favourite))
-//                    return splitLine[1];
-//            }
-//        }
-//        catch (IOException ex) { FileMethods.fileErrorMessage(); }
-//
-//        return null;
-//    }
 }

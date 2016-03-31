@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Cleaning.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Cleaning.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Profiles/Jane Doe.txt" afterPath="$PROJECT_DIR$/Profiles/Jane Doe.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Responses/Favourites.txt" afterPath="$PROJECT_DIR$/Responses/Favourites.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" afterPath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
     </list>
     <ignored path="Chatbot.iws" />
@@ -30,15 +32,16 @@
       <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85200554">
-              <caret line="249" column="37" selection-start-line="249" selection-start-column="37" selection-end-line="249" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.4813278">
+              <caret line="238" column="66" selection-start-line="238" selection-start-column="66" selection-end-line="238" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1212#1266#0" expanded="false" />
-                <element signature="e#2256#2303#0" expanded="true" />
+                <element signature="e#1073#1127#0" expanded="false" />
+                <element signature="e#2117#2164#0" expanded="true" />
                 <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+                <element signature="e#6531#6570#0" expanded="true" />
                 <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
               </folding>
             </state>
@@ -157,8 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -318,6 +319,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -839,7 +842,8 @@
       <workItem from="1459246416411" duration="11245000" />
       <workItem from="1459336362866" duration="105000" />
       <workItem from="1459339829263" duration="25000" />
-      <workItem from="1459341446160" duration="7094000" />
+      <workItem from="1459341446160" duration="7802000" />
+      <workItem from="1459420347426" duration="1153000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -899,7 +903,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88943000" />
+    <option name="totallyTimeSpent" value="90804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -921,11 +925,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28628495" sideWeight="0.50646204" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2623169" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33954728" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17285945" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288948" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -936,7 +941,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288948" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1005,11 +1009,53 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1212#1266#0" expanded="false" />
-            <element signature="e#2256#2303#0" expanded="true" />
+            <element signature="e#1073#1127#0" expanded="false" />
+            <element signature="e#2117#2164#0" expanded="true" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#6531#6570#0" expanded="true" />
+            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="119" selection-start-line="32" selection-start-column="119" selection-end-line="32" selection-end-column="119" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#fileErrorMessage#0;class#FileMethods#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="53" selection-start-line="81" selection-start-column="53" selection-end-line="81" selection-end-column="53" />
+          <folding>
+            <element signature="method#cleanOutput#0;class#Cleaning#0" expanded="false" />
+            <element signature="method#aposReplace#0;class#Cleaning#0" expanded="false" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1073#1127#0" expanded="false" />
+            <element signature="e#2117#2164#0" expanded="true" />
+            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#6531#6570#0" expanded="true" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
@@ -1033,6 +1079,8 @@
           <folding>
             <element signature="method#cleanOutput#0;class#Cleaning#0" expanded="false" />
             <element signature="method#aposReplace#0;class#Cleaning#0" expanded="false" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1067,11 +1115,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1212#1266#0" expanded="false" />
-            <element signature="e#2256#2303#0" expanded="true" />
+            <element signature="e#1073#1127#0" expanded="false" />
+            <element signature="e#2117#2164#0" expanded="true" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#6531#6570#0" expanded="true" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
@@ -1095,6 +1144,8 @@
           <folding>
             <element signature="method#cleanOutput#0;class#Cleaning#0" expanded="false" />
             <element signature="method#aposReplace#0;class#Cleaning#0" expanded="false" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1129,11 +1180,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1212#1266#0" expanded="false" />
-            <element signature="e#2256#2303#0" expanded="true" />
+            <element signature="e#1073#1127#0" expanded="false" />
+            <element signature="e#2117#2164#0" expanded="true" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#6531#6570#0" expanded="true" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
@@ -1157,6 +1209,8 @@
           <folding>
             <element signature="method#cleanOutput#0;class#Cleaning#0" expanded="false" />
             <element signature="method#aposReplace#0;class#Cleaning#0" expanded="false" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1191,11 +1245,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1212#1266#0" expanded="false" />
-            <element signature="e#2256#2303#0" expanded="true" />
+            <element signature="e#1073#1127#0" expanded="false" />
+            <element signature="e#2117#2164#0" expanded="true" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#6531#6570#0" expanded="true" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
@@ -1205,7 +1260,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1215,11 +1272,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1212#1266#0" expanded="false" />
-            <element signature="e#2256#2303#0" expanded="true" />
+            <element signature="e#1073#1127#0" expanded="false" />
+            <element signature="e#2117#2164#0" expanded="true" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#6531#6570#0" expanded="true" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
@@ -1359,7 +1417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1399,7 +1456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.04137931">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1439,15 +1495,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85200554">
-          <caret line="249" column="37" selection-start-line="249" selection-start-column="37" selection-end-line="249" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.4813278">
+          <caret line="238" column="66" selection-start-line="238" selection-start-column="66" selection-end-line="238" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1212#1266#0" expanded="false" />
-            <element signature="e#2256#2303#0" expanded="true" />
+            <element signature="e#1073#1127#0" expanded="false" />
+            <element signature="e#2117#2164#0" expanded="true" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkDate#0;class#ChatBot#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#6531#6570#0" expanded="true" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>

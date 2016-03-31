@@ -31,7 +31,7 @@ Kplace
 Rnext to a socket
 #
 Kcountry
-Rwherever there’s electricity and fast internet 
+Rwherever there’s electricity and fast internet
 #
 Kcity
 Rtokyo

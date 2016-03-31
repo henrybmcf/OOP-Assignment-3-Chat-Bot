@@ -5,3 +5,6 @@ sport,cycling
 food,salad
 place,paris
 album,wilder mind
+song,girlfriend
+hobby,reading
+country,france
