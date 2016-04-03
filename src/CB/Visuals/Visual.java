@@ -1,17 +1,18 @@
 package CB.Visuals;
 
-import processing.core.PApplet;
-
 import CB.Master.ChatBot;
 
+import processing.core.PApplet;
 import java.util.Random;
 
+
 public class Visual extends PApplet {
-    public static int presentCounter = 0;
-
-    public static int exitCounter = 0;
-
-    public static boolean presentCheck = false;
+    public static int presentCounter;
+    public static int exitCounter;
+    public static boolean presentCheck;
+    private static String prevMess;
+    private static int frames;
+    private static int minute;
 
     private final static String[] userPresent = {
             "are you still there?",
@@ -20,14 +21,13 @@ public class Visual extends PApplet {
             "hello..?"
     };
 
-    private static String prevMess = "";
-
-    private static int frames;
-    private static int minute;
-
     public void settings() {
         size(100, 100);
 
+        presentCounter = 0;
+        exitCounter = 0;
+        presentCheck = false;
+        prevMess = "";
         frames = 60;
         minute = frames * 60;
     }
@@ -35,18 +35,16 @@ public class Visual extends PApplet {
     public void draw() {
         frameRate(frames);
         background(0);
-        presentCounter++;
 
+        presentCounter++;
         exitCounter ++;
 
         // After 10 seconds, display message checking is the user is still there
-        if (presentCounter == 600 && !presentCheck) {
+        if (presentCounter == 600 && !presentCheck)
             ChatBot.prepOutput(stillThereMessage());
-            presentCheck = true;
-            presentCounter = 0;
-        }
 
-        if (exitCounter == minute * 1.0f) {
+        // After two minutes, if no response from user, exit
+        if (exitCounter == minute * 2.0f) {
             ChatBot.prepOutput("Okay, well I'm kind of busy and I have other stuff to do, so bye!");
             exit();
         }
@@ -56,6 +54,7 @@ public class Visual extends PApplet {
     public void keyPressed() {
         presentCheck = true;
         presentCounter = 0;
+        exitCounter = 0;
     }
 
     private static String stillThereMessage() {

@@ -42,6 +42,8 @@ public class ChatBot extends PApplet {
 
     static String name;
 
+    static String keyWord;
+
 //    public final static String transposeList[][] = {
 //            {"i'm", "you're"},
 //            {"i am", "you are"},
@@ -81,8 +83,7 @@ public class ChatBot extends PApplet {
 
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
-
-        PApplet.main(Visual.class.getName());
+        //PApplet.main(Visual.class.getName());
 
         //TextSpeech speaking = new TextSpeech("kevin16");
 
@@ -201,6 +202,8 @@ public class ChatBot extends PApplet {
         String smallest = " ";
         int lineCount = 0;
         int smallLine = 0;
+        boolean contains = false;
+        int containsLine = 0;
 
         try {
             BufferedReader buffRead = new BufferedReader(new FileReader("Responses" + File.separator + fileName + ".txt"));
@@ -222,6 +225,13 @@ public class ChatBot extends PApplet {
                                     smallLine = lineCount;
                                     if (dist == 0)
                                         break searching;
+                                }
+
+                                // Check to see if user input contains the keyword
+                                if (uInput.contains(line)) {
+                                    keyWord = line;
+                                    contains = true;
+                                    containsLine = lineCount;
                                 }
                                 break;
 
@@ -259,7 +269,13 @@ public class ChatBot extends PApplet {
             if ((EditDistance.MinimumEditDistance(uInput, smallest) <= 1) && !understand) {
                 // In case strings aren't the exact same, assign keyword to input to allow exact searching for repetition checking
                 uInput = smallest;
+                keyWord = smallest;
                 understand = true;
+            }
+            // If match is not close enough, check to see if input contains any keywords
+            else if (contains) {
+                understand = true;
+                return containsLine;
             }
 
             buffRead.close();
@@ -282,11 +298,35 @@ public class ChatBot extends PApplet {
     }
 
     public static void prepOutput(String out) {
+        out = preProcessOutput(out);
         bOutput = Cleaning.initCap(out);
         RepeatCheck.saveResponse(bOutput);
         System.out.println(bOutput);
-        Visual.presentCheck = false;
-        Visual.presentCounter = 0;
-        //speaking.speak(bOutput);
+//        Visual.presentCheck = false;
+//        Visual.presentCounter = 0;
+//        Visual.exitCounter = 0;
+//        speaking.speak(bOutput);
     }
+
+    public static String preProcessOutput(String resp) {
+        String subject = "";
+        if (resp.contains("*"))
+            subject = findSubject();
+
+        resp = resp.replaceFirst("\\*", subject);
+        return resp;
+    }
+
+    // Find subject within user input, for use in output
+    public static String findSubject() {
+        String subject = "";
+
+        int position = uInput.indexOf(keyWord);
+
+        if (position != -1)
+            subject = uInput.substring(position + keyWord.length(), uInput.length());
+
+        return subject;
+    }
+
 }

@@ -27,9 +27,7 @@ class Cleaning {
     }
 
     static String cleanOutput() {
-        String str;
-        str = ChatBot.bOutput.substring(1);
-        return str;
+        return ChatBot.bOutput.substring(1);
     }
 
     private static String apostropheReplace(String str) {
@@ -49,8 +47,7 @@ class Cleaning {
 
     // Capitalise first letter of string
     static String initCap(String str) {
-        str = str.substring(0, 1).toUpperCase() + str.substring(1);
-        return str;
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
     // indexOf returns -1 if the character does not occur in the string
