@@ -11,6 +11,8 @@ class Favourites {
             BufferedReader buffRead = new BufferedReader(new FileReader("Profiles" + File.separator + ChatBot.name + ".txt"));
             String line;
 
+            buffRead.readLine();
+            buffRead.readLine();
             while ((line = buffRead.readLine()) != null) {
                 String splitLine[] = ConvoContext.splitString(line, ",");
 
@@ -19,6 +21,11 @@ class Favourites {
                         return true;
                     else if (source == 1)
                         return splitLine[1];
+                }
+
+                if (source == 2) {
+                    if (splitLine[1].equalsIgnoreCase(favourite))
+                        return splitLine[0] + "," + splitLine[1];
                 }
             }
         }

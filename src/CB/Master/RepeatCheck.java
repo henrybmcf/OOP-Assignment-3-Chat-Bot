@@ -28,7 +28,7 @@ class RepeatCheck {
             String line = " ";
 
             try {
-                FileReader fileReader = new FileReader("Responses" + File.separator + "KnowledgeBase.txt");
+                FileReader fileReader = new FileReader("Data" + File.separator + "KnowledgeBase.txt");
                 BufferedReader buffRead = new BufferedReader(fileReader);
 
                 // Skip through all lines up to keyword line
@@ -111,7 +111,7 @@ class RepeatCheck {
                     // Loop through words file, to see if input is a word
                     try {
                         if (!ChatBot.uInput.contains(" ")) {
-                            FileReader fileReader = new FileReader("Words.txt");
+                            FileReader fileReader = new FileReader("Data" + File.separator + "Words.txt");
                             BufferedReader buffRead = new BufferedReader(fileReader);
                             String word = buffRead.readLine();
 
@@ -129,7 +129,7 @@ class RepeatCheck {
                     ArrayList<String> responses = new ArrayList<>();
 
                     try {
-                        FileReader fileReader = new FileReader("Responses" + File.separator + "Default Responses.txt");
+                        FileReader fileReader = new FileReader("Data" + File.separator + "Default Responses.txt");
                         BufferedReader buffRead = new BufferedReader(fileReader);
 
                         String line = buffRead.readLine();

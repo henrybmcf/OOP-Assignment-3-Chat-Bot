@@ -170,7 +170,7 @@ public class ChatBot extends PApplet {
                 else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.contextChecks())
                     RepeatCheck.checkRepeat(searchKeyword("KnowledgeBase", 1));
 
-                prepOutput(bOutput);
+                Cleaning.prepOutput(bOutput, 0);
 //                bOutput = Cleaning.initCap(bOutput);
 //                RepeatCheck.saveResponse(bOutput);
 //                System.out.println(bOutput);
@@ -206,7 +206,7 @@ public class ChatBot extends PApplet {
         int containsLine = 0;
 
         try {
-            BufferedReader buffRead = new BufferedReader(new FileReader("Responses" + File.separator + fileName + ".txt"));
+            BufferedReader buffRead = new BufferedReader(new FileReader("Data" + File.separator + fileName + ".txt"));
 
             float small = EditDistance.MinimumEditDistance(uInput, buffRead.readLine().substring(1));
 
@@ -297,36 +297,5 @@ public class ChatBot extends PApplet {
             bOutput = Cleaning.cleanOutput();
     }
 
-    public static void prepOutput(String out) {
-        out = preProcessOutput(out);
-        bOutput = Cleaning.initCap(out);
-        RepeatCheck.saveResponse(bOutput);
-        System.out.println(bOutput);
-//        Visual.presentCheck = false;
-//        Visual.presentCounter = 0;
-//        Visual.exitCounter = 0;
-//        speaking.speak(bOutput);
-    }
-
-    public static String preProcessOutput(String resp) {
-        String subject = "";
-        if (resp.contains("*"))
-            subject = findSubject();
-
-        resp = resp.replaceFirst("\\*", subject);
-        return resp;
-    }
-
-    // Find subject within user input, for use in output
-    public static String findSubject() {
-        String subject = "";
-
-        int position = uInput.indexOf(keyWord);
-
-        if (position != -1)
-            subject = uInput.substring(position + keyWord.length(), uInput.length());
-
-        return subject;
-    }
 
 }

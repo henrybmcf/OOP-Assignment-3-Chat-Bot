@@ -1,6 +1,7 @@
 package CB.Visuals;
 
 import CB.Master.ChatBot;
+import CB.Master.Cleaning;
 
 import processing.core.PApplet;
 import java.util.Random;
@@ -41,11 +42,11 @@ public class Visual extends PApplet {
 
         // After 10 seconds, display message checking is the user is still there
         if (presentCounter == 600 && !presentCheck)
-            ChatBot.prepOutput(stillThereMessage());
+            Cleaning.prepOutput(stillThereMessage(), 0);
 
         // After two minutes, if no response from user, exit
         if (exitCounter == minute * 2.0f) {
-            ChatBot.prepOutput("Okay, well I'm kind of busy and I have other stuff to do, so bye!");
+            Cleaning.prepOutput("Okay, well I'm kind of busy and I have other stuff to do, so bye!", 0);
             exit();
         }
 

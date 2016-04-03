@@ -27,7 +27,7 @@ class SetupKeyword {
             }
             while (confirm.equalsIgnoreCase("yes"));
 
-            File log = new File("Responses" + File.separator + "KnowledgeBase.txt");
+            File log = new File("Data" + File.separator + "KnowledgeBase.txt");
             FileWriter conLog = new FileWriter(log, true);
             for (String key : keys)
                 conLog.write("\nK" + key);

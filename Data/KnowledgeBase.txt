@@ -90,3 +90,7 @@ Ri can, but I try not to, it can be pretty dangerous sometimes
 Ki hate
 Rwhy do you hate*?
 #
+Ki love
+Rwhy do you love*?
+Ris* really worthy of your love?
+#

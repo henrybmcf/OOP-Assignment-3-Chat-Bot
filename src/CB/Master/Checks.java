@@ -24,4 +24,9 @@ class Checks {
         }
         return false;
     }
+
+    static boolean checkTruth() {
+
+        return false;
+    }
 }
