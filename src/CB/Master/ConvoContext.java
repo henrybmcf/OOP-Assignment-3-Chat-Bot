@@ -7,11 +7,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ConvContext {
-    final static String context = "Why like";
-    final static String contextSubj = "it this that them that";
+class ConvoContext {
+    private final static String context = "Why like";
+    private final static String contextSubj = "it this that them that";
 
-    public static boolean contextChecks() {
+    static boolean contextChecks() {
         if (checkContextWordMatch()) {
             inContext();
             return true;
@@ -19,7 +19,7 @@ public class ConvContext {
         return false;
     }
 
-    public static boolean checkContextWordMatch() {
+    private static boolean checkContextWordMatch() {
         int matchCounter = 0;
         int subCounter = 0;
         String[] inTokens = splitString(ChatBot.uInput, " ");
@@ -44,7 +44,7 @@ public class ConvContext {
         return false;
     }
 
-    public static void inContext() {
+    private static void inContext() {
         if (ChatBot.userPrev.contains("favourite")) {
             String line;
             try {
@@ -67,7 +67,7 @@ public class ConvContext {
         ChatBot.bOutput = "What are you talking about??";
     }
 
-    public static String[] splitString(String str, String splitter) {
+    static String[] splitString(String str, String splitter) {
         return str.split(splitter);
     }
 }

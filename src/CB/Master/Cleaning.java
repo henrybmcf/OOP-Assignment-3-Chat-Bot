@@ -1,11 +1,11 @@
 package CB.Master;
 
-public class Cleaning {
+class Cleaning {
     // List of punctuations marks
-    final static String punctuation = "?!.;";
+    private final static String punctuation = "?!.;";
 
     // Clean up user input: Remove white space and punctuation & convert to lower case
-    public static String cleanInput(String str) {
+    static String cleanInput(String str) {
         StringBuilder cleaning = new StringBuilder(str.length());
 
         char prevChar = 0;
@@ -15,26 +15,24 @@ public class Cleaning {
                 cleaning.append(str.charAt(i));
                 prevChar = str.charAt(i);
             }
-            else if(prevChar != ' ' && puncCheck(str.charAt(i))) {
+            else if(prevChar != ' ' && puncCheck(str.charAt(i)))
                 cleaning.append("");
-            }
-
         }
         str = cleaning.toString().toLowerCase();
 
         if (str.contains("'"))
-            str = aposReplace(str);
+            str = apostropheReplace(str);
 
         return str;
     }
 
-    public static String cleanOutput() {
+    static String cleanOutput() {
         String str;
         str = ChatBot.bOutput.substring(1);
         return str;
     }
 
-    public static String aposReplace(String str) {
+    private static String apostropheReplace(String str) {
         StringBuilder strBuild = new StringBuilder(str.length());
 
         for (int i = 0; i < str.length(); i++) {
@@ -50,21 +48,21 @@ public class Cleaning {
     }
 
     // Capitalise first letter of string
-    public static String initCap(String str) {
+    static String initCap(String str) {
         str = str.substring(0, 1).toUpperCase() + str.substring(1);
         return str;
     }
 
     // indexOf returns -1 if the character does not occur in the string
     // If ch is not in punctuation, -1 will be returned (true)
-    public static boolean puncCheck(char ch) {
+    private static boolean puncCheck(char ch) {
         return punctuation.indexOf(ch) != -1;
     }
 
-    public static String toName(String str) {
+    static String toName(String str) {
         StringBuilder convert = new StringBuilder(str.length());
 
-        String[] tokens = ConvContext.splitString(str, " ");
+        String[] tokens = ConvoContext.splitString(str, " ");
 
         for (int i = 0; i < tokens.length; i++) {
             tokens[i] = initCap(tokens[i]);
@@ -78,7 +76,7 @@ public class Cleaning {
         return str;
     }
 
-    public static String firstName(String name) {
-        return ConvContext.splitString(name, " ")[0];
+    static String firstName(String name) {
+        return ConvoContext.splitString(name, " ")[0];
     }
 }

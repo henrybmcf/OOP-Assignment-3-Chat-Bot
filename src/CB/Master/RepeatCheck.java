@@ -9,20 +9,20 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class RepeatCheck {
-    public static void saveUserResponse(String current) {
+class RepeatCheck {
+    static void saveUserResponse(String current) {
         ChatBot.userPrev = current;
     }
 
     // Save bot's response to check if repeating itself
-    public static void saveResponse(String current) {
+    static void saveResponse(String current) {
         ChatBot.bPrevious = current;
         ChatBot.understand = false;
         ChatBot.transposition = false;
     }
 
     // Check to see if bot is repeating itself
-    public static void checkRepeat(int lineIndex) throws IOException {
+    static void checkRepeat(int lineIndex) {
         if (ChatBot.understand) {
             ArrayList<String> responses = new ArrayList<>();
             String line = " ";
@@ -106,7 +106,7 @@ public class RepeatCheck {
 
             // If input hasn't been transposed
 
-            if (!ChatBot.inputChecks()) {
+            if (!Checks.inputChecks()) {
                 if (!ChatBot.transposition) {
                     // Loop through words file, to see if input is a word
                     try {
@@ -148,15 +148,15 @@ public class RepeatCheck {
     }
 
     // Return true is previous bot response exists and is same as current response
-    public static boolean bRepeating() {
+    static boolean bRepeating() {
         return ChatBot.bPrevious.length() > 0 && ChatBot.bOutput.equalsIgnoreCase(ChatBot.bPrevious);
     }
 
-    public static boolean checkUserRepetition() {
+    static boolean checkUserRepetition() {
         return ChatBot.userPrev.length() > 0 && EditDistance.MinimumEditDistance(ChatBot.uInput, ChatBot.userPrev) <= 2;
     }
 
-    public static boolean checkUserBotSame() {
+    static boolean checkUserBotSame() {
         if (ChatBot.uInput.equalsIgnoreCase(ChatBot.bOutput)) {
             ChatBot.bOutput = "That's what I said";
             return true;
@@ -164,7 +164,7 @@ public class RepeatCheck {
         return false;
     }
 
-    public static ArrayList<String> setURepeat() {
+    static ArrayList<String> setURepeat() {
         ArrayList<String> list = new ArrayList<>();
         list.add("Why are you repeating yourself?");
         list.add("You just said that");

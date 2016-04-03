@@ -1,4 +1,4 @@
- /**
+ /*
  * Assignment 3 - Object Orientated Programming - ChatBot
  * Team: Henry Ballinger McFarlane & Lok-Woon Wan
  */
@@ -12,10 +12,13 @@ import CB.Speech.TextSpeech;
 import java.util.*;
 import java.io.*;
 
+import processing.core.PApplet;
+
 // TODO Introduce timer feature, so if user is idle for x seconds, generate prompt, ex: "Are you still there?"
 // TODO Use processing's 60fps for this?
 
-public class ChatBot {
+@SuppressWarnings("serial")
+public class ChatBot extends PApplet {
   //  private static final String VOICENAME_kevin = "kevin16";
 
 //    public static void speak(String text) {
@@ -26,17 +29,17 @@ public class ChatBot {
 //        voice.speak(text);
 //    }
 
-    public static String uInput;
+    static String uInput;
     public static String bOutput;
 
-    public static String bPrevious = "";
-    public static String userPrev = "";
+    static String bPrevious = "";
+    static String userPrev = "";
 
-    public static boolean understand;
-    public static boolean transposition = false;
-    public static boolean exit;
+    static boolean understand;
+    static boolean transposition = false;
+    private static boolean exit;
 
-    public static String name;
+    static String name;
 
 //    public final static String transposeList[][] = {
 //            {"i'm", "you're"},
@@ -57,13 +60,14 @@ public class ChatBot {
 //            {"myself", "yourself"}
 //    };
 
-    protected final static String[] salutations = {
-            "how are you?",
+    private final static String[] salutations = {
+            //"how are you?",
+            "great to see you!",
             "such a nice day today!"
     };
 
     // List of possible user inputs to end the conversation
-    protected final static String[] goodbye = {
+    private final static String[] goodbye = {
             "bye",
             "goodbye",
             "see you later",
@@ -71,11 +75,38 @@ public class ChatBot {
             "see ya"
     };
 
-    protected final static ArrayList<String> userRepetition = RepeatCheck.setURepeat();
+    private final static ArrayList<String> userRepetition = RepeatCheck.setURepeat();
+
+
+    private static int presentCounter = 0;
+    private static boolean presentCheck = false;
+
+    public void settings() {
+        size(100, 100);
+    }
+
+    public void draw() {
+        background(0);
+        presentCounter++;
+
+        if (presentCounter == 300 && !presentCheck) {
+            prepOutput("Are you still there?");
+            presentCheck = true;
+            presentCounter = 0;
+        }
+    }
+
+    public void keyPressed() {
+        presentCheck = true;
+        presentCounter = 0;
+    }
 
     @SuppressWarnings({"unchecked", "deprecation"})
-    public static void main(String[] args) throws IOException {
-        TextSpeech speaking = new TextSpeech("kevin16");
+    public static void main(String[] args) {
+
+        PApplet.main(ChatBot.class.getName());
+
+        //TextSpeech speaking = new TextSpeech("kevin16");
 
 //        String date = new Date().toString().replace(":", "_");
 //        File log = new File("Conversation Logs" + File.separator + date + ".txt");
@@ -103,12 +134,16 @@ public class ChatBot {
             prevProf = false;
         }
 
-        FileWriter profile = new FileWriter(prof, true);
-        if (!prevProf) {
-            profile.write("Profile:\t" + name + "\n*");
-            profile.flush();
-            profile.close();
+        try {
+            FileWriter profile = new FileWriter(prof, true);
+
+            if (!prevProf) {
+                profile.write("Profile:\t" + name + "\n*");
+                profile.flush();
+                profile.close();
+            }
         }
+        catch (IOException ex) { FileMethods.fileErrorMessage(); }
 
         System.out.println(bOutput);
 
@@ -133,6 +168,8 @@ public class ChatBot {
             //FileMethods.saveLog(conLog, "User:\t", uInput);
 
             // Check user input against goodbye strings to see if program should exit
+
+            // TODO Put into Checks class
             int i = 0;
             while (i != goodbye.length) {
                 if (EditDistance.MinimumEditDistance(uInput, goodbye[i]) < 2) {
@@ -151,13 +188,14 @@ public class ChatBot {
             else {
                 if (RepeatCheck.checkUserRepetition())
                     assignResponse(userRepetition);
-                else if (!RepeatCheck.checkUserBotSame() && !ConvContext.contextChecks())
+                else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.contextChecks())
                     RepeatCheck.checkRepeat(searchKeyword("KnowledgeBase", 1));
 
-                bOutput = Cleaning.initCap(bOutput);
-                RepeatCheck.saveResponse(bOutput);
-                System.out.println(bOutput);
-                //speaking.speak(bOutput);
+                prepOutput(bOutput);
+//                bOutput = Cleaning.initCap(bOutput);
+//                RepeatCheck.saveResponse(bOutput);
+//                System.out.println(bOutput);
+//                speaking.speak(bOutput);
 
                 RepeatCheck.saveUserResponse(uInput);
                 uInput = "";
@@ -174,31 +212,13 @@ public class ChatBot {
     }
 
     // Select random salutation from array
-    public static String assignSalutation() {
+    private static String assignSalutation() {
         Random rand = new Random();
         return salutations[rand.nextInt(salutations.length)];
     }
 
-    public static boolean inputChecks() {
-        return checkDate() || checkFavourite();
-    }
-    public static boolean checkDate() {
-        if (uInput.contains("date") || uInput.contains("time") || uInput.contains("day")) {
-            bOutput = "The date and time is " + new Date().toString().substring(0, 19);
-            return true;
-        }
-        return false;
-    }
-    public static boolean checkFavourite() {
-        if (uInput.contains("favourite")) {
-            searchKeyword("Favourites", 2);
-            return true;
-        }
-        return false;
-    }
-
     @SuppressWarnings("ConstantConditions")
-    public static int searchKeyword(String fileName, int source) {
+    static int searchKeyword(String fileName, int source) {
         String line;
         String smallest = " ";
         int lineCount = 0;
@@ -231,8 +251,8 @@ public class ChatBot {
                                 Boolean check = true;
                                 if (uInput.contains(line)) {
                                     String fave;
-                                    if (Boolean.parseBoolean(checkLoadFavourite(line, 0).toString())) {
-                                        fave = ", I think yours is " + checkLoadFavourite(line, 1).toString();
+                                    if (Boolean.parseBoolean(Favourites.checkLoadFavourite(line, 0).toString())) {
+                                        fave = ", I think yours is " + Favourites.checkLoadFavourite(line, 1).toString();
                                         check = false;
                                     }
                                     else
@@ -244,7 +264,7 @@ public class ChatBot {
                                         bOutput = Cleaning.initCap(bOutput);
                                         RepeatCheck.saveResponse(bOutput);
                                         System.out.println(bOutput);
-                                        saveNewFave(line);
+                                        Favourites.saveNewFave(line);
                                     }
                                     break searching;
                                 }
@@ -272,7 +292,7 @@ public class ChatBot {
     }
 
     // Select random bot response
-    public static void assignResponse(ArrayList<String> responsesList) {
+    static void assignResponse(ArrayList<String> responsesList) {
         do {
             Collections.shuffle(responsesList);
             bOutput = responsesList.get(0);
@@ -283,44 +303,12 @@ public class ChatBot {
             bOutput = Cleaning.cleanOutput();
     }
 
-    public static Object checkLoadFavourite(String favourite, int source) {
-        try {
-            BufferedReader buffRead = new BufferedReader(new FileReader("Profiles" + File.separator + name + ".txt"));
-            String line;
-
-            while ((line = buffRead.readLine()) != null) {
-                String splitLine[] = ConvContext.splitString(line, ",");
-
-                if (splitLine[0].equalsIgnoreCase(favourite)) {
-                    if (source == 0)
-                        return true;
-                    else if (source == 1)
-                        return splitLine[1];
-                }
-            }
-        }
-        catch (IOException ex) { FileMethods.fileErrorMessage(); }
-
-        if (source == 0)
-            return false;
-        else
-            return null;
-    }
-
-    public static void saveNewFave(String faveObject) throws IOException {
-        System.out.print("> ");
-        Scanner scanner = new Scanner(System.in);
-        uInput = scanner.nextLine();
-       // uInput = Cleaning.cleanInput(uInput);
-
-        try {
-            FileWriter profile = new FileWriter(new File("Profiles" + File.separator + name + ".txt"), true);
-            profile.write("\n" + faveObject + "," + uInput);
-            profile.flush();
-            profile.close();
-
-            bOutput = "Okay, I'll remember that..";
-        }
-        catch (IOException ex) { FileMethods.fileErrorMessage(); }
+    public static void prepOutput(String out) {
+        bOutput = Cleaning.initCap(out);
+        RepeatCheck.saveResponse(bOutput);
+        System.out.println(bOutput);
+        presentCheck = false;
+        presentCounter = 0;
+        //speaking.speak(bOutput);
     }
 }

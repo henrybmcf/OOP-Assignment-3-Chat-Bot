@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SetupKeyword {
-    public static void setupNewKeyword() throws IOException {
+class SetupKeyword {
+    static void setupNewKeyword() throws IOException {
         System.out.println("Hmm, I don't think I know this keyword.\nCould you give me a few example phrases and responses so I know in the future?");
         System.out.print("Yes or no will do :)\n> ");
         Scanner scanner = new Scanner(System.in);
@@ -39,7 +39,7 @@ public class SetupKeyword {
         }
     }
 
-    public static String checkConfirm() {
+    private static String checkConfirm() {
         Scanner scanner = new Scanner(System.in);
         String check = scanner.nextLine();
         while(!check.equalsIgnoreCase("yes") && !check.equalsIgnoreCase("no")) {

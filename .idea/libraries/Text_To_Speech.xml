@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="cmu_time_awb">
+  <library name="Text-To-Speech">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/cmu_time_awb.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/cmu_us_kal.jar!/" />
