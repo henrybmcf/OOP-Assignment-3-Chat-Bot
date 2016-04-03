@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Processing.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CB/Master/Checks.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CB/Master/Favourites.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/cmu_time_awb.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Text_To_Speech.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/CB/Master/ConvContext.java" afterPath="$PROJECT_DIR$/src/CB/Master/ConvoContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/EditDist/EditDistance.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/EditDist/EditDistance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/EditDist/Matrix.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/EditDist/Matrix.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/FileCode/FileMethods.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/FileCode/FileMethods.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Cleaning.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Cleaning.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/RepeatCheck.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/RepeatCheck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/SetupKeyword.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/SetupKeyword.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatBot.iml" afterPath="$PROJECT_DIR$/ChatBot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Responses/KnowledgeBase.txt" afterPath="$PROJECT_DIR$/Responses/KnowledgeBase.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/ProcessingChatBot.java" afterPath="$PROJECT_DIR$/Testing/ProcessingChatBot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" afterPath="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/EditDist/Matrix.java" afterPath="$PROJECT_DIR$/src/CB/EditDist/Matrix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" afterPath="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" afterPath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" afterPath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" afterPath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" afterPath="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
     </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,18 +28,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="106" column="46" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
+            <state relative-caret-position="303">
+              <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#457#484#0" expanded="true" />
-                <element signature="e#1108#1162#0" expanded="false" />
-                <element signature="e#2298#2299#0" expanded="true" />
-                <element signature="e#2328#2329#0" expanded="true" />
-                <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+                <element signature="e#483#510#0" expanded="true" />
+                <element signature="e#1134#1188#0" expanded="false" />
                 <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
               </folding>
@@ -66,15 +44,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProcessingChatBot.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Testing/ProcessingChatBot.java">
+      <file leaf-file-name="Visual.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CB/Visuals/Visual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="40" column="5" selection-start-line="32" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="453">
+              <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#964#965#0" expanded="true" />
-                <element signature="e#993#994#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,6 +105,7 @@
         <option value="$PROJECT_DIR$/src/CB/Master/Favourites.java" />
         <option value="$PROJECT_DIR$/Testing/ProcessingChatBot.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
+        <option value="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
       </list>
     </option>
   </component>
@@ -219,6 +196,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Visuals" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -833,7 +814,7 @@
       <workItem from="1459341446160" duration="7802000" />
       <workItem from="1459420347426" duration="1282000" />
       <workItem from="1459433025910" duration="4594000" />
-      <workItem from="1459679918825" duration="1692000" />
+      <workItem from="1459679918825" duration="3244000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -902,7 +883,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97219000" />
+    <option name="totallyTimeSpent" value="98771000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1004,23 +985,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#457#484#0" expanded="true" />
-            <element signature="e#1108#1162#0" expanded="false" />
-            <element signature="e#2298#2299#0" expanded="true" />
-            <element signature="e#2328#2329#0" expanded="true" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1052,11 +1016,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#457#484#0" expanded="true" />
-            <element signature="e#1108#1162#0" expanded="false" />
-            <element signature="e#2298#2299#0" expanded="true" />
-            <element signature="e#2328#2329#0" expanded="true" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#483#510#0" expanded="true" />
+            <element signature="e#1134#1188#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
@@ -1121,11 +1082,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#457#484#0" expanded="true" />
-            <element signature="e#1108#1162#0" expanded="false" />
-            <element signature="e#2298#2299#0" expanded="true" />
-            <element signature="e#2328#2329#0" expanded="true" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#483#510#0" expanded="true" />
+            <element signature="e#1134#1188#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
@@ -1190,11 +1148,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#457#484#0" expanded="true" />
-            <element signature="e#1108#1162#0" expanded="false" />
-            <element signature="e#2298#2299#0" expanded="true" />
-            <element signature="e#2328#2329#0" expanded="true" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#483#510#0" expanded="true" />
+            <element signature="e#1134#1188#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
@@ -1259,11 +1214,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#457#484#0" expanded="true" />
-            <element signature="e#1108#1162#0" expanded="false" />
-            <element signature="e#2298#2299#0" expanded="true" />
-            <element signature="e#2328#2329#0" expanded="true" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#483#510#0" expanded="true" />
+            <element signature="e#1134#1188#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
@@ -1283,11 +1235,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#457#484#0" expanded="true" />
-            <element signature="e#1108#1162#0" expanded="false" />
-            <element signature="e#2298#2299#0" expanded="true" />
-            <element signature="e#2328#2329#0" expanded="true" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#483#510#0" expanded="true" />
+            <element signature="e#1134#1188#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
           </folding>
@@ -1551,17 +1500,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="106" column="46" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
+        <state relative-caret-position="303">
+          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#457#484#0" expanded="true" />
-            <element signature="e#1108#1162#0" expanded="false" />
-            <element signature="e#2298#2299#0" expanded="true" />
-            <element signature="e#2328#2329#0" expanded="true" />
-            <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
+            <element signature="e#483#510#0" expanded="true" />
+            <element signature="e#1134#1188#0" expanded="false" />
             <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Visuals/Visual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -8,6 +8,7 @@ package CB.Master;
 import CB.EditDist.EditDistance;
 import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
+import CB.Visuals.Visual;
 
 import java.util.*;
 import java.io.*;
@@ -78,33 +79,10 @@ public class ChatBot extends PApplet {
     private final static ArrayList<String> userRepetition = RepeatCheck.setURepeat();
 
 
-    private static int presentCounter = 0;
-    private static boolean presentCheck = false;
-
-    public void settings() {
-        size(100, 100);
-    }
-
-    public void draw() {
-        background(0);
-        presentCounter++;
-
-        if (presentCounter == 300 && !presentCheck) {
-            prepOutput("Are you still there?");
-            presentCheck = true;
-            presentCounter = 0;
-        }
-    }
-
-    public void keyPressed() {
-        presentCheck = true;
-        presentCounter = 0;
-    }
-
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
 
-        PApplet.main(ChatBot.class.getName());
+        PApplet.main(Visual.class.getName());
 
         //TextSpeech speaking = new TextSpeech("kevin16");
 
@@ -307,8 +285,8 @@ public class ChatBot extends PApplet {
         bOutput = Cleaning.initCap(out);
         RepeatCheck.saveResponse(bOutput);
         System.out.println(bOutput);
-        presentCheck = false;
-        presentCounter = 0;
+        Visual.presentCheck = false;
+        Visual.presentCounter = 0;
         //speaking.speak(bOutput);
     }
 }
