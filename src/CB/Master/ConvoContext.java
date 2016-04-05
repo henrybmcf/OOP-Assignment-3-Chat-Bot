@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import static CB.Master.RepeatCheck.userPrev;
+
 class ConvoContext {
     private final static String context = "Why like";
     private final static String contextSubj = "it this that them that";
@@ -39,13 +41,11 @@ class ConvoContext {
             }
         }
 
-        if (matchCounter == 2 && subCounter >= 1)
-            return true;
-        return false;
+        return matchCounter == 2 && subCounter >= 1;
     }
 
     private static void inContext() {
-        if (ChatBot.userPrev.contains("favourite")) {
+        if (userPrev.contains("favourite")) {
             String line;
             try {
                 BufferedReader buffRead = new BufferedReader(new FileReader("Responses" + File.separator + "Favourites.txt"));
@@ -53,7 +53,7 @@ class ConvoContext {
                 while ((line = buffRead.readLine()) != null) {
                     line = line.substring(1);
 
-                    if (ChatBot.userPrev.contains(line)) {
+                    if (userPrev.contains(line)) {
                         buffRead.readLine();
                         buffRead.readLine();
                         ChatBot.bOutput = buffRead.readLine().substring(1);

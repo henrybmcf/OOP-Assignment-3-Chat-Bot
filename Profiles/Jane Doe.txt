@@ -1,10 +1,5 @@
 Profile:	Jane Doe
 *
-film,get a job
-sport,cycling
-food,salad
-place,paris
-album,wilder mind
-song,girlfriend
-hobby,reading
-country,france
+favourite,film,get a job
+favourite,sport,cycling
+favourite,hobby,reading

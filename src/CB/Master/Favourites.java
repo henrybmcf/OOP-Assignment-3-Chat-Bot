@@ -1,35 +1,40 @@
 package CB.Master;
 
-import CB.FileCode.FileMethods;
-
 import java.io.*;
 import java.util.Scanner;
 
+import static CB.FileCode.FileMethods.fileErrorMessage;
+import static CB.Master.ChatBot.bOutput;
+import static CB.Master.ChatBot.name;
+import static CB.Master.ChatBot.uInput;
+
 class Favourites {
-    static Object checkLoadFavourite(String favourite, int source) {
+    static Object checkLoadFavourite(String favouriteTopic, int source) {
         try {
-            BufferedReader buffRead = new BufferedReader(new FileReader("Profiles" + File.separator + ChatBot.name + ".txt"));
+            BufferedReader buffRead = new BufferedReader(new FileReader("Profiles" + File.separator + name + ".txt"));
             String line;
 
             buffRead.readLine();
             buffRead.readLine();
+
             while ((line = buffRead.readLine()) != null) {
                 String splitLine[] = ConvoContext.splitString(line, ",");
 
-                if (splitLine[0].equalsIgnoreCase(favourite)) {
+                if (splitLine[1].equalsIgnoreCase(favouriteTopic)) {
                     if (source == 0)
                         return true;
                     else if (source == 1)
-                        return splitLine[1];
+                        return splitLine[2];
                 }
 
-                if (source == 2) {
-                    if (splitLine[1].equalsIgnoreCase(favourite))
-                        return splitLine[0] + "," + splitLine[1];
-                }
+                // For check truth method
+//                if (source == 2) {
+//                    if (splitLine[1].equalsIgnoreCase(favouriteTopic))
+//                        return splitLine[0] + "," + splitLine[1];
+//                }
             }
         }
-        catch (IOException ex) { FileMethods.fileErrorMessage(); }
+        catch (IOException ex) { fileErrorMessage(); }
 
         if (source == 0)
             return false;
@@ -37,20 +42,22 @@ class Favourites {
             return null;
     }
 
-    static void saveNewFave(String faveObject) throws IOException {
+    static void saveNewFeel(String feeling, String faveObject) {
         System.out.print("> ");
         Scanner scanner = new Scanner(System.in);
-        ChatBot.uInput = scanner.nextLine();
-        // uInput = Cleaning.cleanInput(uInput);
+        uInput = scanner.nextLine();
 
         try {
-            FileWriter profile = new FileWriter(new File("Profiles" + File.separator + ChatBot.name + ".txt"), true);
-            profile.write("\n" + faveObject + "," + ChatBot.uInput);
+            FileWriter profile = new FileWriter(new File("Profiles" + File.separator + name + ".txt"), true);
+
+            //profile.write("\n" + faveObject + "," + uInput);
+            profile.write("\n" + feeling + "," + faveObject + "," + uInput);
+
             profile.flush();
             profile.close();
 
-            ChatBot.bOutput = "Okay, I'll remember that..";
+            bOutput = "Okay, I'll remember that..";
         }
-        catch (IOException ex) { FileMethods.fileErrorMessage(); }
+        catch (IOException ex) { fileErrorMessage(); }
     }
 }

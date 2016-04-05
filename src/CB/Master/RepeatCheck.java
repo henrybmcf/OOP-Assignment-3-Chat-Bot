@@ -9,26 +9,35 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static CB.FileCode.FileMethods.fileErrorMessage;
+import static CB.Master.ChatBot.bOutput;
+import static CB.Master.ChatBot.transposition;
+import static CB.Master.ChatBot.uInput;
+import static CB.Master.ChatBot.understand;
+
 class RepeatCheck {
-    static void saveUserResponse(String current) {
-        ChatBot.userPrev = current;
+    private static String bPrevious = "";
+    static String userPrev = "";
+
+    static void saveUserResponse(String userCurrent) {
+        userPrev = userCurrent;
     }
 
     // Save bot's response to check if repeating itself
-    static void saveResponse(String current) {
-        ChatBot.bPrevious = current;
-        ChatBot.understand = false;
-        ChatBot.transposition = false;
+    static void saveResponse(String botCurrent) {
+        bPrevious = botCurrent;
+        understand = false;
+        transposition = false;
     }
 
     // Check to see if bot is repeating itself
-    static void checkRepeat(int lineIndex) {
-        if (ChatBot.understand) {
+    static void checkRepeat(String fileName, int lineIndex) {
+        if (understand) {
             ArrayList<String> responses = new ArrayList<>();
             String line = " ";
 
             try {
-                FileReader fileReader = new FileReader("Data" + File.separator + "KnowledgeBase.txt");
+                FileReader fileReader = new FileReader("Data" + File.separator + fileName + ".txt");
                 BufferedReader buffRead = new BufferedReader(fileReader);
 
                 // Skip through all lines up to keyword line
@@ -46,7 +55,7 @@ class RepeatCheck {
                 }
 
                 buffRead.close();
-            } catch(IOException ex) { FileMethods.fileErrorMessage(); }
+            } catch(IOException ex) { fileErrorMessage(); }
 
             ChatBot.assignResponse(responses);
         }
@@ -107,10 +116,10 @@ class RepeatCheck {
             // If input hasn't been transposed
 
             if (!Checks.inputChecks()) {
-                if (!ChatBot.transposition) {
+                if (!transposition) {
                     // Loop through words file, to see if input is a word
                     try {
-                        if (!ChatBot.uInput.contains(" ")) {
+                        if (!uInput.contains(" ")) {
                             FileReader fileReader = new FileReader("Data" + File.separator + "Words.txt");
                             BufferedReader buffRead = new BufferedReader(fileReader);
                             String word = buffRead.readLine();
@@ -118,13 +127,13 @@ class RepeatCheck {
                             while (word != null) {
                                 word = buffRead.readLine();
                                 // If match found, call function to get user to input phrases and responses
-                                if (word.equalsIgnoreCase(ChatBot.uInput)) {
+                                if (word.equalsIgnoreCase(uInput)) {
                                     SetupKeyword.setupNewKeyword();
                                     break;
                                 }
                             }
                         }
-                    } catch (IOException ex) { FileMethods.fileErrorMessage(); }
+                    } catch (IOException ex) { fileErrorMessage(); }
 
                     ArrayList<String> responses = new ArrayList<>();
 
@@ -139,7 +148,7 @@ class RepeatCheck {
                         }
 
                         buffRead.close();
-                    } catch (IOException ex) { FileMethods.fileErrorMessage(); }
+                    } catch (IOException ex) { fileErrorMessage(); }
 
                     ChatBot.assignResponse(responses);
                 }
@@ -149,16 +158,16 @@ class RepeatCheck {
 
     // Return true is previous bot response exists and is same as current response
     static boolean bRepeating() {
-        return ChatBot.bPrevious.length() > 0 && ChatBot.bOutput.equalsIgnoreCase(ChatBot.bPrevious);
+        return bPrevious.length() > 0 && bOutput.equalsIgnoreCase(bPrevious);
     }
 
     static boolean checkUserRepetition() {
-        return ChatBot.userPrev.length() > 0 && EditDistance.MinimumEditDistance(ChatBot.uInput, ChatBot.userPrev) <= 2;
+        return userPrev.length() > 0 && EditDistance.MinimumEditDistance(uInput, userPrev) <= 2;
     }
 
     static boolean checkUserBotSame() {
-        if (ChatBot.uInput.equalsIgnoreCase(ChatBot.bOutput)) {
-            ChatBot.bOutput = "That's what I said";
+        if (uInput.equalsIgnoreCase(bOutput)) {
+            bOutput = "That's what I said";
             return true;
         }
         return false;

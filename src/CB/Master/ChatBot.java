@@ -6,7 +6,6 @@
 package CB.Master;
 
 import CB.EditDist.EditDistance;
-import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
 import CB.Visuals.Visual;
 
@@ -15,34 +14,25 @@ import java.io.*;
 
 import processing.core.PApplet;
 
-// TODO Introduce timer feature, so if user is idle for x seconds, generate prompt, ex: "Are you still there?"
-// TODO Use processing's 60fps for this?
+import static CB.FileCode.FileMethods.fileErrorMessage;
+import static CB.FileCode.FileMethods.saveLog;
+import static CB.FileCode.FileMethods.zipLog;
+import static CB.Master.Checks.exitCheck;
+import static CB.Master.Cleaning.prepOutput;
 
 @SuppressWarnings("serial")
 public class ChatBot extends PApplet {
-  //  private static final String VOICENAME_kevin = "kevin16";
-
-//    public static void speak(String text) {
-//        Voice voice;
-//        VoiceManager voiceManager = VoiceManager.getInstance();
-//        voice = voiceManager.getVoice(VOICENAME_kevin);
-//        voice.allocate();
-//        voice.speak(text);
-//    }
 
     static String uInput;
     public static String bOutput;
 
-    static String bPrevious = "";
-    static String userPrev = "";
-
     static boolean understand;
     static boolean transposition = false;
-    private static boolean exit;
 
     static String name;
-
     static String keyWord;
+
+    private final static String botLogName = "Bot:\t";
 
 //    public final static String transposeList[][] = {
 //            {"i'm", "you're"},
@@ -69,15 +59,6 @@ public class ChatBot extends PApplet {
             "such a nice day today!"
     };
 
-    // List of possible user inputs to end the conversation
-    private final static String[] goodbye = {
-            "bye",
-            "goodbye",
-            "see you later",
-            "i have to go",
-            "see ya"
-    };
-
     private final static ArrayList<String> userRepetition = RepeatCheck.setURepeat();
 
 
@@ -89,104 +70,92 @@ public class ChatBot extends PApplet {
 
 //        String date = new Date().toString().replace(":", "_");
 //        File log = new File("Conversation Logs" + File.separator + date + ".txt");
-//        FileWriter conLog = new FileWriter(log, true);
-//        conLog.write("Start:\t" + date + "\n\n");
+//        FileWriter conLog = null;
+//        try {
+//            conLog = new FileWriter(log, true);
+//            conLog.write("Start:\t" + date + "\n\n");
+//        }
+//        catch (IOException e) { e.printStackTrace(); }
 
-        bOutput = "Hello, what is your full name?";
-        System.out.println(bOutput);
-        System.out.print("> ");
+       // prepOutput("Hello, what is your full name?", 1);
+
+        // Write the bot's response to the conversation log file
+        //saveLog(conLog, botLogName, bOutput);
+
+       // System.out.print("> ");
         Scanner scanner = new Scanner(System.in);
-        uInput = scanner.nextLine();
-        uInput = Cleaning.cleanInput(uInput);
-        name = Cleaning.toName(uInput);
-
-        File prof = new File("Profiles" + File.separator + name + ".txt");
-
-        String firstName = Cleaning.firstName(name);
-
-        boolean prevProf = true;
-
-        if (prof.exists() && !prof.isDirectory())
-            bOutput = "Welcome back " + firstName + ", " + assignSalutation();
-        else {
-            bOutput = "Oo, a new person! Hello " + firstName + ", " + assignSalutation();
-            prevProf = false;
-        }
-
-        try {
-            FileWriter profile = new FileWriter(prof, true);
-
-            if (!prevProf) {
-                profile.write("Profile:\t" + name + "\n*");
-                profile.flush();
-                profile.close();
-            }
-        }
-        catch (IOException ex) { FileMethods.fileErrorMessage(); }
-
-        System.out.println(bOutput);
-
-        //bOutput = assignSalutation();
-        RepeatCheck.saveResponse(bOutput);
-        //System.out.println(bOutput);
-        //speaking.speak(bOutput);
+//        uInput = Cleaning.cleanInput(scanner.nextLine());
+//        name = Cleaning.toName(uInput);
+//        String firstName = Cleaning.firstName(name);
+//
+//        //saveLog(conLog, firstName, uInput);
+//
+//        File prof = new File("Profiles" + File.separator + name + ".txt");
+//
+//        boolean prevProf = true;
+//
+//        if (prof.exists() && !prof.isDirectory())
+//            bOutput = "Welcome back " + firstName + ", " + assignSalutation();
+//        else {
+//            bOutput = "Oo, a new person! Hello " + firstName + ", " + assignSalutation();
+//            prevProf = false;
+//        }
+//
+//        if (!prevProf) {
+//            try {
+//                FileWriter profile = new FileWriter(prof, true);
+//                profile.write("Profile:\t" + name + "\n*");
+//                profile.flush();
+//                profile.close();
+//            } catch (IOException ex) { fileErrorMessage(); }
+//        }
+//
+//        prepOutput(bOutput, 1);
+        //saveLog(conLog, botLogName, bOutput);
 
         do {
-            // Write the bot's response to the conversation log file
-            //FileMethods.saveLog(conLog, "Bot:\t", bOutput);
             System.out.print("> ");
 
-            //Scanner scanner = new Scanner(System.in);
-            scanner = new Scanner(System.in);
-            uInput = scanner.nextLine();
-
-            // Remove unwanted white space and punctuation and convert to lower case
-            uInput = Cleaning.cleanInput(uInput);
+            //scanner = new Scanner(System.in);
+            // Remove unwanted white space and punctuation and convert to lower case from read in line§
+            uInput = Cleaning.cleanInput(scanner.nextLine());
 
             // Write the user's response to the conversation log file
-            //FileMethods.saveLog(conLog, "User:\t", uInput);
+            //saveLog(conLog, firstName, uInput);
 
-            // Check user input against goodbye strings to see if program should exit
-
-            // TODO Put into Checks class
-            int i = 0;
-            while (i != goodbye.length) {
-                if (EditDistance.MinimumEditDistance(uInput, goodbye[i]) < 2) {
-                    exit = true;
-                    break;
-                }
-                i++;
-            }
-
-            if (exit) {
-                String goodbyeMessage = "Goodbye " + firstName + ", it was nice talking to you.";
-                System.out.println(goodbyeMessage);
-                //speaking.speak(goodbyeMessage);
-                break;
-            }
-            else {
+            if (!exitCheck()) {
                 if (RepeatCheck.checkUserRepetition())
                     assignResponse(userRepetition);
-                else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.contextChecks())
-                    RepeatCheck.checkRepeat(searchKeyword("KnowledgeBase", 1));
+                else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.contextChecks() && !Checks.aggressiveCheck()) {
+                    System.out.println("Hopefully not getting here..");
+                    RepeatCheck.checkRepeat("KnowledgeBase", searchKeyword("KnowledgeBase", 1));
+                }
 
-                Cleaning.prepOutput(bOutput, 0);
-//                bOutput = Cleaning.initCap(bOutput);
-//                RepeatCheck.saveResponse(bOutput);
-//                System.out.println(bOutput);
-//                speaking.speak(bOutput);
+                prepOutput(bOutput, 0);
+
+                //saveLog(conLog, botLogName, bOutput);
 
                 RepeatCheck.saveUserResponse(uInput);
                 uInput = "";
+            }
+            else {
+                //prepOutput("Goodbye " + firstName + ", it was nice talking to you.", 1);
+                //saveLog(conLog, botLogName, bOutput);
+                break;
             }
         }
         while (true);
 
 //        Date dateEnd = new Date();
-//        conLog.write("\n\nEnd\t" + dateEnd.toString());
-//        conLog.flush();
-//        conLog.close();
-//        FileMethods.zipLog("Conversation Logs" + File.separator + date);
+//        try {
+//            assert conLog != null;
+//            conLog.write("\n\nEnd\t" + dateEnd.toString());
+//            conLog.flush();
+//            conLog.close();
+//        }
+//        catch (IOException ex) { fileErrorMessage(); }
+//        zipLog("Conversation Logs" + File.separator + date);
+//        //noinspection ResultOfMethodCallIgnored
 //        log.delete();
     }
 
@@ -252,7 +221,7 @@ public class ChatBot extends PApplet {
                                         bOutput = Cleaning.initCap(bOutput);
                                         RepeatCheck.saveResponse(bOutput);
                                         System.out.println(bOutput);
-                                        Favourites.saveNewFave(line);
+                                        Favourites.saveNewFeel("favourite", line);
                                     }
                                     break searching;
                                 }
@@ -280,7 +249,7 @@ public class ChatBot extends PApplet {
 
             buffRead.close();
         }
-        catch(IOException ex) { FileMethods.fileErrorMessage(); }
+        catch(IOException ex) { fileErrorMessage(); }
 
         return smallLine;
     }
@@ -296,6 +265,4 @@ public class ChatBot extends PApplet {
         if (understand)
             bOutput = Cleaning.cleanOutput();
     }
-
-
 }

@@ -1,5 +1,6 @@
 package CB.Master;
 
+import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
 import CB.Visuals.Visual;
 
@@ -46,6 +47,8 @@ public class Cleaning {
 //            Visual.presentCounter = 0;
 //            Visual.exitCounter = 0;
 //            speaking.speak(bOutput);
+
+
         }
     }
 
@@ -100,9 +103,6 @@ public class Cleaning {
         return ConvoContext.splitString(name, " ")[0];
     }
 
-
-
-
     private static String preProcessOutput(String resp) {
         String subject = "";
 
@@ -127,12 +127,33 @@ public class Cleaning {
         return subject;
     }
 
-    //Ryou should really try not to hate stuff, it’s not good for you
+    private final static String[] likeVocab = {
+            "love",
+            "like",
+            "enjoy"
+    };
+    private final static String[] dislikeVocab = {
+            "hate",
+            "dislike",
+            "do not like",
+            "do not enjoy"
+    };
 
     @SuppressWarnings("ConstantConditions")
-    static boolean checkTruth(String str, String subj) {
+    private static boolean checkTruth(String str, String subj) {
+        boolean like = false;
+        boolean dis = false;
 
-        if (str.contains("hate") || str.contains("dislike") || str.contains("do not like") || str.contains("do not enjoy")) {
+        for (String pos : likeVocab) {
+            if (str.contains(pos))
+                like = true;
+        }
+        for (String neg : dislikeVocab) {
+            if (str.contains(neg))
+                dis = true;
+        }
+
+        if (like || dis) {
             String fav;
 
             if (Favourites.checkLoadFavourite(subj, 2) != null) {
@@ -140,7 +161,14 @@ public class Cleaning {
 
                 String splitLine[] = ConvoContext.splitString(fav, ",");
 
-                prepOutput("you are lying, you said that you're favourite " + splitLine[0] + " is " + splitLine[1] + ". I hate it when you lie to me!", 1);
+                String lieCatch = "";
+                if (like)
+                    lieCatch = "you're lying, you said that you didn't like " + splitLine[1] + ". Don't lie to me!";
+                else if (dis)
+                    lieCatch = "you're lying, you said that you're favourite " + splitLine[0] + " is " + splitLine[1] + ". I hate it when you lie to me!";
+
+                prepOutput(lieCatch, 1);
+
                 return false;
             }
         }

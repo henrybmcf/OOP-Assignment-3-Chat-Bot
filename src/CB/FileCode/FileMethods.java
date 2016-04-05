@@ -2,14 +2,18 @@ package CB.FileCode;
 
 import CB.Master.*;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class FileMethods {
+    public static void saveLog(FileWriter log, String ID, String str) {
+        try { log.write(ID + str + "\n"); } catch (IOException ex) { fileErrorMessage(); }
+    }
+
     public static void zipLog(String fileName) {
         byte[] buffer = new byte[1024];
 
@@ -27,11 +31,7 @@ public class FileMethods {
             in.close();
             zos.closeEntry();
             zos.close();
-        } catch(IOException ex){ ex.printStackTrace(); }
-    }
-
-    public static void saveLog(FileWriter log, String ID, String str) {
-        try { log.write(ID + str + "\n"); } catch (IOException ex) { fileErrorMessage(); }
+        } catch(IOException ex) { fileErrorMessage(); }
     }
 
     public static void fileErrorMessage() {
