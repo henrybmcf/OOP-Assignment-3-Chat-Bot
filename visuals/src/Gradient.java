@@ -3,27 +3,23 @@ import processing.core.*;
 public class Gradient extends PApplet {
 
     private int c1, c3, c2, c4, cBlack;
-
-    private int gradWidth1;
-    private int gradWidth2;
-
-    private int gradHeight1;
+    private int [] colours = new int [5];
 
     public void settings() {
         size(800, 600);
 
-        c1 = color(204, 102, 0);
+        colours[0] = color(204, 102, 0);
 
-        c3 = color(100, 200, 100);
-        c2 = color(0, 102, 253);
-        c4 = color(255, 0, 127);
-        cBlack = color(0);
+        colours[1] = color(100, 200, 100);
+        colours[2] = color(0, 102, 253);
+        colours[3] = color(255, 0, 127);
+        colours[4]= color(0);
 
 //        gradWidth1 = 2000;
-        gradWidth1 = 2000;
-        gradWidth2 = 2000;
-
-        gradHeight1 = 200;
+//        gradWidth1 = 2000;
+//        gradWidth2 = 2000;
+//
+//        gradHeight1 = 200;
 //        noLoop();
     }
 
@@ -44,31 +40,28 @@ public class Gradient extends PApplet {
 //        setGradient(0, 0, gradWidth1, gradHeight1, c3, c2);
 //        popMatrix();
 
+        int size = height;
+        for (int i = 0; i < 4; i++)
+        {
+            pushMatrix();
+            switch (i)
+            {
+                case 1: //top right
+                    translate(width, 0);
+                    break;
 
-        setGradient(0, 0, height, c1, cBlack, 0, HALF_PI);
+                case 2: //bottom right
+                    translate (width, height);
+                    break;
 
-        pushMatrix();
-        translate(0, height);
-        setGradient(0, 0, height, c3, cBlack, PI + HALF_PI, TWO_PI);
-        popMatrix();
+                case 3: //bottom left
+                    translate (0, height);
+                    break;
+            }//end switch
+            setGradient(0, 0, size, colours[i], colours[colours.length - 1], i * HALF_PI, (i+1)*HALF_PI);
 
-        pushMatrix();
-        translate(width, height);
-        setGradient(0, 0, height, c2, cBlack, HALF_PI, TWO_PI);
-        popMatrix();
-
-        pushMatrix();
-        translate(width, 0);
-        setGradient(0, 0, height, c4, cBlack, HALF_PI, PI);
-        popMatrix();
-
-        // Corner 2 (Top Right)
-//        pushMatrix();
-//        //rotate(PI * 0.25f);
-//        //translate(width - gradWidth2 * 0.75f, 0);
-//        translate(width, 0);
-//        setGradient(0, 0, gradWidth2, 400, c3, c2);
-//        popMatrix();
+            popMatrix();
+        }
     }
 
     private void setGradient(float startX, int startY, float gSize, int c1, int c2, float start, float stop) {
