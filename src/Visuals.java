@@ -20,12 +20,12 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 
 
-import ddf.minim.AudioInput;
-import ddf.minim.Minim;
-import ddf.minim.analysis.FFT;
+import ddf.minim.AudioInput; //listens to surroundings
+import ddf.minim.Minim; //sound
+import ddf.minim.analysis.FFT; //sound
 import ddf.minim.analysis.WindowFunction;
 
-public class Visuals extends PApplet
+public class Visuals extends PApplet //processing
 {
     Minim minim;
     AudioInput in;
@@ -49,36 +49,6 @@ public class Visuals extends PApplet
         max = Float.MIN_VALUE;
     }
 
-
-    public int countZeroCrossings()
-    {
-        int count = 0;
-
-        for (int i = 1 ; i < in.bufferSize(); i ++)
-        {
-            if (in.left.get(i - 1) > 0 && in.left.get(i) <= 0)
-            {
-                count ++;
-            }
-        }
-        return count;
-    }
-
-    public float FFTFreq()
-    {
-        // Find the higest entry in the FFT and convert to a frequency
-        float maxValue = Float.MIN_VALUE;
-        int maxIndex = -1;
-        for (int i = 0 ; i < fft.specSize() ; i ++)
-        {
-            if (fft.getBand(i) > maxValue)
-            {
-                maxValue = fft.getBand(i);
-                maxIndex = i;
-            }
-        }
-        return fft.indexToFreq(maxIndex);
-    }
 
     public void draw() {
         background(0);
