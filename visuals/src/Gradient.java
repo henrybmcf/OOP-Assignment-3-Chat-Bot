@@ -10,17 +10,31 @@ public class Gradient extends PApplet {
     private int[] colours = new int[5];
 
 //    private float[] frequencies = {
-//            256.78f, 392.00f, 587.33f, 880.00f,
-//            293.66f, 440.00f, 659.25f, 987.77f,
-//            329.63f, 493.88f, 739.99f, 1108.73f,
-//            369.99f, 554.37f, 783.99f, 1174.66f,
+//            256f, 392f, 587f, 880f, 1272f, 1664f, 2060f, 2455f,
+//            293f, 440f, 659f, 987f, 1370f, 1762f, 2158f, 2553f,
+//            329f, 493f, 739f, 1108f, 1468f, 1860f, 2256f, 2652f,
+//            369f, 554f, 783f, 1174f, 1566f, 1962f, 2354f, 2750f
+//    };
+
+//    private float[] frequencies = {
+//            256f, 587f, 1272f, 2060f,
+//            293f, 659f, 1370f, 2158f,
+//            329f, 739f, 1468f, 2256f,
+//            369f, 783f, 1566f, 2354f,
+//    };
+
+//    private float[] frequencies = {
+//            256f, 293f, 329f, 369f,
+//            587f, 659f, 739f, 783f,
+//            1272f, 1370f, 1468f, 1566f,
+//            2060f, 2158f, 2256f, 2354f
 //    };
 
     private float[] frequencies = {
-            256f, 392f, 587f, 880f, 1272f, 1664f, 2060f, 2455f,
-            293f, 440f, 659f, 987f, 1370f, 1762f, 2158f, 2553f,
-            329f, 493f, 739f, 1108f, 1468f, 1860f, 2256f, 2652f,
-            369f, 554f, 783f, 1174f, 1566f, 1962f, 2354f, 2750f
+            256f, 293f, 1468f, 1566f,
+            329f, 369f, 1272f, 1370f,
+            587f, 659f, 2256f, 2354f,
+            739f, 783f, 2060f, 2158f
     };
 
     private float diameter[] = new float[4];
@@ -29,6 +43,7 @@ public class Gradient extends PApplet {
     public void settings() {
         size(800, 600);
         //fullScreen();
+        smooth(8);
 
         int frameSize = 1024;
         int sampleRate = 44100;
@@ -53,15 +68,15 @@ public class Gradient extends PApplet {
         fft.window(FFT.HAMMING);
         fft.forward(in.left);
 
-        int index = frequencies.length / 8;
-        int quart = index * 2;
+        int index = frequencies.length / 4;
+        //int quart = index * 2;
 
         float[][] range = new float[index][2];
 
 
         for (int i = 0; i < index; i++) {
-            int j = i * quart;
-            int k = j + 7;
+            int j = i * index;
+            int k = j + (index - 1);
             range[i][0] = frequencies[j];
             range[i][1] = frequencies[k];
         }
@@ -70,31 +85,29 @@ public class Gradient extends PApplet {
 
         float freq = FFTFreq();
 
-        // System.out.println(freq);
-
         for (int i = 0 ; i < index; i++) {
-            for (int j = i * (quart); j < (i + 1) * (quart); j++) {
+            for (int j = i * index; j < (i + 1) * index; j++) {
                 int k = j + 1;
 
-                if (k == 32)
+                if (k == 16)
                     k--;
 
                 if (checkFreq(freq, frequencies[j], frequencies[k])) {
                     sizing[i] = true;
                     diameter[i] = map(freq, range[i][0], range[i][1], height * 0.3f, height);
-                    System.out.println(diameter[i]);
                 }
             }
         }
 
-//        for (int i = 0; i < sizing.length; i++) {
-//            if (!sizing[i])
-//                diameter[i] = height * 0.3f;
-//        }
+        for (int i = 0; i < sizing.length; i++) {
+            if (!sizing[i])
+                diameter[i] = height * 0.3f;
+        }
 
 //        float size = displayHeight;
 
         noFill();
+        strokeWeight(2);
 
         // Top Left, Top Right, Bottom Right, Bottom Left
         for (int i = 0; i < 4; i++) {
@@ -116,12 +129,11 @@ public class Gradient extends PApplet {
     }
 
     private boolean checkFreq(float freq, float low, float high) {
-        //System.out.println(low + " _ " + high);
         return freq > low && freq < high;
     }
 
     private void setGradient(float startX, int startY, float gSize, int colour1, int colour2, float start, float stop) {
-        for (float i = startY + gSize; i >= startY; i -= 0.1) {
+        for (float i = startY + gSize; i >= startY; i -= 1) {
             float inter = map(i, startY, startY + gSize, 0, 1);
 //            int c = lerpColor(c1, c2, inter);
             stroke(lerpColor(colour1, colour2, inter));
@@ -133,7 +145,7 @@ public class Gradient extends PApplet {
     private float FFTFreq() {
         float maxValue = Float.MIN_VALUE;
         int maxIndex = -1;
-        for (int i = 0 ; i < fft.specSize() ; i ++) {
+        for (int i = 0; i < fft.specSize(); i++) {
             if (fft.getBand(i) > maxValue) {
                 maxValue = fft.getBand(i);
                 maxIndex = i;
