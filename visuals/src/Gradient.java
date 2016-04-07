@@ -1,14 +1,30 @@
 import processing.core.*;
-        import ddf.minim.AudioInput;
-        import ddf.minim.Minim;
-        import ddf.minim.analysis.FFT;
+import ddf.minim.AudioInput;
+import ddf.minim.Minim;
+import ddf.minim.analysis.FFT;
 
 public class Gradient extends PApplet {
-    Minim minim;
-    AudioInput in;
+    private AudioInput in;
     private FFT fft;
 
     private int[] colours = new int[5];
+
+//    private float[] frequencies = {
+//            256.78f, 392.00f, 587.33f, 880.00f,
+//            293.66f, 440.00f, 659.25f, 987.77f,
+//            329.63f, 493.88f, 739.99f, 1108.73f,
+//            369.99f, 554.37f, 783.99f, 1174.66f,
+//    };
+
+    private float[] frequencies = {
+            256f, 392f, 587f, 880f, 1272f, 1664f, 2060f, 2455f,
+            293f, 440f, 659f, 987f, 1370f, 1762f, 2158f, 2553f,
+            329f, 493f, 739f, 1108f, 1468f, 1860f, 2256f, 2652f,
+            369f, 554f, 783f, 1174f, 1566f, 1962f, 2354f, 2750f
+    };
+
+    private float diameter[] = new float[4];
+
 
     public void settings() {
         size(800, 600);
@@ -17,7 +33,7 @@ public class Gradient extends PApplet {
         int frameSize = 1024;
         int sampleRate = 44100;
 
-        minim = new Minim(this);
+        Minim minim = new Minim(this);
         in = minim.getLineIn(Minim.MONO, frameSize, sampleRate, 16);
         fft = new FFT(frameSize, sampleRate);
 
@@ -26,6 +42,9 @@ public class Gradient extends PApplet {
         colours[2] = color(50, 50, 200);
         colours[3] = color(204, 0, 204);
         colours[4] = color(0);
+
+        for (int i = 0; i < diameter.length; i++)
+            diameter[i] = height * 0.3f;
     }
 
     public void draw() {
@@ -34,15 +53,46 @@ public class Gradient extends PApplet {
         fft.window(FFT.HAMMING);
         fft.forward(in.left);
 
+        int index = frequencies.length / 8;
+        int quart = index * 2;
 
-        float[] frequencies = {
-                293.66f, 329.63f, 369.99f, 392.00f,
-                440.00f, 493.88f, 554.37f, 587.33f,
-                659.25f, 739.99f, 783.99f, 880.00f,
-                987.77f, 1108.73f, 1174.66f};
+        float[][] range = new float[index][2];
+
+
+        for (int i = 0; i < index; i++) {
+            int j = i * quart;
+            int k = j + 7;
+            range[i][0] = frequencies[j];
+            range[i][1] = frequencies[k];
+        }
+
+        boolean[] sizing = new boolean[index];
+
+        float freq = FFTFreq();
+
+        // System.out.println(freq);
+
+        for (int i = 0 ; i < index; i++) {
+            for (int j = i * (quart); j < (i + 1) * (quart); j++) {
+                int k = j + 1;
+
+                if (k == 32)
+                    k--;
+
+                if (checkFreq(freq, frequencies[j], frequencies[k])) {
+                    sizing[i] = true;
+                    diameter[i] = map(freq, range[i][0], range[i][1], height * 0.3f, height);
+                    System.out.println(diameter[i]);
+                }
+            }
+        }
+
+//        for (int i = 0; i < sizing.length; i++) {
+//            if (!sizing[i])
+//                diameter[i] = height * 0.3f;
+//        }
 
 //        float size = displayHeight;
-        float size = height;
 
         noFill();
 
@@ -60,11 +110,14 @@ public class Gradient extends PApplet {
                     translate(0, height);
                     break;
             }
-            setGradient(0, 0, size, colours[i], colours[colours.length - 1], i * HALF_PI, (i + 1) * HALF_PI);
+            setGradient(0, 0, diameter[i], colours[i], colours[colours.length - 1], i * HALF_PI, (i + 1) * HALF_PI);
             popMatrix();
         }
+    }
 
-
+    private boolean checkFreq(float freq, float low, float high) {
+        //System.out.println(low + " _ " + high);
+        return freq > low && freq < high;
     }
 
     private void setGradient(float startX, int startY, float gSize, int colour1, int colour2, float start, float stop) {
@@ -77,7 +130,7 @@ public class Gradient extends PApplet {
     }
 
     // Returns frequency
-    public float FFTFreq() {
+    private float FFTFreq() {
         float maxValue = Float.MIN_VALUE;
         int maxIndex = -1;
         for (int i = 0 ; i < fft.specSize() ; i ++) {
