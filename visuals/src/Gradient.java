@@ -3,32 +3,13 @@ import ddf.minim.AudioInput;
 import ddf.minim.Minim;
 import ddf.minim.analysis.FFT;
 
+import java.util.ArrayList;
+
 public class Gradient extends PApplet {
     private AudioInput in;
     private FFT fft;
 
     private int[] colours = new int[5];
-
-//    private float[] frequencies = {
-//            256f, 392f, 587f, 880f, 1272f, 1664f, 2060f, 2455f,
-//            293f, 440f, 659f, 987f, 1370f, 1762f, 2158f, 2553f,
-//            329f, 493f, 739f, 1108f, 1468f, 1860f, 2256f, 2652f,
-//            369f, 554f, 783f, 1174f, 1566f, 1962f, 2354f, 2750f
-//    };
-
-//    private float[] frequencies = {
-//            256f, 587f, 1272f, 2060f,
-//            293f, 659f, 1370f, 2158f,
-//            329f, 739f, 1468f, 2256f,
-//            369f, 783f, 1566f, 2354f,
-//    };
-
-//    private float[] frequencies = {
-//            256f, 293f, 329f, 369f,
-//            587f, 659f, 739f, 783f,
-//            1272f, 1370f, 1468f, 1566f,
-//            2060f, 2158f, 2256f, 2354f
-//    };
 
     private float[] frequencies = {
             256f, 293f, 1468f, 1566f,
@@ -37,13 +18,24 @@ public class Gradient extends PApplet {
             739f, 783f, 2060f, 2158f
     };
 
-    private float diameter[] = new float[4];
+    private float desDiameter[] = new float[4];
 
+    private ArrayList<CornerArc> arcs = new ArrayList<>();
+
+    private float scrHeight;
 
     public void settings() {
-        size(800, 600);
-        //fullScreen();
+        //size(800, 600);
+        fullScreen();
         smooth(8);
+
+        // Fullscreen
+        float scrWidth = displayWidth;
+        scrHeight = displayHeight;
+
+        // Windowed
+//        scrWidth = width;
+//        scrHeight = height;
 
         int frameSize = 1024;
         int sampleRate = 44100;
@@ -58,8 +50,17 @@ public class Gradient extends PApplet {
         colours[3] = color(204, 0, 204);
         colours[4] = color(0);
 
-        for (int i = 0; i < diameter.length; i++)
-            diameter[i] = height * 0.3f;
+        for (int i = 0; i < desDiameter.length; i++)
+            desDiameter[i] = scrHeight * 0.3f;
+
+        CornerArc cArc = new CornerArc(0, 0, desDiameter[0], colours[0]);
+        arcs.add(cArc);
+        cArc = new CornerArc(scrWidth, 0, desDiameter[0], colours[1]);
+        arcs.add(cArc);
+        cArc = new CornerArc(scrWidth, scrHeight, desDiameter[0], colours[2]);
+        arcs.add(cArc);
+        cArc = new CornerArc(0, scrHeight, desDiameter[0], colours[3]);
+        arcs.add(cArc);
     }
 
     public void draw() {
@@ -69,10 +70,8 @@ public class Gradient extends PApplet {
         fft.forward(in.left);
 
         int index = frequencies.length / 4;
-        //int quart = index * 2;
 
         float[][] range = new float[index][2];
-
 
         for (int i = 0; i < index; i++) {
             int j = i * index;
@@ -89,56 +88,49 @@ public class Gradient extends PApplet {
             for (int j = i * index; j < (i + 1) * index; j++) {
                 int k = j + 1;
 
+                // Prevent array out of bounds exception
                 if (k == 16)
                     k--;
 
                 if (checkFreq(freq, frequencies[j], frequencies[k])) {
                     sizing[i] = true;
-                    diameter[i] = map(freq, range[i][0], range[i][1], height * 0.3f, height);
+                    float mapped = map(freq, range[i][0], range[i][1], scrHeight * 0.3f, scrHeight);
+                    if (mapped < desDiameter[i] * 0.7f || mapped > desDiameter[i] * 1.3f)
+                        desDiameter[i] = mapped;
                 }
             }
         }
 
-        for (int i = 0; i < sizing.length; i++) {
-            if (!sizing[i])
-                diameter[i] = height * 0.3f;
-        }
+//        for (int i = 0; i < sizing.length; i++) {
+//            if (!sizing[i])
+//                desDiameter[i] = scrHeight * 0.4f;
+//        }
 
-//        float size = displayHeight;
-
-        noFill();
-        strokeWeight(2);
+        strokeWeight(4);
 
         // Top Left, Top Right, Bottom Right, Bottom Left
-        for (int i = 0; i < 4; i++) {
+        // Size Match method call for all arcs
+        for (int j = 0; j < arcs.size(); j++ ) {
+            CornerArc arcy = arcs.get(j);
+            arcy.sizeMatch(desDiameter[j]);
+
+            PVector pos = arcy.loc;
+            float diam = arcy.diameter;
+            int colour = arcy.colour;
+            int black = color(0);
+
             pushMatrix();
-            switch (i) {
-                case 1:
-                    translate(width, 0);
-                    break;
-                case 2:
-                    translate(width, height);
-                    break;
-                case 3:
-                    translate(0, height);
-                    break;
+            translate(pos.x, pos.y);
+
+            for (float i = 0 + diam; i >= 0; i -= 1) {
+                float inter = map(i, 0, diam, 0, 1);
+                stroke(lerpColor(colour, black, inter));
+                arc(0, 0, i, i, j * HALF_PI, (j + 1) * HALF_PI);
             }
-            setGradient(0, 0, diameter[i], colours[i], colours[colours.length - 1], i * HALF_PI, (i + 1) * HALF_PI);
             popMatrix();
         }
-    }
 
-    private boolean checkFreq(float freq, float low, float high) {
-        return freq > low && freq < high;
-    }
-
-    private void setGradient(float startX, int startY, float gSize, int colour1, int colour2, float start, float stop) {
-        for (float i = startY + gSize; i >= startY; i -= 1) {
-            float inter = map(i, startY, startY + gSize, 0, 1);
-//            int c = lerpColor(c1, c2, inter);
-            stroke(lerpColor(colour1, colour2, inter));
-            arc(startX, startY, i, i, start, stop);
-        }
+        noFill();
     }
 
     // Returns frequency
@@ -152,6 +144,11 @@ public class Gradient extends PApplet {
             }
         }
         return fft.indexToFreq(maxIndex);
+    }
+
+    // Checks if frequency is within range
+    private boolean checkFreq(float freq, float low, float high) {
+        return freq > low && freq < high;
     }
 
     public static void main(String[] args) { PApplet.main(Gradient.class.getName()); }
