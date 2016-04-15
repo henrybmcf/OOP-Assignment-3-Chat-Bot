@@ -13,8 +13,8 @@ public class GraphicLines extends PApplet {
         loc = new PVector(startX, startY);
         this.lineLength = lineLength;
 
-        incSize = 1.07f;
-        decSize = 0.93f;
+        incSize = 1.05f;
+        decSize = 0.95f;
     }
 
     void lineChange(float desLength) {

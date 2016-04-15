@@ -7,14 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-<<<<<<< HEAD
     <orderEntry type="library" name="Text-To-Speech" level="project" />
     <orderEntry type="library" name="Processing" level="project" />
-<<<<<<< HEAD
     <orderEntry type="library" name="Minim" level="application" />
-=======
-=======
->>>>>>> origin/Visuals
->>>>>>> e276d798c1b8f6cfdaf070a9e01cf19f652aa9db
   </component>
 </module>

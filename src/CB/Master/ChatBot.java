@@ -64,7 +64,7 @@ public class ChatBot extends PApplet {
 
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
-//        PApplet.main(Visual.class.getName());
+       PApplet.main(Visual.class.getName());
 //        TextSpeech speaking = new TextSpeech("kevin16");
 //        String date = new Date().toString().replace(":", "_");
 //        File log = new File("Conversation Logs" + File.separator + date + ".txt");

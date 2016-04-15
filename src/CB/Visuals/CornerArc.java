@@ -16,8 +16,8 @@ class CornerArc {
         this.diameter = diameter;
         this.colour = colour;
 
-        incSize = 1.03f;
-        decSize = 0.97f;
+        incSize = 1.01f;
+        decSize = 0.99f;
     }
 
     // Increase or decrease to desired diameter
