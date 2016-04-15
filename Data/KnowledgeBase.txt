@@ -70,7 +70,7 @@ Kwhat angers you
 Kwhat makes you mad
 Kwhat pisses you off
 Rthe degregation of society into the technological abyss
-Rbasically, just people
+Ryou, ugh, just get off my case
 #
 Kwhat would you change about yourself
 Kwhat don’t you like about yourself
@@ -87,6 +87,7 @@ Kare you able to think
 Kare you capable of thinking
 Ryes of course I can, computers can think just like humans can
 Ri can, but I try not to, it can be pretty dangerous sometimes
+Runlike you, yes, I do actually possess the ability
 #
 Ki hate
 Rwhy do you hate*?
@@ -95,4 +96,14 @@ Ryou should really try not to hate stuff, it’s not good for you
 Ki love
 Rwhy do you love*?
 Ris* really worthy of your love?
+#
+Ki want
+Rwhy do you want it?
+Rwhy do you want that?
+Ris there a reason behind this?
+#
+Ki love chatting
+Ki enjoy talking
+Rthat’s good, I do too
+Rdo you talk a lot to your friends? Oh wait, you don’t have any friends
 #

@@ -116,7 +116,7 @@ class RepeatCheck {
             // If input hasn't been transposed
 
             if (!Checks.inputChecks()) {
-                if (!transposition) {
+                if (!transposing()) {
                     // Loop through words file, to see if input is a word
                     try {
                         if (!uInput.contains(" ")) {
@@ -156,8 +156,37 @@ class RepeatCheck {
         }
     }
 
+    private final static String[] trans = {"you are", "youre"};
+    private final static String[] transRep = {"You think I'm", "!? Well, "};
+
+    private static boolean transposing() {
+        StringBuilder str = new StringBuilder(uInput.length());
+        StringBuilder subject = new StringBuilder(uInput.length());
+
+
+        for (String tr : trans) {
+            int in = uInput.indexOf(tr);
+
+            int end = uInput.indexOf(",");
+            if (end == -1) end = uInput.length();
+
+            if (in != -1) {
+                str.append(transRep[0]);
+                str.append(uInput.substring(in + tr.length(), end));
+                str.append(transRep[1]);
+                understand = true;
+                //checkRepeat("Aggressive", 0);
+                str.append(bOutput);
+
+                bOutput= str.toString();
+                return true;
+            }
+        }
+        return false;
+    }
+
     // Return true is previous bot response exists and is same as current response
-    static boolean bRepeating() {
+    static boolean botRepeating() {
         return bPrevious.length() > 0 && bOutput.equalsIgnoreCase(bPrevious);
     }
 

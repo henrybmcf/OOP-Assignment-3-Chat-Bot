@@ -18,7 +18,8 @@ import static CB.FileCode.FileMethods.fileErrorMessage;
 import static CB.FileCode.FileMethods.saveLog;
 import static CB.FileCode.FileMethods.zipLog;
 import static CB.Master.Checks.exitCheck;
-import static CB.Master.Cleaning.prepOutput;
+import static CB.Master.Cleaning.output;
+
 
 @SuppressWarnings("serial")
 public class ChatBot extends PApplet {
@@ -54,7 +55,6 @@ public class ChatBot extends PApplet {
 //    };
 
     private final static String[] salutations = {
-            //"how are you?",
             "great to see you!",
             "such a nice day today!"
     };
@@ -64,10 +64,8 @@ public class ChatBot extends PApplet {
 
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
-        //PApplet.main(Visual.class.getName());
-
-        //TextSpeech speaking = new TextSpeech("kevin16");
-
+//        PApplet.main(Visual.class.getName());
+//        TextSpeech speaking = new TextSpeech("kevin16");
 //        String date = new Date().toString().replace(":", "_");
 //        File log = new File("Conversation Logs" + File.separator + date + ".txt");
 //        FileWriter conLog = null;
@@ -76,13 +74,12 @@ public class ChatBot extends PApplet {
 //            conLog.write("Start:\t" + date + "\n\n");
 //        }
 //        catch (IOException e) { e.printStackTrace(); }
-
-       // prepOutput("Hello, what is your full name?", 1);
+//        prepOutput("Hello, what is your full name?", 1);
 
         // Write the bot's response to the conversation log file
-        //saveLog(conLog, botLogName, bOutput);
+//        saveLog(conLog, botLogName, bOutput);
 
-       // System.out.print("> ");
+//        System.out.print("> ");
         Scanner scanner = new Scanner(System.in);
 //        uInput = Cleaning.cleanInput(scanner.nextLine());
 //        name = Cleaning.toName(uInput);
@@ -116,31 +113,28 @@ public class ChatBot extends PApplet {
         do {
             System.out.print("> ");
 
-            //scanner = new Scanner(System.in);
-            // Remove unwanted white space and punctuation and convert to lower case from read in line§
+            // Remove unwanted white space and punctuation and convert to lower case from read in line
             uInput = Cleaning.cleanInput(scanner.nextLine());
 
             // Write the user's response to the conversation log file
-            //saveLog(conLog, firstName, uInput);
+//            saveLog(conLog, firstName, uInput);
 
             if (!exitCheck()) {
                 if (RepeatCheck.checkUserRepetition())
                     assignResponse(userRepetition);
-                else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.contextChecks() && !Checks.aggressiveCheck()) {
-                    System.out.println("Hopefully not getting here..");
+                else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.contextChecks())
                     RepeatCheck.checkRepeat("KnowledgeBase", searchKeyword("KnowledgeBase", 1));
-                }
 
-                prepOutput(bOutput, 0);
+                output(bOutput, 0);
 
-                //saveLog(conLog, botLogName, bOutput);
+//                saveLog(conLog, botLogName, bOutput);
 
                 RepeatCheck.saveUserResponse(uInput);
                 uInput = "";
             }
             else {
-                //prepOutput("Goodbye " + firstName + ", it was nice talking to you.", 1);
-                //saveLog(conLog, botLogName, bOutput);
+//                prepOutput("Goodbye " + firstName + ", it was nice talking to you.", 1);
+//                saveLog(conLog, botLogName, bOutput);
                 break;
             }
         }
@@ -256,11 +250,12 @@ public class ChatBot extends PApplet {
 
     // Select random bot response
     static void assignResponse(ArrayList<String> responsesList) {
+        System.out.println(responsesList);
         do {
             Collections.shuffle(responsesList);
             bOutput = responsesList.get(0);
         }
-        while (RepeatCheck.bRepeating());
+        while (RepeatCheck.botRepeating());
 
         if (understand)
             bOutput = Cleaning.cleanOutput();

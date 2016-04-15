@@ -6,6 +6,7 @@ import java.util.Date;
 
 import static CB.Master.ChatBot.uInput;
 import static CB.Master.ChatBot.bOutput;
+import static CB.Master.Cleaning.output;
 
 class Checks {
     // List of possible user inputs to end the conversation
@@ -18,7 +19,7 @@ class Checks {
     };
 
     static boolean inputChecks() {
-        return checkDate() || checkFavourite() || aggressiveCheck();
+        return checkDate() || checkFavourite();// || aggressiveCheck();
     }
 
     private static boolean checkDate() {
@@ -37,7 +38,7 @@ class Checks {
         return false;
     }
 
-    static boolean aggressiveCheck() {
+    private static boolean aggressiveCheck() {
         int line = ChatBot.searchKeyword("Aggressive", 1);
         if (line > 0) {
             RepeatCheck.checkRepeat("Aggressive", line);
@@ -55,5 +56,54 @@ class Checks {
             i++;
         }
         return false;
+    }
+
+
+    private final static String[] likeVocab = {
+            "love",
+            "like",
+            "enjoy"
+    };
+    private final static String[] dislikeVocab = {
+            "hate",
+            "dislike",
+            "do not like",
+            "do not enjoy"
+    };
+
+    @SuppressWarnings("ConstantConditions")
+    static boolean checkTruth(String str, String subj) {
+        boolean like = false;
+        boolean dis = false;
+
+        for (String pos : likeVocab) {
+            if (str.contains(pos))
+                like = true;
+        }
+        for (String neg : dislikeVocab) {
+            if (str.contains(neg))
+                dis = true;
+        }
+
+        if (like || dis) {
+            String fav;
+
+            if (Favourites.checkLoadFavourite(subj, 2) != null) {
+                fav = Favourites.checkLoadFavourite(subj, 2).toString();
+
+                String splitLine[] = ConvoContext.splitString(fav, ",");
+
+                String lieCatch = "";
+                if (like)
+                    lieCatch = "you're lying, you said that you didn't like " + splitLine[1] + ". Don't lie to me!";
+                else if (dis)
+                    lieCatch = "you're lying, you said that you're favourite " + splitLine[0] + " is " + splitLine[1] + ". I hate it when you lie to me!";
+
+                output(lieCatch, 1);
+
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -9,7 +9,7 @@ import java.util.Scanner;
 class SetupKeyword {
     static void setupNewKeyword() throws IOException {
         System.out.println("Hmm, I don't think I know this keyword.\nCould you give me a few example phrases and responses so I know in the future?");
-        System.out.print("Yes or no will do :)\n> ");
+        System.out.print("Yes or no will do\n> ");
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> keys = new ArrayList<>();
         ArrayList<String> responses = new ArrayList<>();
@@ -36,6 +36,10 @@ class SetupKeyword {
             conLog.write("\n#");
             conLog.flush();
             conLog.close();
+        }
+        else {
+            ChatBot.understand = true;
+            RepeatCheck.checkRepeat("Aggressive", 0);
         }
     }
 

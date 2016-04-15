@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Text-To-Speech" level="project" />
     <orderEntry type="library" name="Processing" level="project" />
+    <orderEntry type="library" name="Minim" level="application" />
   </component>
 </module>
