@@ -3,7 +3,6 @@ import processing.core.PVector;
 import ddf.minim.AudioInput;
 import ddf.minim.Minim;
 import ddf.minim.analysis.FFT;
-import java.util.ArrayList;
 
 public class Gradient extends PApplet {
     private AudioInput in;
@@ -46,6 +45,8 @@ public class Gradient extends PApplet {
         // Windowed
 //        float scrWidth = width;
 //        scrHeight = height;
+//        centX = width * 0.5f;
+//        centY = height * 0.5f;
 
         int frameSize = 1024;
         int sampleRate = 44100;
@@ -58,8 +59,8 @@ public class Gradient extends PApplet {
         colours[1] = color(150, 250, 50);
         colours[2] = color(50, 50, 200);
         colours[3] = color(204, 0, 204);
-        for (int i = 0; i < desDiameter.length; i++)
-            desDiameter[i] = scrHeight * 0.3f;
+
+        desDiameter[0] = scrHeight * 0.3f;
         arcs[0] = new CornerArc(0, 0, desDiameter[0], colours[0]);
         arcs[1] = new CornerArc(scrWidth, 0, desDiameter[0], colours[1]);
         arcs[2] = new CornerArc(scrWidth, scrHeight, desDiameter[0], colours[2]);
@@ -96,7 +97,7 @@ public class Gradient extends PApplet {
 
         float freq = FFTFreq();
 
-        for (int i = 0 ; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             for (int j = i * index; j < (i + 1) * index; j++) {
                 int k = j + 1;
 
@@ -111,7 +112,8 @@ public class Gradient extends PApplet {
                 }
             }
         }
-        strokeWeight(4);
+
+        strokeWeight(10);
 
 //         Top Left, Top Right, Bottom Right, Bottom Left
 //         Size Match method call for all arcs
@@ -126,7 +128,7 @@ public class Gradient extends PApplet {
 
             pushMatrix();
             translate(pos.x, pos.y);
-            for (float i = 0 + diam; i >= 0; i--) {
+            for (float i = diam; i >= 0; i-= 2.5f) {
                 float inter = map(i, 0, diam, 0, 1);
                 stroke(lerpColor(colour, black, inter));
                 arc(0, 0, i, i, j * HALF_PI, (j + 1) * HALF_PI);
@@ -136,25 +138,22 @@ public class Gradient extends PApplet {
 
 
         // Center Visual
-        strokeWeight(1);
-        noFill();
-        stroke(255);
-        ellipse(centX, centY, radius * 2.0f, radius * 2.0f);
-
+        
         int bandReset = 16;
         int k = 0;
         for (int i = 0; i < bandReset; i ++) {
-            for (int j = i; j < fft.specSize() * 0.5f; j += bandReset, k++) {
-                float band = fft.getBand(j) * 150;
-                if (band > 20.0f) {
-                    if (band > centX * 0.4f)
-                        band = band * 0.2f;
-                    outLineLengths[k] = band;
-                }
-                else
-                    outLineLengths[k] = random(20.0f, 80.0f);
+            for (int j = i; j < fft.specSize() * 0.5f; j += bandReset, k++)
+            {
+                outLineLengths[k] = map(fft.getBand(j) * 150, 0.0f, centX * 0.6f, 30.0f, centX * 0.08f);
+                if (outLineLengths[k] < 40.0f)
+                    outLineLengths[k] = random(30.0f, 40.0f);
             }
         }
+
+        strokeWeight(1.5f);
+        noFill();
+        stroke(220);
+
 
         int i = 0;
         for (float alpha = 0.0f; alpha < TWO_PI; alpha += step, i++) {
@@ -169,7 +168,6 @@ public class Gradient extends PApplet {
             pushMatrix();
             translate(pos.x, pos.y);
             line(0, 0, outEnd.x, outEnd.y);
-            //line(0, 0, inEnd.x, inEnd.y);
             popMatrix();
 
             outCoordinates[i] = new PVector(outEnd.x + pos.x, outEnd.y + pos.y);
@@ -178,6 +176,12 @@ public class Gradient extends PApplet {
 
         drawCurve(outCoordinates);
         drawCurve(inCoordinates);
+
+        strokeWeight(3);
+        ellipse(centX, centY, radius * 2.0f, radius * 2.0f);
+        fill(0);
+        noStroke();
+        ellipse (centX, centY, radius * 1.2f, radius * 1.2f);
     }
 
     private void drawCurve(PVector[] coordinates) {
