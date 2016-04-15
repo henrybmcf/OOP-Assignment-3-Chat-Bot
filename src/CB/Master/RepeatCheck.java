@@ -16,16 +16,16 @@ import static CB.Master.ChatBot.uInput;
 import static CB.Master.ChatBot.understand;
 
 public class RepeatCheck {
-    private static String bPrevious = "";
-    public static String userPrev = "";
+    public static String botPrevious = "";
+    public static String userPrevious = "";
 
     static void saveUserResponse(String userCurrent) {
-        userPrev = userCurrent;
+        userPrevious = userCurrent;
     }
 
     // Save bot's response to check if repeating itself
     static void saveResponse(String botCurrent) {
-        bPrevious = botCurrent;
+        botPrevious = botCurrent;
         understand = false;
         transposition = false;
     }
@@ -187,11 +187,11 @@ public class RepeatCheck {
 
     // Return true is previous bot response exists and is same as current response
     static boolean botRepeating() {
-        return bPrevious.length() > 0 && bOutput.equalsIgnoreCase(bPrevious);
+        return botPrevious.length() > 0 && bOutput.equalsIgnoreCase(botPrevious);
     }
 
     static boolean checkUserRepetition() {
-        return userPrev.length() > 0 && EditDistance.MinimumEditDistance(uInput, userPrev) <= 2;
+        return userPrevious.length() > 0 && EditDistance.MinimumEditDistance(uInput, userPrevious) <= 2;
     }
 
     static boolean checkUserBotSame() {

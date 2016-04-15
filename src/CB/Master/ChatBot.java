@@ -24,7 +24,7 @@ import static CB.Master.Cleaning.output;
 @SuppressWarnings("serial")
 public class ChatBot extends PApplet {
     public static String uInput;
-    public static String bOutput;
+    public static String bOutput = "";
     static boolean understand;
     static boolean transposition = false;
     static String name;

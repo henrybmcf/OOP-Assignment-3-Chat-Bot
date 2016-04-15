@@ -9,9 +9,11 @@ import processing.core.PApplet;
 import processing.core.PVector;
 import java.util.Random;
 
+import static CB.Master.ChatBot.bOutput;
 import static CB.Master.ChatBot.waitInput;
 import static CB.Master.Cleaning.output;
-import static CB.Master.RepeatCheck.userPrev;
+import static CB.Master.RepeatCheck.userPrevious;
+import static CB.Master.RepeatCheck.botPrevious;
 
 public class Visual extends PApplet {
     private static int presentCounter;
@@ -145,15 +147,24 @@ public class Visual extends PApplet {
         }
     }
 
+    // TODO As each new repsonse/input is shown, move previosu slowly up screen (Star Wars style)
+
     private void writeText() {
         fill(255);
         textAlign(CENTER);
+        pushMatrix();
+        translate(centX, centY - radius * 0.6f);
+
+        float dist = radius * 0.4f;
         // Previous User
-        text(userPrev, centX, centY - radius * 0.25f);
+        text(userPrevious, 0, 0);
         // Previous Bot
+        text(botPrevious, 0, dist);
         // Current User
-        text(capturedText, centX, centY);
+        text(capturedText, 0, dist * 2.0f);
         // Current Bot
+        text(bOutput, 0, dist * 3.0f);
+        popMatrix();
     }
 
     private static String stillThereMessage() {
