@@ -1,5 +1,7 @@
 package CB.Visuals;
 
+import CB.Master.ChatBot;
+import CB.Master.Cleaning;
 import ddf.minim.AudioInput;
 import ddf.minim.Minim;
 import ddf.minim.analysis.FFT;
@@ -7,7 +9,9 @@ import processing.core.PApplet;
 import processing.core.PVector;
 import java.util.Random;
 
+import static CB.Master.ChatBot.waitInput;
 import static CB.Master.Cleaning.output;
+import static CB.Master.RepeatCheck.userPrev;
 
 public class Visual extends PApplet {
     private static int presentCounter;
@@ -16,16 +20,9 @@ public class Visual extends PApplet {
     private static String prevMess;
     private static int frames;
     private static int minute;
-    private final static String[] userPresent = {
-            "are you still there?",
-            "you take a long time to reply..",
-            "kind of getting bored here..",
-            "hello..?"
-    };
-
+    private final static String[] userPresent = {"are you still there?", "you take a long time to reply..", "kind of getting bored here..", "hello..?" };
     private AudioInput in;
     private FFT fft;
-
     // Corner Visuals
     private int index = 4;
     private int[] colours = new int[index];
@@ -33,12 +30,10 @@ public class Visual extends PApplet {
             256f, 293f, 1468f, 1566f,
             329f, 369f, 1272f, 1370f,
             587f, 659f, 2256f, 2354f,
-            739f, 783f, 2060f, 2158f
-    };
+            739f, 783f, 2060f, 2158f };
     private float desDiameter[] = new float[index];
     private CornerArc[] arcs = new CornerArc[index];
     private float scrHeight;
-
     // Center Visual
     private float centX;
     private float centY;
@@ -49,6 +44,9 @@ public class Visual extends PApplet {
     private PVector[] outCoordinates;
     private PVector[] inCoordinates;
 
+    public static String capturedText = "";
+    public static boolean waitingIn = true;
+
     public void settings() {
         presentCounter = 0;
         exitCounter = 0;
@@ -58,19 +56,21 @@ public class Visual extends PApplet {
         frames = 30;
         minute = frames * 2 * 60;
 
-        //size(800, 600);
-        fullScreen();
+        size(800, 600);
+        //fullScreen();
         smooth(8);
 
         // Fullscreen
-        float scrWidth = displayWidth;
+        //float scrWidth = displayWidth;
         scrHeight = displayHeight;
         centX = displayWidth * 0.5f;
         centY = displayHeight * 0.5f;
+        centX = width * 0.5f;
+        centY = height * 0.5f;
 
         // Windowed
-//        float scrWidth = width;
-//        scrHeight = height;
+        float scrWidth = width;
+        scrHeight = height;
 
         int frameSize = 1024;
         int sampleRate = 44100;
@@ -90,7 +90,6 @@ public class Visual extends PApplet {
         arcs[2] = new CornerArc(scrWidth, scrHeight, desDiameter[0], colours[2]);
         arcs[3] = new CornerArc(0, scrHeight, desDiameter[0], colours[3]);
 
-
         // Center Visual
         radius = 200.0f;
         step = TWO_PI / (fft.specSize() * 0.5f);
@@ -104,7 +103,6 @@ public class Visual extends PApplet {
         for (float alpha = 0.0f; alpha < TWO_PI; alpha += step, i++)
             outLines[i] = new GraphicLines(radius * sin(alpha) + centX, radius * cos(alpha) + centY, 10.0f);
     }
-
 
     public void draw() {
         frameRate(frames);
@@ -126,7 +124,51 @@ public class Visual extends PApplet {
         fft.window(FFT.HAMMING);
         fft.forward(in.left);
 
-        // Corner Visuals
+        drawCorners();
+        drawCenter();
+
+        writeText();
+    }
+
+    public void keyPressed() {
+        presentCheck = true;
+        presentCounter = 0;
+        exitCounter = 0;
+
+        if (ChatBot.captureInput && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && keyCode != ENTER && keyCode != RETURN && keyCode != BACKSPACE)
+            capturedText = capturedText + key;
+        else if (keyCode == BACKSPACE && capturedText.length() > 0)
+            capturedText = capturedText.substring(0, capturedText.length() - 1);
+        else if ((keyCode == ENTER || keyCode == RETURN) && capturedText.length() > 0) {
+            ChatBot.uInput = Cleaning.cleanInput(capturedText);
+            waitingIn = false;
+        }
+    }
+
+    private void writeText() {
+        fill(255);
+        textAlign(CENTER);
+        // Previous User
+        text(userPrev, centX, centY - radius * 0.25f);
+        // Previous Bot
+        // Current User
+        text(capturedText, centX, centY);
+        // Current Bot
+    }
+
+    private static String stillThereMessage() {
+        Random rand = new Random();
+        String mess = userPresent[rand.nextInt(userPresent.length)];
+
+        while (prevMess.equalsIgnoreCase(mess))
+            mess = userPresent[rand.nextInt(userPresent.length)];
+
+        prevMess = mess;
+        return mess;
+    }
+
+    private void drawCorners() {
+        strokeWeight(10);
         float[][] range = new float[index][2];
         for (int i = 0; i < index; i++) {
             range[i][0] = frequencies[i * index];
@@ -151,10 +193,7 @@ public class Visual extends PApplet {
             }
         }
 
-        strokeWeight(10);
-
 //         Top Left, Top Right, Bottom Right, Bottom Left
-//         Size Match method call for all arcs
         for (int j = 0; j < arcs.length; j++ ) {
             CornerArc arcy = arcs[j];
             arcy.sizeMatch(desDiameter[j]);
@@ -173,9 +212,8 @@ public class Visual extends PApplet {
             }
             popMatrix();
         }
-
-
-        // Center Visual
+    }
+    private void drawCenter() {
         int bandReset = 16;
         int k = 0;
         for (int i = 0; i < bandReset; i ++) {
@@ -218,23 +256,6 @@ public class Visual extends PApplet {
         noStroke();
         ellipse(centX, centY, radius * 1.2f, radius * 1.2f);
     }
-
-    public void keyPressed() {
-        presentCheck = true;
-        presentCounter = 0;
-        exitCounter = 0;
-    }
-    private static String stillThereMessage() {
-        Random rand = new Random();
-        String mess = userPresent[rand.nextInt(userPresent.length)];
-
-        while (prevMess.equalsIgnoreCase(mess))
-            mess = userPresent[rand.nextInt(userPresent.length)];
-
-        prevMess = mess;
-        return mess;
-    }
-
 
     private void drawCurve(PVector[] coordinates) {
         beginShape();

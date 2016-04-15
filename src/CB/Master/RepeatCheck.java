@@ -15,9 +15,9 @@ import static CB.Master.ChatBot.transposition;
 import static CB.Master.ChatBot.uInput;
 import static CB.Master.ChatBot.understand;
 
-class RepeatCheck {
+public class RepeatCheck {
     private static String bPrevious = "";
-    static String userPrev = "";
+    public static String userPrev = "";
 
     static void saveUserResponse(String userCurrent) {
         userPrev = userCurrent;

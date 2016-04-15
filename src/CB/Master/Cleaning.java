@@ -16,7 +16,7 @@ public class Cleaning {
     private static TextSpeech speaking = new TextSpeech("kevin16");
 
     // Clean up user input: Remove white space and punctuation & convert to lower case
-    static String cleanInput(String str) {
+    public static String cleanInput(String str) {
         StringBuilder cleaning = new StringBuilder(str.length());
 
         char prevChar = 0;

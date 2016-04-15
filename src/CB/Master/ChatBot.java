@@ -23,18 +23,13 @@ import static CB.Master.Cleaning.output;
 
 @SuppressWarnings("serial")
 public class ChatBot extends PApplet {
-
-    static String uInput;
+    public static String uInput;
     public static String bOutput;
-
     static boolean understand;
     static boolean transposition = false;
-
     static String name;
     static String keyWord;
-
     private final static String botLogName = "Bot:\t";
-
 //    public final static String transposeList[][] = {
 //            {"i'm", "you're"},
 //            {"i am", "you are"},
@@ -53,14 +48,12 @@ public class ChatBot extends PApplet {
 //            {"mum", "mother"},
 //            {"myself", "yourself"}
 //    };
-
-    private final static String[] salutations = {
-            "great to see you!",
-            "such a nice day today!"
-    };
-
+    private final static String[] salutations = { "great to see you!", "such a nice day today!" };
     private final static ArrayList<String> userRepetition = RepeatCheck.setURepeat();
 
+
+    public static boolean captureInput = true;
+    public static boolean waitInput = true;
 
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
@@ -113,8 +106,12 @@ public class ChatBot extends PApplet {
         do {
             System.out.print("> ");
 
+            while (Visual.waitingIn) {
+                try { Thread.sleep(500); }
+                catch (InterruptedException e) { e.printStackTrace(); }
+            }
             // Remove unwanted white space and punctuation and convert to lower case from read in line
-            uInput = Cleaning.cleanInput(scanner.nextLine());
+            //uInput = Cleaning.cleanInput(scanner.nextLine());
 
             // Write the user's response to the conversation log file
 //            saveLog(conLog, firstName, uInput);
@@ -131,12 +128,17 @@ public class ChatBot extends PApplet {
 
                 RepeatCheck.saveUserResponse(uInput);
                 uInput = "";
+                Visual.capturedText = "";
+                Visual.waitingIn = true;
+                waitInput = true;
             }
             else {
 //                prepOutput("Goodbye " + firstName + ", it was nice talking to you.", 1);
 //                saveLog(conLog, botLogName, bOutput);
                 break;
             }
+
+
         }
         while (true);
 
@@ -250,7 +252,6 @@ public class ChatBot extends PApplet {
 
     // Select random bot response
     static void assignResponse(ArrayList<String> responsesList) {
-        System.out.println(responsesList);
         do {
             Collections.shuffle(responsesList);
             bOutput = responsesList.get(0);
