@@ -13,7 +13,7 @@ class ConvoContext {
     private final static String context = "Why like";
     private final static String contextSubj = "it this that them that";
 
-    static boolean contextChecks() {
+    static boolean favouriteContextChecks() {
         if (checkContextWordMatch()) {
             inContext();
             return true;

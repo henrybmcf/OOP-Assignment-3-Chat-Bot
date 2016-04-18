@@ -1,6 +1,6 @@
  /*
  * Assignment 3 - Object Orientated Programming - ChatBot
- * Team: Henry Ballinger McFarlane & Lok-Woon Wan
+ * Team: Henry Ballinger McFarlane & The Asian
  */
 
 package CB.Master;
@@ -51,13 +51,15 @@ public class ChatBot extends PApplet {
     private final static String[] salutations = { "great to see you!", "such a nice day today!" };
     private final static ArrayList<String> userRepetition = RepeatCheck.setURepeat();
 
-    public static boolean waitInput = true;
+    private static boolean waitInput = true;
 
     public static boolean exit = false;
 
+    private static boolean checkFutureContext = false;
+
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
-       PApplet.main(Visual.class.getName());
+//       PApplet.main(Visual.class.getName());
 //        TextSpeech speaking = new TextSpeech("kevin16");
 //        String date = new Date().toString().replace(":", "_");
 //        File log = new File("Conversation Logs" + File.separator + date + ".txt");
@@ -102,28 +104,59 @@ public class ChatBot extends PApplet {
 //
 //        prepOutput(bOutput, 1);
         //saveLog(conLog, botLogName, bOutput);
-
         do {
             System.out.print("> ");
 
-            while (Visual.waitingIn) {
-                try { Thread.sleep(500); }
-                catch (InterruptedException e) { e.printStackTrace(); }
-            }
+//            while (Visual.waitingIn) {
+//                try { Thread.sleep(500); }
+//                catch (InterruptedException e) { e.printStackTrace(); }
+//            }
 
             // Remove unwanted white space and punctuation and convert to lower case from read in line
-            //uInput = Cleaning.cleanInput(scanner.nextLine());
+            uInput = Cleaning.cleanInput(scanner.nextLine());
 
             // Write the user's response to the conversation log file
 //            saveLog(conLog, firstName, uInput);
 
             if (!exitCheck()) {
+                // Check if user is repeating, choose relevant message
                 if (RepeatCheck.checkUserRepetition())
                     assignResponse(userRepetition);
-                else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.contextChecks())
-                    RepeatCheck.checkRepeat("KnowledgeBase", searchKeyword("KnowledgeBase", 1));
+                // Check if user is repeating bot
+                // Check user isn't talking in context to favourite
+                // Check if user is asking for date, favourite or being aggressive
+
+                // Search database for keyword match
+                // If bot understands input, grab related responses from file
+                // Else, do some transposition or see if it contains it
+                else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.favouriteContextChecks() && !Checks.inputChecks()) {
+                    int line;// = searchKeyword("KnowledgeBase", 1);
+
+                    // If need to check for context (if bot previous contained ?)
+                    if (checkFutureContext)
+                        line = searchKeyword("KnowledgeBase", 1, true);
+
+                    // If no context match found, go back to normal check
+                    else {
+                        line = searchKeyword("KnowledgeBase", 1, false);
+                      //  System.out.println(line);
+                    }
+
+                    // Third variable is to say if context is true or false
+                    if (understand) {
+                        if (checkFutureContext)
+                            grabResponses("KnowledgeBase", line, '#', true);
+                        else
+                            grabResponses("KnowledgeBase", line, 'K', false);
+                    }
+                    else
+                        RepeatCheck.checkRepeat();
+                }
 
                 output(bOutput, 0);
+
+                if (bOutput.contains("?"))
+                    checkFutureContext = true;
 
 //                saveLog(conLog, botLogName, bOutput);
 
@@ -157,12 +190,11 @@ public class ChatBot extends PApplet {
 
     // Select random salutation from array
     private static String assignSalutation() {
-        Random rand = new Random();
-        return salutations[rand.nextInt(salutations.length)];
+        return salutations[new Random().nextInt(salutations.length)];
     }
 
     @SuppressWarnings("ConstantConditions")
-    static int searchKeyword(String fileName, int source) {
+    static int searchKeyword(String fileName, int source, boolean context) {
         String line;
         String smallest = " ";
         int lineCount = 0;
@@ -175,12 +207,19 @@ public class ChatBot extends PApplet {
 
             float small = EditDistance.MinimumEditDistance(uInput, buffRead.readLine().substring(1));
 
+            System.out.println(context);
             searching:
             while((line = buffRead.readLine()) != null) {
                 lineCount++;
+
                 switch(line.charAt(0)) {
                     case 'K':
-                        line = line.substring(1);
+                        if (context) {
+                            if (line.charAt(1) == 'C')
+                                line = line.substring(2);
+                        }
+                        else
+                            line = line.substring(1);
 
                         switch (source) {
                             case 1:
@@ -188,6 +227,7 @@ public class ChatBot extends PApplet {
                                 if (dist < small) {
                                     smallest = line;
                                     smallLine = lineCount;
+
                                     if (dist == 0)
                                         break searching;
                                 }
@@ -195,9 +235,13 @@ public class ChatBot extends PApplet {
                                 // Check to see if user input contains the keyword
                                 if (uInput.contains(line)) {
                                     keyWord = line;
-                                    contains = true;
-                                    containsLine = lineCount;
+                                    //contains = true;
+                                    //containsLine = lineCount;
+
+                                    understand = true;
+                                    return lineCount;
                                 }
+
                                 break;
 
                             case 2:
@@ -238,16 +282,64 @@ public class ChatBot extends PApplet {
                 understand = true;
             }
             // If match is not close enough, check to see if input contains any keywords
-            else if (contains) {
-                understand = true;
-                return containsLine;
-            }
+//            else if (contains) {
+//                understand = true;
+//                return containsLine;
+//            }
+
+            // TODO
+//            if (context keyword not found)
+//            checkFutureContext = false;
 
             buffRead.close();
         }
         catch(IOException ex) { fileErrorMessage(); }
 
+        System.out.println(uInput);
+        System.out.println("smallest = " + smallest);
+
         return smallLine;
+    }
+
+    static void grabResponses(String fileName, int lineIndex, char stop, boolean context) {
+        ArrayList<String> responses = new ArrayList<>();
+        String line = " ";
+        System.out.println(stop);
+
+        try {
+            FileReader fileReader = new FileReader("Data" + File.separator + fileName + ".txt");
+            BufferedReader buffRead = new BufferedReader(fileReader);
+
+            // Skip through all lines up to keyword line
+            for (int i = 0; i <= lineIndex; i++)
+                line = buffRead.readLine();
+
+            // Skip through anymore keywords until at responses
+            if (context) {
+                while(line.charAt(0) != 'K' && line.charAt(1) != 'R') {
+                    System.out.println("line = " + line);
+                    line = buffRead.readLine();
+                }
+            }
+            else {
+                while ((line.charAt(0)) != 'R')
+                    line = buffRead.readLine();
+            }
+
+            // Go through all the responses
+            //while((line.charAt(0)) != '#'){// || line.charAt(0) != 'C') {
+            while((line.charAt(0)) != stop) {
+                if (stop == '#')
+                    responses.add(line.substring(1));
+                else
+                    responses.add(line);
+                line = buffRead.readLine();
+            }
+
+            buffRead.close();
+        } catch(IOException ex) { fileErrorMessage(); }
+
+        assignResponse(responses);
     }
 
     // Select random bot response
@@ -260,5 +352,7 @@ public class ChatBot extends PApplet {
 
         if (understand)
             bOutput = Cleaning.cleanOutput();
+
+        checkFutureContext = false;
     }
 }

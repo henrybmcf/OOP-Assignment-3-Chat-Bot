@@ -4,6 +4,8 @@ Kyour name
 Rwhat would you like my name to be?
 Rwhy do you want to know?
 Ryou can call me Jarvis
+KCbecause I just do
+KRwell that's great for you, isn't it..
 #
 Kwho are you
 Ri think that you already know who I am
@@ -18,7 +20,7 @@ Kwhat is your nickname
 Khello
 Khi
 Rhello
-Rhi, how are you
+Rhi, how are you?
 Rnice to meet you
 #
 Khow are you

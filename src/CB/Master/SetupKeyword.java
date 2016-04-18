@@ -39,7 +39,8 @@ class SetupKeyword {
         }
         else {
             ChatBot.understand = true;
-            RepeatCheck.checkRepeat("Aggressive", 0);
+            ChatBot.grabResponses("Aggressive", 0, 'K', false);
+            //RepeatCheck.checkRepeat();
         }
     }
 

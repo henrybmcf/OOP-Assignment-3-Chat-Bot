@@ -49,24 +49,14 @@ public class Visual extends PApplet {
     // Text Visuals
     public static String capturedText = "";
     public static boolean waitingIn = true;
-
     private float dist;
     private static boolean moveText = false;
-
     private static ArrayList<OnScreenText> OST = new ArrayList<>();
-
     private float prevPos;
-
-    private static String outText = "...";
     public static String outTextDisplay = "";
     private int outCount = 0;
-
-    private StringBuilder out = new StringBuilder(outText.length());
-
     private boolean captureInput = true;
-
     private int typeTimer = 0;
-
     private float xCo;
 
     public void settings() {
@@ -125,10 +115,10 @@ public class Visual extends PApplet {
         for (float alpha = 0.0f; alpha < TWO_PI; alpha += step, i++)
             outLines[i] = new GraphicLines(radius * sin(alpha) + centX, radius * cos(alpha) + centY, 10.0f);
 
+        // Text Visuals
         dist = radius * 0.6f;
         xCo = centX - (radius * 0.8f);
         OST.add(new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
-
         OST.add(new OnScreenText("...", new PVector(xCo, centY)));
         OST.add(new OnScreenText("", new PVector(xCo, centY - dist)));
     }
@@ -157,8 +147,8 @@ public class Visual extends PApplet {
         drawCorners();
         drawCenter();
 
+        // Text Visuals
         float pos = OST.get(2).position.y;
-
         if (moveText && (prevPos - pos) < dist * 2.0f) {
             for (int i = 1; i < OST.size(); i++)
                 OST.get(i).update();
@@ -170,11 +160,9 @@ public class Visual extends PApplet {
 
         if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
             try {
-                Thread.sleep(15);
+                Thread.sleep((long) abs(map(outTextDisplay.length(), 10, 50, 10, 1)));
                 outCount++;
-                out = new StringBuilder(outTextDisplay.substring(0, outCount));
-                outText = out.toString();
-                OST.set(1, new OnScreenText(outText, new PVector(xCo, OST.get(1).position.y)));
+                OST.set(1, new OnScreenText(outTextDisplay.substring(0, outCount), new PVector(xCo, OST.get(1).position.y)));
             } catch (InterruptedException e) { e.printStackTrace(); }
         }
         else {

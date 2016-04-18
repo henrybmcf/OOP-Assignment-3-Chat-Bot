@@ -6,6 +6,7 @@ import java.util.Date;
 
 import static CB.Master.ChatBot.uInput;
 import static CB.Master.ChatBot.bOutput;
+import static CB.Master.ChatBot.understand;
 import static CB.Master.Cleaning.output;
 
 class Checks {
@@ -32,17 +33,18 @@ class Checks {
 
     private static boolean checkFavourite() {
         if (uInput.contains("favourite")) {
-            ChatBot.searchKeyword("Favourites", 2);
+            ChatBot.searchKeyword("Favourites", 2, false);
             return true;
         }
         return false;
     }
 
     private static boolean aggressiveCheck() {
-        int line = ChatBot.searchKeyword("Aggressive", 1);
-        if (line > 0) {
-            RepeatCheck.checkRepeat("Aggressive", line);
-            return true;
+        int line = ChatBot.searchKeyword("Aggressive", 1, false);
+
+        if (line > 0 && understand) {
+                ChatBot.grabResponses("Aggressive", line, 'K', false);
+                return true;
         }
         return false;
     }
