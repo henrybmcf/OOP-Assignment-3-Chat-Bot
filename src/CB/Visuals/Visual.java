@@ -58,18 +58,17 @@ public class Visual extends PApplet {
 
     // TODO HERE
     private float dist;
-    private float[] textPositions = new float[3];
-    public static boolean moveText = false;
+    private static boolean moveText = false;
 
-    public static ArrayList<OnScreenText> onScreenTexts = new ArrayList<>();
+    private static ArrayList<OnScreenText> onScreenTexts = new ArrayList<>();
 
-    float prevPos;
-    float pos;
+    private float prevPos;
+    private float pos;
 
-    public static String outText = "...";
+    private static String outText = "...";
     public static String outTextDisp = "";
     public static boolean outDisp = false;
-    int outCount = 0;
+    private int outCount = 0;
 
     public static StringBuilder out;
 
@@ -130,17 +129,7 @@ public class Visual extends PApplet {
         for (float alpha = 0.0f; alpha < TWO_PI; alpha += step, i++)
             outLines[i] = new GraphicLines(radius * sin(alpha) + centX, radius * cos(alpha) + centY, 10.0f);
 
-
         dist = radius * 0.6f;
-        // TODO HERE
-//        textPositions[0] = centY - dist;
-//        textPositions[1] = centY;
-//        textPositions[2] = centY + dist;
-
-       // onScreenTexts.add(new OnScreenText(capturedText, new PVector(centX, centY + dist)));
-//        onScreenTexts.add(new OnScreenText(bOutput, new PVector(centX, centY)));
-//        onScreenTexts.add(new OnScreenText(userPrevious, new PVector(centX, centY - dist)));
-
 
         onScreenTexts.add(new OnScreenText(capturedText, new PVector(centX, centY + (radius * 0.6f))));
     }
@@ -170,50 +159,26 @@ public class Visual extends PApplet {
 
         pos = onScreenTexts.get(0).position.y;
 
-//        if (moveText) {
-//            System.out.println("prev = " + prevPos);
-//            System.out.println("position = " + pos);
-//        }
-//        System.out.println("Diff = " + (pos - prevPos));
-//        System.out.println("Radius = " + (radius * 0.6f));
-
-        if (moveText && (prevPos - pos) < radius * 1.2f) {
+        if (moveText && (prevPos - pos) < radius * 1.2f)
             onScreenTexts.forEach(OnScreenText::update);
-
-//            for (OnScreenText ost : onScreenTexts)
-//                ost.update();
-        }
-        else {
-//            if (bOutput.length() > 0)
-//                onScreenTexts.add(onScreenTexts.get(onScreenTexts.size() - 1));
+        else
             moveText = false;
 
-            //while (outDisp) {
-            if (outDisp) {
-                try {
-                    outCount++;
-                    Thread.sleep(50);
-                    out = new StringBuilder(outTextDisp.substring(0, outCount));
-                    outText = out.toString();
-                    onScreenTexts.set(1, new OnScreenText(outText, new PVector(centX, centY)));
-                    if (out.length() == outTextDisp.length())
-                        outDisp = false;
+        if (outDisp && !outTextDisp.equalsIgnoreCase("") && onScreenTexts.get(1).position.y < centY + (radius * 0.8f)) {
+            try {
+                outCount++;
+                Thread.sleep(25);
+                out = new StringBuilder(outTextDisp.substring(0, outCount));
+                outText = out.toString();
+                //onScreenTexts.set(1, new OnScreenText(outText, new PVector(centX, centY)));
+                onScreenTexts.set(1, new OnScreenText(outText, new PVector(centX, onScreenTexts.get(1).position.y)));
+                if (out.length() == outTextDisp.length())
+                    outDisp = false;
 
-                    //System.out.println("OT = " + outText);
-                }
-                catch (InterruptedException e) { e.printStackTrace(); }
+                //System.out.println("OT = " + outText);
             }
-//            if (outText.length() > 0 && !outDisp) {
-//                System.out.println("Here");
-//               // onScreenTexts.add(new OnScreenText(outText, new PVector(centX, centY)));
-//                outDisp = true;
-//            }
+            catch (InterruptedException e) { e.printStackTrace(); }
         }
-
-//        if (moveText && textPositions[2] > centY)
-//            textPositions[2] -= 1.5f;
-//        else
-       //     moveText = false;
 
         writeText();
     }
@@ -225,6 +190,8 @@ public class Visual extends PApplet {
 
         if (ChatBot.captureInput && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && keyCode != ENTER && keyCode != RETURN && keyCode != BACKSPACE) {
             capturedText = capturedText + key;
+            if (capturedText.length() == 1)
+                capturedText = Cleaning.initCap(capturedText);
             onScreenTexts.set(0, new OnScreenText(capturedText, new PVector(centX, centY + dist)));
         }
         else if (keyCode == BACKSPACE && capturedText.length() > 0) {
@@ -235,8 +202,6 @@ public class Visual extends PApplet {
             ChatBot.uInput = Cleaning.cleanInput(capturedText);
             waitingIn = false;
             moveText = true;
-
-//            prevPos = onScreenTexts.get(onScreenTexts.size() - 1).position.y;
 
             onScreenTexts.set(0, new OnScreenText(capturedText, new PVector(centX, centY + (radius * 0.6f))));
             prevPos = centY + (radius * 0.6f);
@@ -251,40 +216,7 @@ public class Visual extends PApplet {
         fill(255);
         textAlign(CENTER);
 
-//        if (!moveText) {
-//            onScreenTexts.set(0, new OnScreenText(capturedText, new PVector(centX, centY + dist)));
-////        onScreenTexts.set(1, new OnScreenText(bOutput, new PVector(centX, centY)));
-////        onScreenTexts.set(2, new OnScreenText(userPrevious, new PVector(centX, centY - dist)));
-//
-//            onScreenTexts.add(new OnScreenText(bOutput, new PVector(centX, centY)));
-//            onScreenTexts.add(new OnScreenText(userPrevious, new PVector(centX, centY - dist)));
-//    }
-
         onScreenTexts.stream().filter(ost -> ost.position.y < centY + radius).forEach(ost -> text(ost.content, ost.position.x, ost.position.y));
-
-//        for (OnScreenText ost : onScreenTexts) {
-//            if (ost.position.y < radius)
-//                text(ost.content, ost.position.x, ost.position.y);
-//        }
-
-//        if (moveText && bOutput.length() > 0)
-//            text(userPrevious, centX, textPositions[2]);
-//        else
-//            text(capturedText, centX, textPositions[2]);
-//        // Bot
-//        text(botPrevious, centX, textPositions[1] + dist);
-//        // Current User
-//        text(capturedText, centX, textPositions[2] + dist);
-
-//        pushMatrix();
-//        translate(centX, centY);
-//        // Previous User
-//        text(userPrevious, 0, -dist);
-//        // Bot
-//        text(botPrevious, 0, 0);
-//        // Current User
-//        text(capturedText, 0, dist);
-//        popMatrix();
     }
 
     private static String stillThereMessage() {

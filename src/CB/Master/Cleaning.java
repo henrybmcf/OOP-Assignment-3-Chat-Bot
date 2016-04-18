@@ -2,16 +2,13 @@ package CB.Master;
 
 import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
-import CB.Visuals.OnScreenText;
 import CB.Visuals.Visual;
 import processing.core.PApplet;
-import processing.core.PVector;
 
 import static CB.Master.ChatBot.bOutput;
 import static CB.Master.ChatBot.keyWord;
 import static CB.Master.ChatBot.uInput;
 import static CB.Master.Checks.checkTruth;
-import static CB.Visuals.Visual.*;
 
 public class Cleaning extends PApplet {
     // List of punctuations marks
@@ -54,11 +51,8 @@ public class Cleaning extends PApplet {
 //            Visual.exitCounter = 0;
 //            speaking.speak(bOutput);
 
-            //onScreenTexts.set(1, new OnScreenText(bOutput, new PVector(centX, onScreenTexts.get(1).position.y)));
-
             Visual.outTextDisp = bOutput;
             Visual.outDisp = true;
-            Visual.out = new StringBuilder(bOutput.length());
         }
     }
 
@@ -82,7 +76,7 @@ public class Cleaning extends PApplet {
     }
 
     // Capitalise first letter of string
-    static String initCap(String str) {
+    public static String initCap(String str) {
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
