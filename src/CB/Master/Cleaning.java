@@ -69,6 +69,10 @@ public class Cleaning extends PApplet {
                 strBuild.append(" is");
                 i++;
             }
+            else if (str.charAt(i + 1) == 'm') {
+                strBuild.append(" am");
+                i++;
+            }
         }
 
         return strBuild.toString();

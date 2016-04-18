@@ -130,17 +130,15 @@ public class ChatBot extends PApplet {
                 // If bot understands input, grab related responses from file
                 // Else, do some transposition or see if it contains it
                 else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.favouriteContextChecks() && !Checks.inputChecks()) {
-                    int line;// = searchKeyword("KnowledgeBase", 1);
+                    int line;
 
                     // If need to check for context (if bot previous contained ?)
                     if (checkFutureContext)
                         line = searchKeyword("KnowledgeBase", 1, true);
 
                     // If no context match found, go back to normal check
-                    else {
+                    else
                         line = searchKeyword("KnowledgeBase", 1, false);
-                      //  System.out.println(line);
-                    }
 
                     // Third variable is to say if context is true or false
                     if (understand) {
@@ -199,15 +197,12 @@ public class ChatBot extends PApplet {
         String smallest = " ";
         int lineCount = 0;
         int smallLine = 0;
-        boolean contains = false;
-        int containsLine = 0;
 
         try {
             BufferedReader buffRead = new BufferedReader(new FileReader("Data" + File.separator + fileName + ".txt"));
 
             float small = EditDistance.MinimumEditDistance(uInput, buffRead.readLine().substring(1));
 
-            System.out.println(context);
             searching:
             while((line = buffRead.readLine()) != null) {
                 lineCount++;
@@ -235,9 +230,6 @@ public class ChatBot extends PApplet {
                                 // Check to see if user input contains the keyword
                                 if (uInput.contains(line)) {
                                     keyWord = line;
-                                    //contains = true;
-                                    //containsLine = lineCount;
-
                                     understand = true;
                                     return lineCount;
                                 }
@@ -281,22 +273,11 @@ public class ChatBot extends PApplet {
                 keyWord = smallest;
                 understand = true;
             }
-            // If match is not close enough, check to see if input contains any keywords
-//            else if (contains) {
-//                understand = true;
-//                return containsLine;
-//            }
-
-            // TODO
-//            if (context keyword not found)
-//            checkFutureContext = false;
 
             buffRead.close();
         }
         catch(IOException ex) { fileErrorMessage(); }
 
-        System.out.println(uInput);
-        System.out.println("smallest = " + smallest);
 
         return smallLine;
     }
@@ -304,7 +285,6 @@ public class ChatBot extends PApplet {
     static void grabResponses(String fileName, int lineIndex, char stop, boolean context) {
         ArrayList<String> responses = new ArrayList<>();
         String line = " ";
-        System.out.println(stop);
 
         try {
             FileReader fileReader = new FileReader("Data" + File.separator + fileName + ".txt");
@@ -316,8 +296,7 @@ public class ChatBot extends PApplet {
 
             // Skip through anymore keywords until at responses
             if (context) {
-                while(line.charAt(0) != 'K' && line.charAt(1) != 'R') {
-                    System.out.println("line = " + line);
+                while(line.charAt(0) == 'K' && line.charAt(1) != 'R') {
                     line = buffRead.readLine();
                 }
             }
