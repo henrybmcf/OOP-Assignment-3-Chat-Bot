@@ -41,8 +41,8 @@ public class Visual extends PApplet {
     private CornerArc[] arcs = new CornerArc[index];
     private float scrHeight;
     // Center Visual
-    private float centX;
-    private float centY;
+    public static float centX;
+    public static float centY;
 
     public static float radius;
 
@@ -61,10 +61,17 @@ public class Visual extends PApplet {
     private float[] textPositions = new float[3];
     public static boolean moveText = false;
 
-    private ArrayList<OnScreenText> onScreenTexts = new ArrayList<>();
+    public static ArrayList<OnScreenText> onScreenTexts = new ArrayList<>();
 
     float prevPos;
     float pos;
+
+    public static String outText = "...";
+    public static String outTextDisp = "";
+    public static boolean outDisp = false;
+    int outCount = 0;
+
+    public static StringBuilder out;
 
 
     public void settings() {
@@ -130,9 +137,12 @@ public class Visual extends PApplet {
 //        textPositions[1] = centY;
 //        textPositions[2] = centY + dist;
 
-        onScreenTexts.add(new OnScreenText(capturedText, new PVector(centX, centY + dist)));
+       // onScreenTexts.add(new OnScreenText(capturedText, new PVector(centX, centY + dist)));
 //        onScreenTexts.add(new OnScreenText(bOutput, new PVector(centX, centY)));
 //        onScreenTexts.add(new OnScreenText(userPrevious, new PVector(centX, centY - dist)));
+
+
+        onScreenTexts.add(new OnScreenText(capturedText, new PVector(centX, centY + (radius * 0.6f))));
     }
 
     public void draw() {
@@ -158,7 +168,7 @@ public class Visual extends PApplet {
         drawCorners();
         drawCenter();
 
-        pos = onScreenTexts.get(onScreenTexts.size() - 1).position.y;
+        pos = onScreenTexts.get(0).position.y;
 
 //        if (moveText) {
 //            System.out.println("prev = " + prevPos);
@@ -167,18 +177,38 @@ public class Visual extends PApplet {
 //        System.out.println("Diff = " + (pos - prevPos));
 //        System.out.println("Radius = " + (radius * 0.6f));
 
-        if (moveText && (prevPos - pos) < radius * 0.6f) {
+        if (moveText && (prevPos - pos) < radius * 1.2f) {
             onScreenTexts.forEach(OnScreenText::update);
 
 //            for (OnScreenText ost : onScreenTexts)
 //                ost.update();
         }
         else {
-            if (bOutput.length() > 0)
-                onScreenTexts.add(onScreenTexts.get(onScreenTexts.size() - 1));
+//            if (bOutput.length() > 0)
+//                onScreenTexts.add(onScreenTexts.get(onScreenTexts.size() - 1));
             moveText = false;
-        }
 
+            //while (outDisp) {
+            if (outDisp) {
+                try {
+                    outCount++;
+                    Thread.sleep(50);
+                    out = new StringBuilder(outTextDisp.substring(0, outCount));
+                    outText = out.toString();
+                    onScreenTexts.set(1, new OnScreenText(outText, new PVector(centX, centY)));
+                    if (out.length() == outTextDisp.length())
+                        outDisp = false;
+
+                    //System.out.println("OT = " + outText);
+                }
+                catch (InterruptedException e) { e.printStackTrace(); }
+            }
+//            if (outText.length() > 0 && !outDisp) {
+//                System.out.println("Here");
+//               // onScreenTexts.add(new OnScreenText(outText, new PVector(centX, centY)));
+//                outDisp = true;
+//            }
+        }
 
 //        if (moveText && textPositions[2] > centY)
 //            textPositions[2] -= 1.5f;
@@ -205,8 +235,13 @@ public class Visual extends PApplet {
             ChatBot.uInput = Cleaning.cleanInput(capturedText);
             waitingIn = false;
             moveText = true;
-            //System.out.println("hit enter");
-            prevPos = onScreenTexts.get(onScreenTexts.size() - 1).position.y;
+
+//            prevPos = onScreenTexts.get(onScreenTexts.size() - 1).position.y;
+
+            onScreenTexts.set(0, new OnScreenText(capturedText, new PVector(centX, centY + (radius * 0.6f))));
+            prevPos = centY + (radius * 0.6f);
+
+            onScreenTexts.add(new OnScreenText(outText, new PVector(centX, centY + (radius * 1.2f))));
         }
     }
 
@@ -216,18 +251,21 @@ public class Visual extends PApplet {
         fill(255);
         textAlign(CENTER);
 
-        if (!moveText) {
+//        if (!moveText) {
 //            onScreenTexts.set(0, new OnScreenText(capturedText, new PVector(centX, centY + dist)));
 ////        onScreenTexts.set(1, new OnScreenText(bOutput, new PVector(centX, centY)));
 ////        onScreenTexts.set(2, new OnScreenText(userPrevious, new PVector(centX, centY - dist)));
 //
 //            onScreenTexts.add(new OnScreenText(bOutput, new PVector(centX, centY)));
 //            onScreenTexts.add(new OnScreenText(userPrevious, new PVector(centX, centY - dist)));
-        }
+//    }
 
-        for (OnScreenText ost : onScreenTexts) {
-            text(ost.content, ost.position.x, ost.position.y);
-        }
+        onScreenTexts.stream().filter(ost -> ost.position.y < centY + radius).forEach(ost -> text(ost.content, ost.position.x, ost.position.y));
+
+//        for (OnScreenText ost : onScreenTexts) {
+//            if (ost.position.y < radius)
+//                text(ost.content, ost.position.x, ost.position.y);
+//        }
 
 //        if (moveText && bOutput.length() > 0)
 //            text(userPrevious, centX, textPositions[2]);

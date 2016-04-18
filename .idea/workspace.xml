@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Visuals/Visual.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Visuals/Visual.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" afterPath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" afterPath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java" afterPath="$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Visuals/Visual.java" afterPath="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
     </list>
     <ignored path="Chatbot.iws" />
@@ -38,8 +37,8 @@
       <file leaf-file-name="Visual.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CB/Visuals/Visual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="202" column="9" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="9" />
+            <state relative-caret-position="-117">
+              <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#stillThereMessage#0;class#Visual#0" expanded="false" />
@@ -55,14 +54,27 @@
       <file leaf-file-name="OnScreenText.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#386#387#0" expanded="true" />
-                <element signature="e#439#440#0" expanded="true" />
-                <element signature="e#460#461#0" expanded="true" />
-                <element signature="e#500#501#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cleaning.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
+                <element signature="method#apostropheReplace#0;class#Cleaning#0" expanded="false" />
+                <element signature="method#toName#0;class#Cleaning#0" expanded="false" />
+                <element signature="method#preProcessOutput#0;class#Cleaning#0" expanded="false" />
+                <element signature="method#findSubject#0;class#Cleaning#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -114,7 +126,6 @@
         <option value="$PROJECT_DIR$/Profiles/Jane Doe.txt" />
         <option value="$PROJECT_DIR$/src/CB/Master/Favourites.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/Checks.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/GraphicLines.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/Gradient.java" />
@@ -123,6 +134,7 @@
         <option value="$PROJECT_DIR$/src/CB/Master/ConvoContext.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
       </list>
     </option>
@@ -848,7 +860,8 @@
       <workItem from="1460718047404" duration="2879000" />
       <workItem from="1460725473637" duration="6991000" />
       <workItem from="1460929060124" duration="3653000" />
-      <workItem from="1460935613297" duration="2258000" />
+      <workItem from="1460935613297" duration="2324000" />
+      <workItem from="1460969323003" duration="3770000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -917,7 +930,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140222000" />
+    <option name="totallyTimeSpent" value="144058000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -940,7 +953,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28628495" sideWeight="0.50646204" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26764315" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20239681" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1241,18 +1254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="70" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
-            <element signature="method#toName#0;class#Cleaning#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/SetupKeyword.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -1283,7 +1284,7 @@
         <state relative-caret-position="60">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1320,8 +1321,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1215">
-          <caret line="138" column="13" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
+        <state relative-caret-position="495">
+          <caret line="111" column="13" selection-start-line="108" selection-start-column="12" selection-end-line="111" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2554#2613#0" expanded="false" />
@@ -1333,22 +1334,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
+            <element signature="method#apostropheReplace#0;class#Cleaning#0" expanded="false" />
+            <element signature="method#toName#0;class#Cleaning#0" expanded="false" />
+            <element signature="method#preProcessOutput#0;class#Cleaning#0" expanded="false" />
+            <element signature="method#findSubject#0;class#Cleaning#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Visuals/Visual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="202" column="9" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="9" />
+        <state relative-caret-position="-117">
+          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#stillThereMessage#0;class#Visual#0" expanded="false" />

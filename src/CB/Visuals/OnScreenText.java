@@ -6,15 +6,15 @@ import processing.core.PVector;
 
 public class OnScreenText extends PApplet {
     String content;
-    PVector position;
+    public PVector position;
 
-    float moving;
+    private float moving;
 
-    OnScreenText(String content, PVector position) {
+    public OnScreenText(String content, PVector position) {
         this.content = content;
         this.position = position;
 
-        moving = 1.5f;
+        moving = 3.5f;
     }
 
     void render() {
