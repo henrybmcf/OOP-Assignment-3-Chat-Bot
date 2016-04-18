@@ -137,8 +137,6 @@ public class ChatBot extends PApplet {
 //                saveLog(conLog, botLogName, bOutput);
                 break;
             }
-
-
         }
         while (true);
 
