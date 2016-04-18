@@ -6,18 +6,12 @@ import ddf.minim.AudioInput;
 import ddf.minim.Minim;
 import ddf.minim.analysis.FFT;
 import processing.core.PApplet;
-import processing.core.PFont;
 import processing.core.PVector;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import static CB.Master.ChatBot.bOutput;
-import static CB.Master.ChatBot.uInput;
-import static CB.Master.ChatBot.waitInput;
 import static CB.Master.Cleaning.output;
-import static CB.Master.RepeatCheck.userPrevious;
-import static CB.Master.RepeatCheck.botPrevious;
 
 public class Visual extends PApplet {
     private static int presentCounter;
@@ -188,6 +182,7 @@ public class Visual extends PApplet {
             outCount = 0;
         }
 
+        // Flashing typing line
         stroke(255);
         strokeWeight(1);
         float tw = textWidth(capturedText) * 0.55f;
@@ -207,9 +202,7 @@ public class Visual extends PApplet {
         exitCounter = 0;
 
         if (captureInput && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && keyCode != ENTER && keyCode != RETURN && keyCode != BACKSPACE) {
-            capturedText = capturedText + key;
-            if (capturedText.length() == 1)
-                capturedText = Cleaning.initCap(capturedText);
+            capturedText = Cleaning.initCap(capturedText + key);
             OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
         }
         else if (keyCode == BACKSPACE && capturedText.length() > 0) {
