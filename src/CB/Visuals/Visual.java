@@ -40,38 +40,40 @@ public class Visual extends PApplet {
     private float desDiameter[] = new float[index];
     private CornerArc[] arcs = new CornerArc[index];
     private float scrHeight;
+
     // Center Visual
-    public static float centX;
-    public static float centY;
-
-    public static float radius;
-
+    private static float centX;
+    private static float centY;
+    private static float radius;
     private float step;
     private Float[] outLineLengths;
     private GraphicLines[] outLines;
     private PVector[] outCoordinates;
     private PVector[] inCoordinates;
 
+
+    // Text Visuals
     public static String capturedText = "";
     public static boolean waitingIn = true;
 
-
-    // TODO HERE
     private float dist;
     private static boolean moveText = false;
 
-    private static ArrayList<OnScreenText> onScreenTexts = new ArrayList<>();
+    private static ArrayList<OnScreenText> OST = new ArrayList<>();
 
     private float prevPos;
-    private float pos;
 
     private static String outText = "...";
-    public static String outTextDisp = "";
-    public static boolean outDisp = false;
+    public static String outTextDisplay = "";
     private int outCount = 0;
 
-    public static StringBuilder out;
+    private StringBuilder out = new StringBuilder(outText.length());
 
+    private boolean captureInput = true;
+
+    private int typeTimer = 0;
+
+    private float xCo;
 
     public void settings() {
         size(800, 600);
@@ -130,21 +132,25 @@ public class Visual extends PApplet {
             outLines[i] = new GraphicLines(radius * sin(alpha) + centX, radius * cos(alpha) + centY, 10.0f);
 
         dist = radius * 0.6f;
+        xCo = centX - (radius * 0.8f);
+        OST.add(new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
 
-        onScreenTexts.add(new OnScreenText(capturedText, new PVector(centX, centY + (radius * 0.6f))));
+        OST.add(new OnScreenText("...", new PVector(xCo, centY)));
+        OST.add(new OnScreenText("", new PVector(xCo, centY - dist)));
     }
 
     public void draw() {
         frameRate(frames);
         background(0);
 
+        if (ChatBot.exit && !moveText)
+            exit();
+
         presentCounter++;
         exitCounter ++;
-
         // After 10 seconds, display message checking is the user is still there
         if (presentCounter == 600 && !presentCheck)
             output(stillThereMessage(), 0);
-
         // After two minutes, if no response from user, exit
         if (exitCounter == minute * 2.0f) {
             output("Okay, well I'm kind of busy and I have other stuff to do, so bye!", 0);
@@ -157,28 +163,40 @@ public class Visual extends PApplet {
         drawCorners();
         drawCenter();
 
-        pos = onScreenTexts.get(0).position.y;
+        float pos = OST.get(2).position.y;
 
-        if (moveText && (prevPos - pos) < radius * 1.2f)
-            onScreenTexts.forEach(OnScreenText::update);
-        else
-            moveText = false;
-
-        if (outDisp && !outTextDisp.equalsIgnoreCase("") && onScreenTexts.get(1).position.y < centY + (radius * 0.8f)) {
-            try {
-                outCount++;
-                Thread.sleep(25);
-                out = new StringBuilder(outTextDisp.substring(0, outCount));
-                outText = out.toString();
-                //onScreenTexts.set(1, new OnScreenText(outText, new PVector(centX, centY)));
-                onScreenTexts.set(1, new OnScreenText(outText, new PVector(centX, onScreenTexts.get(1).position.y)));
-                if (out.length() == outTextDisp.length())
-                    outDisp = false;
-
-                //System.out.println("OT = " + outText);
-            }
-            catch (InterruptedException e) { e.printStackTrace(); }
+        if (moveText && (prevPos - pos) < dist * 2.0f) {
+            for (int i = 1; i < OST.size(); i++)
+                OST.get(i).update();
         }
+        else {
+            moveText = false;
+            captureInput = true;
+        }
+
+        if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
+            try {
+                Thread.sleep(15);
+                outCount++;
+                out = new StringBuilder(outTextDisplay.substring(0, outCount));
+                outText = out.toString();
+                OST.set(1, new OnScreenText(outText, new PVector(xCo, OST.get(1).position.y)));
+            } catch (InterruptedException e) { e.printStackTrace(); }
+        }
+        else {
+            outTextDisplay = "";
+            outCount = 0;
+        }
+
+        stroke(255);
+        strokeWeight(1);
+        float tw = textWidth(capturedText) * 0.55f;
+        if (typeTimer > 20 && !moveText) {
+            line(centX + tw, centY + (dist * 1.1f), centX + tw, centY + dist);
+            if (typeTimer > 40)
+                typeTimer = 0;
+        }
+        typeTimer++;
 
         writeText();
     }
@@ -188,35 +206,38 @@ public class Visual extends PApplet {
         presentCounter = 0;
         exitCounter = 0;
 
-        if (ChatBot.captureInput && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && keyCode != ENTER && keyCode != RETURN && keyCode != BACKSPACE) {
+        if (captureInput && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && keyCode != ENTER && keyCode != RETURN && keyCode != BACKSPACE) {
             capturedText = capturedText + key;
             if (capturedText.length() == 1)
                 capturedText = Cleaning.initCap(capturedText);
-            onScreenTexts.set(0, new OnScreenText(capturedText, new PVector(centX, centY + dist)));
+            OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
         }
         else if (keyCode == BACKSPACE && capturedText.length() > 0) {
             capturedText = capturedText.substring(0, capturedText.length() - 1);
-            onScreenTexts.set(0, new OnScreenText(capturedText, new PVector(centX, centY + dist)));
+            OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
         }
         else if ((keyCode == ENTER || keyCode == RETURN) && capturedText.length() > 0) {
+            captureInput = false;
             ChatBot.uInput = Cleaning.cleanInput(capturedText);
             waitingIn = false;
             moveText = true;
 
-            onScreenTexts.set(0, new OnScreenText(capturedText, new PVector(centX, centY + (radius * 0.6f))));
-            prevPos = centY + (radius * 0.6f);
+            OST.get(2).content = OST.get(0).content;
+            prevPos = centY + dist;
 
-            onScreenTexts.add(new OnScreenText(outText, new PVector(centX, centY + (radius * 1.2f))));
+            OST.get(0).content = "";
+            OST.get(1).content = "";
+
+            OST.get(2).position.y = centY + dist;
+            OST.get(1).position.y = centY + (dist * 2.0f);
         }
     }
-
-    // TODO As each new response/input is shown, move previous slowly up screen (Star Wars style)
 
     private void writeText() {
         fill(255);
         textAlign(CENTER);
 
-        onScreenTexts.stream().filter(ost -> ost.position.y < centY + radius).forEach(ost -> text(ost.content, ost.position.x, ost.position.y));
+        OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.8f)).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
     }
 
     private static String stillThereMessage() {

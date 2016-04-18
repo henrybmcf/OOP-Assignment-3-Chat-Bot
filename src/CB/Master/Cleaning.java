@@ -2,13 +2,13 @@ package CB.Master;
 
 import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
-import CB.Visuals.Visual;
 import processing.core.PApplet;
 
 import static CB.Master.ChatBot.bOutput;
 import static CB.Master.ChatBot.keyWord;
 import static CB.Master.ChatBot.uInput;
 import static CB.Master.Checks.checkTruth;
+import static CB.Visuals.Visual.outTextDisplay;
 
 public class Cleaning extends PApplet {
     // List of punctuations marks
@@ -51,8 +51,7 @@ public class Cleaning extends PApplet {
 //            Visual.exitCounter = 0;
 //            speaking.speak(bOutput);
 
-            Visual.outTextDisp = bOutput;
-            Visual.outDisp = true;
+            outTextDisplay = bOutput;
         }
     }
 

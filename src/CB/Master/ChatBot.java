@@ -51,9 +51,9 @@ public class ChatBot extends PApplet {
     private final static String[] salutations = { "great to see you!", "such a nice day today!" };
     private final static ArrayList<String> userRepetition = RepeatCheck.setURepeat();
 
-
-    public static boolean captureInput = true;
     public static boolean waitInput = true;
+
+    public static boolean exit = false;
 
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
@@ -110,6 +110,7 @@ public class ChatBot extends PApplet {
                 try { Thread.sleep(500); }
                 catch (InterruptedException e) { e.printStackTrace(); }
             }
+
             // Remove unwanted white space and punctuation and convert to lower case from read in line
             //uInput = Cleaning.cleanInput(scanner.nextLine());
 
@@ -133,8 +134,9 @@ public class ChatBot extends PApplet {
                 waitInput = true;
             }
             else {
-//                prepOutput("Goodbye " + firstName + ", it was nice talking to you.", 1);
+//                output("Goodbye " + firstName + ", it was nice talking to you.", 1);
 //                saveLog(conLog, botLogName, bOutput);
+                exit = true;
                 break;
             }
         }

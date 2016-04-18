@@ -1,24 +1,19 @@
 package CB.Visuals;
 
-import CB.Master.ChatBot;
 import processing.core.PApplet;
 import processing.core.PVector;
 
 public class OnScreenText extends PApplet {
     String content;
-    public PVector position;
+    PVector position;
 
     private float moving;
 
-    public OnScreenText(String content, PVector position) {
+    OnScreenText(String content, PVector position) {
         this.content = content;
         this.position = position;
 
-        moving = 3.5f;
-    }
-
-    void render() {
-        text(content, position.x, position.y);
+        moving = 7.5f;
     }
 
     void update() {
