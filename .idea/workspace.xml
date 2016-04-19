@@ -9,7 +9,9 @@
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/KnowledgeBase.txt" afterPath="$PROJECT_DIR$/Data/KnowledgeBase.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" afterPath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" afterPath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Checks.java" afterPath="$PROJECT_DIR$/src/CB/Master/Checks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" afterPath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" afterPath="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
     </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,41 +34,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="298" column="71" selection-start-line="298" selection-start-column="71" selection-end-line="298" selection-end-column="71" />
+            <state relative-caret-position="210">
+              <caret line="150" column="51" selection-start-line="150" selection-start-column="51" selection-end-line="150" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1862#1908#0" expanded="false" />
                 <element signature="e#2603#2662#0" expanded="false" />
-                <element signature="e#3677#3717#0" expanded="false" />
                 <element signature="e#4032#4089#0" expanded="false" />
-                <element signature="e#6409#6445#0" expanded="false" />
-                <element signature="e#6923#6924#0" expanded="true" />
-                <element signature="e#6999#7000#0" expanded="true" />
+                <element signature="e#6410#6446#0" expanded="false" />
+                <element signature="e#6924#6925#0" expanded="true" />
+                <element signature="e#7000#7001#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KnowledgeBase.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/KnowledgeBase.txt">
+      <file leaf-file-name="Checks.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/Checks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConvoContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CB/Master/ConvoContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="513">
+              <caret line="186" column="41" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#checkDate#0;class#Checks#0" expanded="false" />
+                <element signature="method#checkFavourite#0;class#Checks#0" expanded="false" />
+                <element signature="method#aggressiveCheck#0;class#Checks#0" expanded="false" />
+                <element signature="method#exitCheck#0;class#Checks#0" expanded="false" />
+                <element signature="method#checkTruth#0;class#Checks#0" expanded="false" />
+                <element signature="e#3447#3550#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,10 +73,9 @@
       <file leaf-file-name="RepeatCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="146" column="35" selection-start-line="146" selection-start-column="33" selection-end-line="146" selection-end-column="35" />
+            <state relative-caret-position="198">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
-                <element signature="e#936#1039#0" expanded="false" />
                 <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
                 <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
               </folding>
@@ -85,19 +83,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Checks.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CB/Master/Checks.java">
+      <file leaf-file-name="ConvoContext.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/ConvoContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="45" column="68" selection-start-line="45" selection-start-column="68" selection-end-line="45" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#527#528#0" expanded="true" />
-                <element signature="e#605#606#0" expanded="true" />
-                <element signature="method#checkDate#0;class#Checks#0" expanded="false" />
-                <element signature="method#exitCheck#0;class#Checks#0" expanded="false" />
-                <element signature="method#checkTruth#0;class#Checks#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="-27">
+              <caret line="26" column="14" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KnowledgeBase.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/KnowledgeBase.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-867">
+              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,8 +106,8 @@
       <file leaf-file-name="SetupKeyword.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/SetupKeyword.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
+            <state relative-caret-position="498">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,15 +116,13 @@
       <file leaf-file-name="Cleaning.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+            <state relative-caret-position="30">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
-                <element signature="method#output#0;class#Cleaning#0" expanded="false" />
                 <element signature="e#1831#1832#0" expanded="true" />
                 <element signature="e#1874#1875#0" expanded="true" />
                 <element signature="e#2525#2526#0" expanded="true" />
                 <element signature="e#2600#2601#0" expanded="true" />
-                <element signature="method#toName#0;class#Cleaning#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -197,12 +196,12 @@
         <option value="$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/ConvoContext.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/Checks.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
         <option value="$PROJECT_DIR$/Data/KnowledgeBase.txt" />
+        <option value="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/Checks.java" />
       </list>
     </option>
   </component>
@@ -914,7 +913,7 @@
       <workItem from="1460725473637" duration="6991000" />
       <workItem from="1460929060124" duration="3653000" />
       <workItem from="1460935613297" duration="2324000" />
-      <workItem from="1460969323003" duration="25429000" />
+      <workItem from="1460969323003" duration="27577000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -983,7 +982,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165717000" />
+    <option name="totallyTimeSpent" value="167865000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1078,7 +1077,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="24" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1106,7 +1105,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2603#2662#0" expanded="false" />
-            <element signature="e#6409#6445#0" expanded="false" />
+            <element signature="e#6410#6446#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
@@ -1159,7 +1158,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2603#2662#0" expanded="false" />
-            <element signature="e#6409#6445#0" expanded="false" />
+            <element signature="e#6410#6446#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
@@ -1179,7 +1178,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2603#2662#0" expanded="false" />
-            <element signature="e#6409#6445#0" expanded="false" />
+            <element signature="e#6410#6446#0" expanded="false" />
             <element signature="method#assignSalutation#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
@@ -1367,85 +1366,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/ConvoContext.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="150" column="51" selection-start-line="150" selection-start-column="51" selection-end-line="150" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1862#1908#0" expanded="false" />
+            <element signature="e#2603#2662#0" expanded="false" />
+            <element signature="e#4032#4089#0" expanded="false" />
+            <element signature="e#6410#6446#0" expanded="false" />
+            <element signature="e#6924#6925#0" expanded="true" />
+            <element signature="e#7000#7001#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="146" column="35" selection-start-line="146" selection-start-column="33" selection-end-line="146" selection-end-column="35" />
+        <state relative-caret-position="198">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="e#936#1039#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ConvoContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/KnowledgeBase.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-867">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1874#1875#0" expanded="true" />
+            <element signature="e#2525#2526#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/SetupKeyword.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
+        <state relative-caret-position="498">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/Checks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="45" column="68" selection-start-line="45" selection-start-column="68" selection-end-line="45" selection-end-column="68" />
+        <state relative-caret-position="513">
+          <caret line="186" column="41" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
             <element signature="method#checkDate#0;class#Checks#0" expanded="false" />
+            <element signature="method#checkFavourite#0;class#Checks#0" expanded="false" />
+            <element signature="method#aggressiveCheck#0;class#Checks#0" expanded="false" />
             <element signature="method#exitCheck#0;class#Checks#0" expanded="false" />
             <element signature="method#checkTruth#0;class#Checks#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
-          <folding>
-            <element signature="method#output#0;class#Cleaning#0" expanded="false" />
-            <element signature="e#1831#1832#0" expanded="true" />
-            <element signature="e#1874#1875#0" expanded="true" />
-            <element signature="e#2525#2526#0" expanded="true" />
-            <element signature="e#2600#2601#0" expanded="true" />
-            <element signature="method#toName#0;class#Cleaning#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/KnowledgeBase.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="298" column="71" selection-start-line="298" selection-start-column="71" selection-end-line="298" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1862#1908#0" expanded="false" />
-            <element signature="e#2603#2662#0" expanded="false" />
-            <element signature="e#3677#3717#0" expanded="false" />
-            <element signature="e#4032#4089#0" expanded="false" />
-            <element signature="e#6409#6445#0" expanded="false" />
-            <element signature="e#6923#6924#0" expanded="true" />
-            <element signature="e#6999#7000#0" expanded="true" />
+            <element signature="e#3447#3550#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -36,11 +36,12 @@ class SetupKeyword {
             conLog.write("\n#");
             conLog.flush();
             conLog.close();
+
+            ChatBot.bOutput = "Thanks bae!";
         }
         else {
             ChatBot.understand = true;
             ChatBot.grabResponses("Aggressive", 0, 'K', false);
-            //RepeatCheck.checkRepeat();
         }
     }
 

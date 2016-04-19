@@ -2,8 +2,14 @@ package CB.Master;
 
 import CB.EditDist.EditDistance;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 
+import static CB.FileCode.FileMethods.fileErrorMessage;
 import static CB.Master.ChatBot.uInput;
 import static CB.Master.ChatBot.bOutput;
 import static CB.Master.ChatBot.understand;
@@ -107,5 +113,121 @@ class Checks {
             }
         }
         return true;
+    }
+
+
+    // Check to see if bot is repeating itself
+    static void checkWordValidity() {
+//            // TODO split string when substring found, replace substring, concat string back together
+//            // TODO loop through string, splitting into number of elements of string to be replaced (i.e. You = 3), see if these match the string.
+//            // TODO then do the split and concat
+//
+//            // Need this?
+////            uInputBackup = uInput;
+////
+////            checkWithin:
+////            for (int i = 0; i < transposeList.length; i++) {
+////                // Split input backup when match to transpose list item found
+////                // TODO Need to change to make sure ' ' (space) before and after transposition
+////
+////                StringBuilder checking = new StringBuilder(transposeList[i][0].length());
+////
+////                // Add space at start
+////                checking.insert(0, " ");
+////                // Add space at end
+//////                checking.insert(checking.length() + 1, " ");
+////
+////                for (int j = 0; j < uInputBackup.length(); j++) {
+////
+////                    if (j + transposeList[i][0].length() + 2 < uInputBackup.length()) {
+////                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length()));
+////
+////                        // checking.insert(checking.length() + 1, " ");
+////
+////                        // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 2);
+////                    }
+//////                    else if (j + transposeList[i][0].length() + 1 < uInputBackup.length()) {
+//////                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length() + 1));
+//////
+//////                        checking.insert(checking.length() + 1, " ");
+//////                       // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 1);
+//////                    }
+////                    else if (j + transposeList[i][0].length() > uInputBackup.length()) {
+////                        break;
+////                    }
+////
+////                    // Convert back to string to check if contains transposeList item
+////                    String check = checking.toString();
+////
+////                    // Trim removes white space at start and end
+////                    if (check.trim().equals(transposeList[i][0])) {
+////                        // If contains, then call function to split up input.
+////
+////                        // j is position within input
+////
+////                        splitInput(uInputBackup, i);
+////                        break checkWithin;
+////                    }
+////                }
+////            }
+//
+//            // If input hasn't been transposed
+
+       // if (!transposing()) {
+            // Loop through words file, to see if input is a word
+            // If so, setup new keyword
+            try {
+                int wordCount = 0;
+
+                // Split input on spaces ("The sky is blue" -> {"the", "sky", "is", "blue"})
+                String[] tokens = ConvoContext.splitString(uInput, " ");
+
+
+                // Load list of English words
+                FileReader fileReader = new FileReader("Data" + File.separator + "Words.txt");
+                BufferedReader buffRead = new BufferedReader(fileReader);
+                String word;
+
+                while ((word = buffRead.readLine()) != null) {
+                    // If match found, call function to get user to input phrases and responses
+
+                    // Loop through tokens to check if each is a word, if so, increment counter
+                    for (String token : tokens) {
+                        if (word.equalsIgnoreCase(token))
+                            wordCount++;
+                    }
+
+                    // If all words have been verified, call setup new keyword function
+                    if (wordCount == tokens.length) {
+                        SetupKeyword.setupNewKeyword();
+                        return;
+                    }
+                }
+
+                // If not all tokens are words, call default "do not understand" responses
+                if (wordCount != tokens.length)
+                    assignDefault();
+            } catch (IOException ex) { fileErrorMessage(); }
+       // }
+    }
+
+    private static void assignDefault() {
+        ArrayList<String> responses = new ArrayList<>();
+
+        // Assign default response (for when bot doesn't understand user)
+        try {
+            FileReader fileReader = new FileReader("Data" + File.separator + "Default Responses.txt");
+            BufferedReader buffRead = new BufferedReader(fileReader);
+
+            String line = buffRead.readLine();
+            while (line != null) {
+                responses.add(line);
+                line = buffRead.readLine();
+            }
+
+            buffRead.close();
+        } catch (IOException ex) { fileErrorMessage(); }
+
+        ChatBot.assignResponse(responses);
     }
 }

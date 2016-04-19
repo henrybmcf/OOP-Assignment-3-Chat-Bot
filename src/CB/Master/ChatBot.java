@@ -148,7 +148,7 @@ public class ChatBot extends PApplet {
                             grabResponses("KnowledgeBase", line, 'K', false);
                     }
                     else
-                        RepeatCheck.checkRepeat();
+                        Checks.checkWordValidity();
                 }
 
                 output(bOutput, 0);
@@ -278,7 +278,6 @@ public class ChatBot extends PApplet {
         }
         catch(IOException ex) { fileErrorMessage(); }
 
-
         return smallLine;
     }
 
@@ -294,19 +293,17 @@ public class ChatBot extends PApplet {
             for (int i = 0; i <= lineIndex; i++)
                 line = buffRead.readLine();
 
-            // Skip through anymore keywords until at responses
+            // Skip through anymore keywords until at responses (skip to relevant responses depending on whether in context or not)
             if (context) {
-                while(line.charAt(0) == 'K' && line.charAt(1) != 'R') {
+                while(line.charAt(0) == 'K' && line.charAt(1) != 'R')
                     line = buffRead.readLine();
-                }
             }
             else {
                 while ((line.charAt(0)) != 'R')
                     line = buffRead.readLine();
             }
 
-            // Go through all the responses
-            //while((line.charAt(0)) != '#'){// || line.charAt(0) != 'C') {
+            // Go through all the responses, up to relevant stop sign (if in context)
             while((line.charAt(0)) != stop) {
                 if (stop == '#')
                     responses.add(line.substring(1));
