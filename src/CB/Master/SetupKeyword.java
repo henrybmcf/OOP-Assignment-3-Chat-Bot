@@ -26,21 +26,19 @@ class SetupKeyword {
         ArrayList<String> responses = new ArrayList<>();
         String confirm = checkConfirm();
 
-        System.out.println("confirm is = " + confirm);
-
         if (confirm.equalsIgnoreCase("yes")) {
             do {
 //                System.out.print("What would be a typical phrase/question?\n> ");
 //                keys.add(Cleaning.cleanInput(scanner.nextLine()));
                 output("What would be a typical phrase/question?", 1);
                 waiting();
-                keys.add(Cleaning.cleanInput(uInput));
+                keys.add(uInput);
 
 //                System.out.print("And a response?\n> ");
 //                responses.add(Cleaning.cleanInput(scanner.nextLine()));
                 output("And a response?", 1);
                 waiting();
-                responses.add(Cleaning.cleanInput(uInput));
+                responses.add(uInput);
 
 //                System.out.print("Anymore?\n> ");
                 output("Anymore?", 1);
@@ -64,7 +62,7 @@ class SetupKeyword {
         }
         else {
             ChatBot.understand = true;
-            ChatBot.grabResponses("Aggressive", 0, '#', false);
+            ChatBot.grabResponses("Aggressive", 0);
         }
     }
 
@@ -82,7 +80,7 @@ class SetupKeyword {
             //check = scanner.nextLine();
         }
 
-        Visual.waitingIn = true;
+      //  Visual.waitingIn = true;
 
         return check;
     }

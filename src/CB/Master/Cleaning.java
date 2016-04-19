@@ -2,6 +2,7 @@ package CB.Master;
 
 import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
+import CB.Visuals.Visual;
 import processing.core.PApplet;
 
 import static CB.Master.ChatBot.bOutput;
@@ -48,12 +49,14 @@ public class Cleaning extends PApplet {
             //System.out.println(bOutput);
             System.out.println("Output = " + bOutput);
 
+//            Visual.OST.get(1).content = bOutput;
+
 //            Visual.presentCheck = false;
 //            Visual.presentCounter = 0;
 //            Visual.exitCounter = 0;
 //            speaking.speak(bOutput);
 
-            outTextDisplay = bOutput;
+            //outTextDisplay = bOutput;
         }
     }
 

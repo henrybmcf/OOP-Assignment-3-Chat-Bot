@@ -59,7 +59,8 @@ public class ChatBot extends PApplet {
 
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
-       PApplet.main(Visual.class.getName());
+//       PApplet.main(Visual.class.getName());
+
 //        TextSpeech speaking = new TextSpeech("kevin16");
 //        String date = new Date().toString().replace(":", "_");
 //        File log = new File("Conversation Logs" + File.separator + date + ".txt");
@@ -77,8 +78,8 @@ public class ChatBot extends PApplet {
 //        saveLog(conLog, botLogName, bOutput);
 
 //        System.out.print("> ");
- //       Scanner scanner = new Scanner(System.in);
-//        uInput = Cleaning.cleanInput(scanner.nextLine());
+        Scanner scanner = new Scanner(System.in);
+  //      uInput = Cleaning.cleanInput(scanner.nextLine());
  //       name = Cleaning.toName(uInput);
    //     String firstName = Cleaning.firstName(name);
 //
@@ -106,16 +107,16 @@ public class ChatBot extends PApplet {
         //saveLog(conLog, botLogName, bOutput);
 
         do {
-            //System.out.print("> ");
+            System.out.print("> ");
 
-            waiting();
+            //waiting();
             /* while (Visual.waitingIn) {
                  try { Thread.sleep(500); }
                  catch (InterruptedException e) { e.printStackTrace(); }
             }*/
 
             // Remove unwanted white space and punctuation and convert to lower case from read in line
-           // uInput = Cleaning.cleanInput(scanner.nextLine());
+            uInput = Cleaning.cleanInput(scanner.nextLine());
 
             // Write the user's response to the conversation log file
 //            saveLog(conLog, firstName, uInput);
@@ -134,23 +135,10 @@ public class ChatBot extends PApplet {
                 // If bot understands input, grab related responses from file
                 // Else, do some transposition or see if it contains it
                 else if (!RepeatCheck.checkUserBotSame() && !ConvoContext.favouriteContextChecks() && !Checks.inputChecks()) {
-                    int line;
+                    int line = searchKeyword("KnowledgeBase", 1, false);
 
-                    // If need to check for context (if bot previous contained ?)
-                    if (checkFutureContext)
-                        line = searchKeyword("KnowledgeBase", 1, true);
-
-                    // If no context match found, go back to normal check
-                    else
-                        line = searchKeyword("KnowledgeBase", 1, false);
-
-                    // Third variable is to say if context is true or false
-                    if (understand) {
-                        if (checkFutureContext)
-                            grabResponses("KnowledgeBase", line, '#', true);
-                        else
-                            grabResponses("KnowledgeBase", line, 'K', false);
-                    }
+                    if (understand)
+                        grabResponses("KnowledgeBase", line);
                     else
                         Checks.checkWordValidity();
                 }
@@ -213,12 +201,7 @@ public class ChatBot extends PApplet {
 
                 switch(line.charAt(0)) {
                     case 'K':
-                        if (context) {
-                            if (line.charAt(1) == 'C')
-                                line = line.substring(2);
-                        }
-                        else
-                            line = line.substring(1);
+                        line = line.substring(1);
 
                         switch (source) {
                             case 1:
@@ -285,11 +268,9 @@ public class ChatBot extends PApplet {
         return smallLine;
     }
 
-    static void grabResponses(String fileName, int lineIndex, char stop, boolean context) {
+    static void grabResponses(String fileName, int lineIndex) {
         ArrayList<String> responses = new ArrayList<>();
         String line = " ";
-
-        System.out.println("stop = " + stop);
 
         try {
             FileReader fileReader = new FileReader("Data" + File.separator + fileName + ".txt");
@@ -299,27 +280,13 @@ public class ChatBot extends PApplet {
             for (int i = 0; i <= lineIndex; i++)
                 line = buffRead.readLine();
 
-            // Skip through anymore keywords until at responses (skip to relevant responses depending on whether in context or not)
-            if (context) {
-                while(line.charAt(0) == 'K' && line.charAt(1) != 'R')
+            // Skip through anymore keywords until at responses
+            while ((line.charAt(0)) != 'R')
                     line = buffRead.readLine();
-            }
-            else {
-                while ((line.charAt(0)) != 'R')
-                    line = buffRead.readLine();
-            }
 
             // Go through all the responses, up to relevant stop sign (if in context)
-            while((line.charAt(0)) != stop) {
-                if (stop == '#') {
-                    if (context)
-                        responses.add(line.substring(1));
-                    else
-                        responses.add(line);
-
-                }
-                else
-                    responses.add(line);
+            while((line.charAt(0)) != '#') {
+                responses.add(line);
                 line = buffRead.readLine();
             }
 

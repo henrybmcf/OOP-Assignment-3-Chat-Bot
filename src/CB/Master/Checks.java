@@ -25,9 +25,7 @@ class Checks {
             "see ya"
     };
 
-    static boolean inputChecks() {
-        return checkDate() || checkFavourite();// || aggressiveCheck();
-    }
+    static boolean inputChecks() { return checkDate() || checkFavourite() || aggressiveCheck(); }
 
     private static boolean checkDate() {
         if (uInput.contains("date") || uInput.contains("time") || uInput.contains("day")) {
@@ -49,7 +47,7 @@ class Checks {
         int line = ChatBot.searchKeyword("Aggressive", 1, false);
 
         if (line > 0 && understand) {
-                ChatBot.grabResponses("Aggressive", line, 'K', false);
+                ChatBot.grabResponses("Aggressive", line);
                 return true;
         }
         return false;

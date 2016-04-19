@@ -53,7 +53,7 @@ public class Visual extends PApplet {
     public static boolean waitingIn = true;
     private float dist;
     private static boolean moveText = false;
-    private static ArrayList<OnScreenText> OST = new ArrayList<>();
+    public static ArrayList<OnScreenText> OST = new ArrayList<>();
     private float prevPos;
     public static String outTextDisplay = "";
     private int outCount = 0;
@@ -173,15 +173,15 @@ public class Visual extends PApplet {
         drawCenter();
 
         // Text Visuals
-//        float pos = OST.get(2).position.y;
-//        if (moveText && (prevPos - pos) < dist * 2.0f) {
-//            for (int i = 1; i < OST.size(); i++)
-//                OST.get(i).update();
-//        }
-//        else {
-//            moveText = false;
-//            captureInput = true;
-//        }
+        float pos = OST.get(2).position.y;
+        if (moveText && (prevPos - pos) < dist * 2.0f) {
+            for (int i = 1; i < OST.size(); i++)
+                OST.get(i).update();
+        }
+        else {
+            moveText = false;
+            captureInput = true;
+        }
 
 //        if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
 //            try {
@@ -212,54 +212,50 @@ public class Visual extends PApplet {
 //            capturedText = capturedText.substring(0, capturedText.length() - 1);
 //            OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
 //        }
-        //else
-        if ((keyCode == ENTER || keyCode == RETURN) && capturedText.length() > 0) {
+//        else
+//        if ((keyCode == ENTER || keyCode == RETURN) && capturedText.length() > 0) {
 //            captureInput = false;
 //            ChatBot.uInput = Cleaning.cleanInput(capturedText);
-
 //            OST.set(0, new OnScreenText(cp5.get(Textfield.class,"").getText(), new PVector(xCo, centY + dist)));
-            System.out.println("Content = " + OST.get(0).content);
-
-            ChatBot.uInput = Cleaning.cleanInput(cp5.get(Textfield.class,"input").getText());
-
-            waitingIn = false;
+//            System.out.println("Content = " + OST.get(0).content);
+//
+//            ChatBot.uInput = Cleaning.cleanInput(cp5.get(Textfield.class,"input").getText());
+//
+//            waitingIn = false;
 //            moveText = true;
-
 //            OST.get(2).content = OST.get(0).content;
 //            prevPos = centY + dist;
-//
 //            OST.get(0).content = "";
 //            OST.get(1).content = "";
-//
 //            OST.get(2).position.y = centY + dist;
 //            OST.get(1).position.y = centY + (dist * 2.0f);
-
 //            capturedText = "";
-
 //            cp5.get(Textfield.class,"input").clear();
-
-            System.out.println(ChatBot.uInput);
-        }
+//            System.out.println(ChatBot.uInput);
+//        }
 
         // Prevent exit via escape key
 //        if (key == ESC) key = 0;
     }
 
-//
-//    void controlEvent(ControlEvent theEvent) {
-//        if(theEvent.isAssignableFrom(Textfield.class)) {
-//            println("controlEvent: accessing a string from controller '"
-//                    +theEvent.getName()+"': "
-//                    +theEvent.getStringValue()
-//            );
-//        }
-//    }
 
-
-    public void input(String theText) {
-        System.out.println("Input = " + theText);
-        ChatBot.uInput = Cleaning.cleanInput(cp5.get(Textfield.class,"input").getText());
+    public void input(String input) {
+        ChatBot.uInput = Cleaning.cleanInput(input);
+        System.out.println("Input = " + ChatBot.uInput);
         waitingIn = false;
+
+        moveText = true;
+
+        OST.get(2).content = OST.get(0).content;
+        prevPos = centY + dist;
+
+        OST.get(0).content = "";
+        OST.get(1).content = "";
+
+        OST.get(2).position.y = centY + dist;
+        OST.get(1).position.y = centY + (dist * 2.0f);
+
+        OST.set(2, new OnScreenText(input, new PVector(xCo, centY + dist)));
     }
 
 
@@ -267,7 +263,7 @@ public class Visual extends PApplet {
         fill(255);
         textAlign(CENTER);
 
-       // OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.8f)).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
+        OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.8f)).filter(ost -> ost.content.length() != 0).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
     }
 
     // Flashing typing line

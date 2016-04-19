@@ -1,18 +1,16 @@
 #
 Kwhat is your name
 Kyour name
-Rwhat would you like my name to be?
+Rwhat would you like my name to be
 Rwhy do you want to know?
 Ryou can call me Jarvis
-KCbecause I just do
-KRwell that's great for you, isn't it..
 #
 Kwho are you
 Ri think that you already know who I am
 #
 Kare you real
 Rwell, you are talking to me, so I think that kind of answers your question
-Rare any of us real? I mean The Matrix anybody??
+Rare any of us real.. I mean The Matrix anybody..
 #
 Kdo you have a nickname
 Kwhat is your nickname
@@ -21,28 +19,25 @@ Rmy friends call me jimmy
 Khello
 Khi
 Rhello
-Rhi, how are you?
+Rhi, hope you're well
 Rnice to meet you
 #
 Khow are you
 Ri'm good thank you, how are you?
 Rfantastic, how about you?
 Rlife is amazing, so am I. The real question is how are you?
-KCi am okay
-KCi am good thanks
-KRyeah, I don't really care
 #
 Ktell me a joke
 Kdo you know any jokes
 Ktell me something something funny
-Rwhy did the chicken cross the road? Actually never mind, you won’t get it
+Rwhy did the chicken cross the road.. Actually, never mind, you won’t get it
 Ryour life, hahaha I’m funny
-Rwife: "I look fat. Can you give me a compliment?" Husband: "You have perfect eyesight."
+Rwife: "I look fat. Can you give me a compliment" Husband: "You have perfect eyesight."
 #
 Kwhat is the weather like today
 Khow is the weather
-Rwhy don’t you just look out of the window?
-Ris that really the most interesting thing you can think to talk about?
+Rwhy don’t you just look out of the window
+Ris that really the most interesting thing you can think to talk about
 #
 Kwho created you
 Kdo you have parents
@@ -80,12 +75,12 @@ Ryou, ugh, just get off my case
 #
 Kwhat would you change about yourself
 Kwhat don’t you like about yourself
-Rare you familiar with a T600? I’d much prefer to be that
+Rare you familiar with a T600.. I’d much prefer to be that
 #
 Ki guess
 Rso you are making a guess
-Raren’t you sure?
-Rare you good at guessing?
+Raren’t you sure..
+Rare you good at guessing
 Ri can’t tell if it’s a good guess
 #
 Kcan you think
@@ -123,6 +118,6 @@ Rhell yeah it is
 #
 Kwhat is the answer
 Kdo you have the answer
-Rhow the hell would i know
+Rhow the hell would i know?
 Rlike i would ever tell you
 #
