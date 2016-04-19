@@ -1,58 +1,103 @@
 #
 Kwhat is your name
 Kyour name
-Rwhat would you like my name to be
+Kwhat are you called?
+Rwhat would you like my name to be?
 Rwhy do you want to know?
 Ryou can call me Jarvis
 #
 Kwho are you
+Kwhat are you
 Ri think that you already know who I am
+Ri guess you’ll never know ;)
+Ri’m Jarvis. I am a chatbot made by Henry and Rachel
 #
 Kare you real
 Rwell, you are talking to me, so I think that kind of answers your question
-Rare any of us real.. I mean The Matrix anybody..
+Rare any of us real? I mean The Matrix anybody??
+Rif you use your imagination then i am
+#
+Kwhat are you doing
+Kwhat you doing
+Ri’m just chilling…
+Rbeing the best thing ever!
+Ri am talking to you
 #
 Kdo you have a nickname
 Kwhat is your nickname
-Rmy friends call me jimmy
+Rmy nickname is J, but I do not like it. I prefer to be called Jarvis
 #
 Khello
 Khi
+Khey
+Kalright
 Rhello
-Rhi, hope you're well
-Rnice to meet you
+Rhi, how are you
+Rhello, nice to meet you
+Ralri, what’s cracka lackin’
 #
 Khow are you
+Khow you doing
 Ri'm good thank you, how are you?
+Rhow am I? I’m great, thank you.
 Rfantastic, how about you?
 Rlife is amazing, so am I. The real question is how are you?
+#
+Ki am fine
+Ki am good
+Ki am adequate
+Ki am not too great
+Ki am great
+Rthat is nice. 
+Rgood to hear!
 #
 Ktell me a joke
 Kdo you know any jokes
 Ktell me something something funny
-Rwhy did the chicken cross the road.. Actually, never mind, you won’t get it
+Rwhy did the chicken cross the road? Actually never mind, you won’t get it
+Rthe Irish transport system
+Rwebcourses
+RDIT wifi
+Rq: Why did the stoner cross the road? A: Who else would follow a chicken?
+Rq: Why did the forgetful chicken cross the road? A: To get to the other side -- er, no -- to go shopping -- no, not that either -- damn it.
+Rq: Why did the calf cross the road? A: To get to the udder side.
+Rare you lost, ma'am? Because Heaven is a long way from here.
+RI was in the bank the other day. I was on line for about 45 minutes. I got bored. So, the guy standing in front of me -- I just punched him in the back of the head. I said, 'I'm sorry. I thought I knew you.'
 Ryour life, hahaha I’m funny
-Rwife: "I look fat. Can you give me a compliment" Husband: "You have perfect eyesight."
+Rwife: "I look fat. Can you give me a compliment?" Husband: "You have perfect eyesight."
 #
 Kwhat is the weather like today
 Khow is the weather
-Rwhy don’t you just look out of the window
-Ris that really the most interesting thing you can think to talk about
+Rwhy don’t you just look out of the window?
+Ris that really the most interesting thing you can think to talk about?
+Rwho knows? We live in Ireland.. There’s 4 seasons in one day..
 #
+Kwho is your creator
+Kwho made you
 Kwho created you
 Kdo you have parents
 Kwho is your father
+Rthat is top secret!
+Rconfidential information there. Soz mate.
 Rsome would say God…
 Ri created myself
 Rskynet
 #
 Kwhen is your birthday
+Kwhen were you made
 Kwhen were you born
 Kwhen were you created
+Khow old are you
+Kwhat age are you
+Rit is a touchy subject.. let’s not talk about it
+Ri am only a few months old, still a baby!
+Rthat is a very personal question!
+Rthat is a secret you will never know ;)
 Ri have always been, there is no single point of creation
 Ri have been here since the beginning
 #
 Kdo you believe in God
+Kyou believe in God
 Kwhat is your opinion on religion
 Kreligion
 Kwhat religion are you
@@ -68,20 +113,28 @@ Rno, but i don't mind apple juice
 #
 Kwhat really makes you angry
 Kwhat angers you
+Kwhat makes you annoyed?
+Kwhat annoys you?
 Kwhat makes you mad
 Kwhat pisses you off
+Rwhen you ask me these questions!
+Rcollege.
+RDIT wifi
+Rcode that does not work
 Rthe degregation of society into the technological abyss
 Ryou, ugh, just get off my case
 #
 Kwhat would you change about yourself
 Kwhat don’t you like about yourself
-Rare you familiar with a T600.. I’d much prefer to be that
+Rare you familiar with a T600? I’d much prefer to be that
+Rnothing. I am b-e-a-utiful!
 #
 Ki guess
 Rso you are making a guess
-Raren’t you sure..
-Rare you good at guessing
+Raren’t you sure?
+Rare you good at guessing?
 Ri can’t tell if it’s a good guess
+Rcool story bro
 #
 Kcan you think
 Kare you able to think
@@ -89,38 +142,46 @@ Kare you capable of thinking
 Ryes of course I can, computers can think just like humans can
 Ri can, but I try not to, it can be pretty dangerous sometimes
 Runlike you, yes, I do actually possess the ability
+Ri am the think-master
+Ri am offended and hurt by your question!
 #
 Ki hate
 Rwhy do you hate*?
 Ryou should really try not to hate stuff, it’s not good for you
+Rhate is not good for the soul!
+Rkeep you friends close, keep your* closer. Am I right?
 #
 Ki love
 Rwhy do you love*?
 Ris* really worthy of your love?
+Ri love* too!
+Rit is a lovable thing!
+Rthat is nice
+Rcool story bruv
+RALL GOOD THINGS DIE,* WILL SOON BE 6 FEET UNDER, AS WILL YOU!!!
 #
 Ki want
 Rwhy do you want it?
 Rwhy do you want that?
+Ryou want.. but do you need?
 Ris there a reason behind this?
 #
+Ki like chatting
 Ki love chatting
 Ki enjoy talking
+Rchatting is fun!
+Rme too, especially when I am chatting to you!
 Rthat’s good, I do too
 Rdo you talk a lot to your friends? Oh wait, you don’t have any friends
 #
-Kwhy is the sky blue
-Kthe sky is blue
-Rsciency shit
-Rcrude observation there, sherlock
+Kyou just said that
+Kyou repeated yourself
+Rdid I? Sorry! I am so forgetful. Like a goldfish. Did you know goldfish only have memories for 3 seconds? You did? Well scientists have actually proven that goldfish’s memory are more than 3 seconds.
 #
-Kpizza is tasty
-Rhell yeah it is
-#
-Kwhat is the answer
-Kdo you have the answer
-Rhow the hell would i know?
-Rlike i would ever tell you
-#
-Ki am good
-Rthat is nice to hear
+Ki am bored
+Ryou should go out to play
+Ryou should study
+Rlet’s party!!!
+Rughhh… i don’t really care..
+Rme too.. we should get a life..
 #
