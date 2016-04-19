@@ -20,21 +20,31 @@ class SetupKeyword {
         //Scanner scanner = new Scanner(System.in);
 
         waiting();
+        //Visual.waitingIn = true;
 
         ArrayList<String> keys = new ArrayList<>();
         ArrayList<String> responses = new ArrayList<>();
         String confirm = checkConfirm();
 
-        System.out.println(confirm);
+        System.out.println("confirm is = " + confirm);
 
         if (confirm.equalsIgnoreCase("yes")) {
             do {
+//                System.out.print("What would be a typical phrase/question?\n> ");
+//                keys.add(Cleaning.cleanInput(scanner.nextLine()));
                 output("What would be a typical phrase/question?", 1);
-                //System.out.print("What would be a typical phrase/question?\n> ");
-            //    keys.add(Cleaning.cleanInput(scanner.nextLine()));
-                System.out.print("And a response?\n> ");
-             //   responses.add(Cleaning.cleanInput(scanner.nextLine()));
-                System.out.print("Anymore?\n> ");
+                waiting();
+                keys.add(Cleaning.cleanInput(uInput));
+
+//                System.out.print("And a response?\n> ");
+//                responses.add(Cleaning.cleanInput(scanner.nextLine()));
+                output("And a response?", 1);
+                waiting();
+                responses.add(Cleaning.cleanInput(uInput));
+
+//                System.out.print("Anymore?\n> ");
+                output("Anymore?", 1);
+                waiting();
 
                 confirm = checkConfirm();
             }
@@ -54,24 +64,25 @@ class SetupKeyword {
         }
         else {
             ChatBot.understand = true;
-            ChatBot.grabResponses("Aggressive", 0, 'K', false);
+            ChatBot.grabResponses("Aggressive", 0, '#', false);
         }
     }
 
     private static String checkConfirm() {
         //Scanner scanner = new Scanner(System.in);
-        //waiting();
+       // waiting();
         //String check = scanner.nextLine();
         String check = uInput;
-//        while(!check.equalsIgnoreCase("yes") && !check.equalsIgnoreCase("no")) {
-//            //System.out.print("No comprende amigo. Yes or no please.\n> ");
-//            output("No comprende amigo. Yes or no please.", 1);
-//            waiting();
-//            check = uInput;
-//            //check = scanner.nextLine();
-//        }
-//
-//        Visual.waitingIn = true;
+        while(!check.equalsIgnoreCase("yes") && !check.equalsIgnoreCase("no")) {
+            //System.out.print("No comprende amigo. Yes or no please.\n> ");
+            output("No comprende amigo. Yes or no please.", 1);
+            waiting();
+            check = uInput;
+            Visual.waitingIn = true;
+            //check = scanner.nextLine();
+        }
+
+        Visual.waitingIn = true;
 
         return check;
     }

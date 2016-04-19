@@ -176,39 +176,38 @@ class Checks {
        // if (!transposing()) {
             // Loop through words file, to see if input is a word
             // If so, setup new keyword
-            try {
-                int wordCount = 0;
+        try {
+            int wordCount = 0;
 
-                // Split input on spaces ("The sky is blue" -> {"the", "sky", "is", "blue"})
-                String[] tokens = ConvoContext.splitString(uInput, " ");
+            // Split input on spaces ("The sky is blue" -> {"the", "sky", "is", "blue"})
+            String[] tokens = ConvoContext.splitString(uInput, " ");
 
+            // Load list of English words
+            FileReader fileReader = new FileReader("Data" + File.separator + "Words.txt");
+            BufferedReader buffRead = new BufferedReader(fileReader);
+            String word;
 
-                // Load list of English words
-                FileReader fileReader = new FileReader("Data" + File.separator + "Words.txt");
-                BufferedReader buffRead = new BufferedReader(fileReader);
-                String word;
+            while ((word = buffRead.readLine()) != null) {
+               // System.out.println(word);
+                // If match found, call function to get user to input phrases and responses
 
-                while ((word = buffRead.readLine()) != null) {
-                    // If match found, call function to get user to input phrases and responses
-
-                    // Loop through tokens to check if each is a word, if so, increment counter
-                    for (String token : tokens) {
-                        if (word.equalsIgnoreCase(token))
-                            wordCount++;
-                    }
-
-                    // If all words have been verified, call setup new keyword function
-                    if (wordCount == tokens.length) {
-                        SetupKeyword.setupNewKeyword();
-                        return;
-                    }
+                // Loop through tokens to check if each is a word, if so, increment counter
+                for (String token : tokens) {
+                    if (word.equalsIgnoreCase(token))
+                        wordCount++;
                 }
 
-                // If not all tokens are words, call default "do not understand" responses
-                if (wordCount != tokens.length)
-                    assignDefault();
-            } catch (IOException ex) { fileErrorMessage(); }
-       // }
+                // If all words have been verified, call setup new keyword function
+                if (wordCount == tokens.length) {
+                    SetupKeyword.setupNewKeyword();
+                    return;
+                }
+            }
+
+            // If not all tokens are words, call default "do not understand" responses
+            if (wordCount != tokens.length)
+                assignDefault();
+        } catch (IOException ex) { fileErrorMessage(); }
     }
 
     private static void assignDefault() {

@@ -109,12 +109,17 @@ public class ChatBot extends PApplet {
             //System.out.print("> ");
 
             waiting();
+            /* while (Visual.waitingIn) {
+                 try { Thread.sleep(500); }
+                 catch (InterruptedException e) { e.printStackTrace(); }
+            }*/
 
             // Remove unwanted white space and punctuation and convert to lower case from read in line
            // uInput = Cleaning.cleanInput(scanner.nextLine());
 
             // Write the user's response to the conversation log file
 //            saveLog(conLog, firstName, uInput);
+
 
             if (!exitCheck()) {
                 // Check if user is repeating, choose relevant message
@@ -284,6 +289,8 @@ public class ChatBot extends PApplet {
         ArrayList<String> responses = new ArrayList<>();
         String line = " ";
 
+        System.out.println("stop = " + stop);
+
         try {
             FileReader fileReader = new FileReader("Data" + File.separator + fileName + ".txt");
             BufferedReader buffRead = new BufferedReader(fileReader);
@@ -304,8 +311,13 @@ public class ChatBot extends PApplet {
 
             // Go through all the responses, up to relevant stop sign (if in context)
             while((line.charAt(0)) != stop) {
-                if (stop == '#')
-                    responses.add(line.substring(1));
+                if (stop == '#') {
+                    if (context)
+                        responses.add(line.substring(1));
+                    else
+                        responses.add(line);
+
+                }
                 else
                     responses.add(line);
                 line = buffRead.readLine();
@@ -336,5 +348,6 @@ public class ChatBot extends PApplet {
             try { Thread.sleep(500); }
             catch (InterruptedException e) { e.printStackTrace(); }
         }
+        Visual.waitingIn = true;
     }
 }

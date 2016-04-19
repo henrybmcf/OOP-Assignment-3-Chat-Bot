@@ -133,11 +133,13 @@ public class Visual extends PApplet {
 
         cp5 = new ControlP5(this);
 
-        cp5.addTextfield("")
+
+        cp5.addTextfield("input")
                 .setPosition(centX - dist, centY + (dist * 0.75f))
                 .setSize((int)(radius * 1.2f), (int)(radius * 0.2f))
                 .setFont(font)
                 .setFocus(true)
+                .getCaptionLabel().align(ControlP5.CENTER, ControlP5.BOTTOM_OUTSIDE)
         ;
         cp5.setColorForeground(0);
         cp5.setColorBackground(0);
@@ -150,19 +152,19 @@ public class Visual extends PApplet {
         frameRate(frames);
         background(0);
 
-        if (ChatBot.exit && !moveText)
-            exit();
-
-        presentCounter++;
-        exitCounter ++;
-        // After 10 seconds, display message checking is the user is still there
-        if (presentCounter == 600 && !presentCheck)
-            output(stillThereMessage(), 0);
-        // After two minutes, if no response from user, exit
-        if (exitCounter == minute * 2.0f) {
-            output("Okay, well I'm kind of busy and I have other stuff to do, so bye!", 0);
-            exit();
-        }
+//        if (ChatBot.exit && !moveText)
+//            exit();
+//
+//        presentCounter++;
+//        exitCounter ++;
+//        // After 10 seconds, display message checking is the user is still there
+//        if (presentCounter == 600 && !presentCheck)
+//            output(stillThereMessage(), 0);
+//        // After two minutes, if no response from user, exit
+//        if (exitCounter == minute * 2.0f) {
+//            output("Okay, well I'm kind of busy and I have other stuff to do, so bye!", 0);
+//            exit();
+//        }
 
         fft.window(FFT.HAMMING);
         fft.forward(in.left);
@@ -171,15 +173,15 @@ public class Visual extends PApplet {
         drawCenter();
 
         // Text Visuals
-        float pos = OST.get(2).position.y;
-        if (moveText && (prevPos - pos) < dist * 2.0f) {
-            for (int i = 1; i < OST.size(); i++)
-                OST.get(i).update();
-        }
-        else {
-            moveText = false;
-            captureInput = true;
-        }
+//        float pos = OST.get(2).position.y;
+//        if (moveText && (prevPos - pos) < dist * 2.0f) {
+//            for (int i = 1; i < OST.size(); i++)
+//                OST.get(i).update();
+//        }
+//        else {
+//            moveText = false;
+//            captureInput = true;
+//        }
 
 //        if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
 //            try {
@@ -217,7 +219,9 @@ public class Visual extends PApplet {
 
 //            OST.set(0, new OnScreenText(cp5.get(Textfield.class,"").getText(), new PVector(xCo, centY + dist)));
             System.out.println("Content = " + OST.get(0).content);
-            ChatBot.uInput = Cleaning.cleanInput(cp5.get(Textfield.class,"").getText());
+
+            ChatBot.uInput = Cleaning.cleanInput(cp5.get(Textfield.class,"input").getText());
+
             waitingIn = false;
 //            moveText = true;
 
@@ -230,9 +234,9 @@ public class Visual extends PApplet {
 //            OST.get(2).position.y = centY + dist;
 //            OST.get(1).position.y = centY + (dist * 2.0f);
 
-            capturedText = "";
+//            capturedText = "";
 
-            cp5.get(Textfield.class,"").clear();
+//            cp5.get(Textfield.class,"input").clear();
 
             System.out.println(ChatBot.uInput);
         }
@@ -241,11 +245,29 @@ public class Visual extends PApplet {
 //        if (key == ESC) key = 0;
     }
 
+//
+//    void controlEvent(ControlEvent theEvent) {
+//        if(theEvent.isAssignableFrom(Textfield.class)) {
+//            println("controlEvent: accessing a string from controller '"
+//                    +theEvent.getName()+"': "
+//                    +theEvent.getStringValue()
+//            );
+//        }
+//    }
+
+
+    public void input(String theText) {
+        System.out.println("Input = " + theText);
+        ChatBot.uInput = Cleaning.cleanInput(cp5.get(Textfield.class,"input").getText());
+        waitingIn = false;
+    }
+
+
     private void writeText() {
         fill(255);
         textAlign(CENTER);
 
-        OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.8f)).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
+       // OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.8f)).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
     }
 
     // Flashing typing line

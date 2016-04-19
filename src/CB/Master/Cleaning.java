@@ -45,7 +45,9 @@ public class Cleaning extends PApplet {
         if (out != null) {
             bOutput = initCap(out);
             RepeatCheck.saveResponse(bOutput);
-            System.out.println(bOutput);
+            //System.out.println(bOutput);
+            System.out.println("Output = " + bOutput);
+
 //            Visual.presentCheck = false;
 //            Visual.presentCounter = 0;
 //            Visual.exitCounter = 0;
