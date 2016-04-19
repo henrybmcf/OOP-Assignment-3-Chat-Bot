@@ -14,7 +14,7 @@ import static CB.Master.ChatBot.waiting;
 
 class SetupKeyword {
     static void setupNewKeyword() throws IOException {
-        output("Hmm, I don't think I know this keyword.\nCould you give me a few example phrases and responses so I know in the future?\nYes or no will do", 1);
+        output("Hmm, I don't think I know this keyword.\nCould you give me a few example phrases and responses so I know in the future?\nYes or no will do");
         //System.out.println("Hmm, I don't think I know this keyword.\nCould you give me a few example phrases and responses so I know in the future?");
 //        System.out.print("Yes or no will do\n> ");
         //Scanner scanner = new Scanner(System.in);
@@ -30,18 +30,18 @@ class SetupKeyword {
             do {
 //                System.out.print("What would be a typical phrase/question?\n> ");
 //                keys.add(Cleaning.cleanInput(scanner.nextLine()));
-                output("What would be a typical phrase/question?", 1);
+                output("What would be a typical phrase/question?");
                 waiting();
                 keys.add(uInput);
 
 //                System.out.print("And a response?\n> ");
 //                responses.add(Cleaning.cleanInput(scanner.nextLine()));
-                output("And a response?", 1);
+                output("And a response?");
                 waiting();
                 responses.add(uInput);
 
 //                System.out.print("Anymore?\n> ");
-                output("Anymore?", 1);
+                output("Anymore?");
                 waiting();
 
                 confirm = checkConfirm();
@@ -67,20 +67,13 @@ class SetupKeyword {
     }
 
     private static String checkConfirm() {
-        //Scanner scanner = new Scanner(System.in);
-       // waiting();
-        //String check = scanner.nextLine();
         String check = uInput;
         while(!check.equalsIgnoreCase("yes") && !check.equalsIgnoreCase("no")) {
-            //System.out.print("No comprende amigo. Yes or no please.\n> ");
-            output("No comprende amigo. Yes or no please.", 1);
+            output("No comprende amigo. Yes or no please.");
             waiting();
             check = uInput;
             Visual.waitingIn = true;
-            //check = scanner.nextLine();
         }
-
-      //  Visual.waitingIn = true;
 
         return check;
     }

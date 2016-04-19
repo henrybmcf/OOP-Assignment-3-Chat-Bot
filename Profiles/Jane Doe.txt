@@ -1,5 +1,7 @@
 Profile:	Jane Doe
 *
-favourite,film,get a job
-favourite,sport,cycling
-favourite,hobby,reading
+film,get a job
+sport,cycling
+hobby,reading
+food,pasta
+album,wilder mind

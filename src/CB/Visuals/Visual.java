@@ -17,9 +17,9 @@ import java.util.Random;
 import static CB.Master.Cleaning.output;
 
 public class Visual extends PApplet {
-    private static int presentCounter;
-    private static int exitCounter;
-    private static boolean presentCheck;
+    public static int presentCounter;
+    public static int exitCounter;
+    public static boolean presentCheck;
     private static String prevMess;
     private static int frames;
     private static int minute;
@@ -57,11 +57,15 @@ public class Visual extends PApplet {
     private float prevPos;
     public static String outTextDisplay = "";
     private int outCount = 0;
-    private boolean captureInput = true;
     private int typeTimer = 0;
     private float xCo;
 
-    ControlP5 cp5;
+
+    private int colourTimer = 0;
+    private boolean colourSwitch = true;
+
+    private ControlP5 cp5;
+    private String input;
 
     public void settings() {
         size(800, 600);
@@ -70,7 +74,7 @@ public class Visual extends PApplet {
     }
 
     public void setup() {
-        PFont font = createFont("Data" + File.separator + "DigiFont.TTF",20);
+        PFont font = createFont("Data" + File.separator + "DigiFont.TTF", 16);
 
         // Fullscreen
         //float scrWidth = displayWidth;
@@ -126,14 +130,14 @@ public class Visual extends PApplet {
         // Text Visuals
         dist = radius * 0.6f;
         xCo = centX - (radius * 0.8f);
-        //OST.add(new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
-        OST.add(new OnScreenText("....", new PVector(xCo, centY + dist)));
-        OST.add(new OnScreenText("...", new PVector(xCo, centY)));
+
+        OST.add(new OnScreenText("..", new PVector(xCo, centY + dist)));
+        OST.add(new OnScreenText("..", new PVector(xCo, centY)));
         OST.add(new OnScreenText("..", new PVector(xCo, centY - dist)));
 
         cp5 = new ControlP5(this);
 
-
+        textAlign(CENTER);
         cp5.addTextfield("input")
                 .setPosition(centX - dist, centY + (dist * 0.75f))
                 .setSize((int)(radius * 1.2f), (int)(radius * 0.2f))
@@ -142,8 +146,8 @@ public class Visual extends PApplet {
                 .getCaptionLabel().align(ControlP5.CENTER, ControlP5.BOTTOM_OUTSIDE)
         ;
         cp5.setColorForeground(0);
-        cp5.setColorBackground(0);
-        cp5.setColorActive(0);
+        cp5.setColorBackground(color(0, 100));
+        cp5.setColorActive(color(0, 0, 100));
 
         textFont(font);
     }
@@ -152,19 +156,25 @@ public class Visual extends PApplet {
         frameRate(frames);
         background(0);
 
-//        if (ChatBot.exit && !moveText)
-//            exit();
-//
-//        presentCounter++;
-//        exitCounter ++;
-//        // After 10 seconds, display message checking is the user is still there
-//        if (presentCounter == 600 && !presentCheck)
-//            output(stillThereMessage(), 0);
-//        // After two minutes, if no response from user, exit
-//        if (exitCounter == minute * 2.0f) {
-//            output("Okay, well I'm kind of busy and I have other stuff to do, so bye!", 0);
-//            exit();
-//        }
+        // Pulsating colours for text box
+        if (colourSwitch) colourTimer++;
+        else colourTimer--;
+        if (colourTimer == 45 || colourTimer == 0) colourSwitch =! colourSwitch;
+        cp5.setColorActive(color(0, colourTimer * 3, colourTimer * 4));
+
+        if (ChatBot.exit && !moveText)
+            exit();
+
+        presentCounter++;
+        exitCounter ++;
+        // After 10 seconds, display message checking is the user is still there
+        if (presentCounter == 600 && !presentCheck)
+            output(stillThereMessage());
+        // After two minutes, if no response from user, exit
+        if (exitCounter == minute * 2.0f) {
+            output("Okay, well I'm kind of busy and I have other stuff to do, so bye!");
+            exit();
+        }
 
         fft.window(FFT.HAMMING);
         fft.forward(in.left);
@@ -178,10 +188,8 @@ public class Visual extends PApplet {
             for (int i = 1; i < OST.size(); i++)
                 OST.get(i).update();
         }
-        else {
+        else
             moveText = false;
-            captureInput = true;
-        }
 
 //        if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
 //            try {
@@ -195,7 +203,6 @@ public class Visual extends PApplet {
 //            outCount = 0;
 //        }
 
-        typingLine();
         writeText();
     }
 
@@ -204,44 +211,18 @@ public class Visual extends PApplet {
         presentCounter = 0;
         exitCounter = 0;
 
-//        if (captureInput && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && keyCode != ENTER && keyCode != RETURN && keyCode != BACKSPACE) {
-//            capturedText = Cleaning.initCap(capturedText + key);
-//            OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
-//        }
-//        else if (keyCode == BACKSPACE && capturedText.length() > 0) {
-//            capturedText = capturedText.substring(0, capturedText.length() - 1);
-//            OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
-//        }
-//        else
-//        if ((keyCode == ENTER || keyCode == RETURN) && capturedText.length() > 0) {
-//            captureInput = false;
-//            ChatBot.uInput = Cleaning.cleanInput(capturedText);
-//            OST.set(0, new OnScreenText(cp5.get(Textfield.class,"").getText(), new PVector(xCo, centY + dist)));
-//            System.out.println("Content = " + OST.get(0).content);
-//
-//            ChatBot.uInput = Cleaning.cleanInput(cp5.get(Textfield.class,"input").getText());
-//
-//            waitingIn = false;
-//            moveText = true;
-//            OST.get(2).content = OST.get(0).content;
-//            prevPos = centY + dist;
-//            OST.get(0).content = "";
-//            OST.get(1).content = "";
-//            OST.get(2).position.y = centY + dist;
-//            OST.get(1).position.y = centY + (dist * 2.0f);
-//            capturedText = "";
-//            cp5.get(Textfield.class,"input").clear();
-//            System.out.println(ChatBot.uInput);
-//        }
-
         // Prevent exit via escape key
-//        if (key == ESC) key = 0;
+        if (key == ESC) key = 0;
     }
 
 
     public void input(String input) {
+        this.input = input;
+        while(input.charAt(0) == ' ')
+            input = input.substring(1);
+
         ChatBot.uInput = Cleaning.cleanInput(input);
-        System.out.println("Input = " + ChatBot.uInput);
+
         waitingIn = false;
 
         moveText = true;
@@ -253,9 +234,9 @@ public class Visual extends PApplet {
         OST.get(1).content = "";
 
         OST.get(2).position.y = centY + dist;
-        OST.get(1).position.y = centY + (dist * 2.0f);
+        OST.get(1).position.y = centY + (dist * 1.95f);
 
-        OST.set(2, new OnScreenText(input, new PVector(xCo, centY + dist)));
+        OST.set(2, new OnScreenText(input, new PVector(xCo, centY + (dist * 0.75f) + (int)(radius * 0.05f))));
     }
 
 
@@ -263,21 +244,9 @@ public class Visual extends PApplet {
         fill(255);
         textAlign(CENTER);
 
-        OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.8f)).filter(ost -> ost.content.length() != 0).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
+        OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.6f)).filter(ost -> ost.content.length() != 0).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
     }
 
-    // Flashing typing line
-    private void typingLine() {
-        stroke(255);
-        strokeWeight(1);
-        float tw = textWidth(capturedText) * 0.55f;
-        if (typeTimer > 20 && !moveText) {
-            line(centX + tw, centY + (dist * 1.1f), centX + tw, centY + dist);
-            if (typeTimer > 40)
-                typeTimer = 0;
-        }
-        typeTimer++;
-    }
 
     private static String stillThereMessage() {
         Random rand = new Random();

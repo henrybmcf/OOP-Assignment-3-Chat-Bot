@@ -1,15 +1,10 @@
 package CB.Master;
 
-import CB.FileCode.FileMethods;
 import CB.Speech.TextSpeech;
 import CB.Visuals.Visual;
 import processing.core.PApplet;
 
 import static CB.Master.ChatBot.bOutput;
-import static CB.Master.ChatBot.keyWord;
-import static CB.Master.ChatBot.uInput;
-import static CB.Master.Checks.checkTruth;
-import static CB.Visuals.Visual.outTextDisplay;
 
 public class Cleaning extends PApplet {
     // List of punctuations marks
@@ -40,23 +35,17 @@ public class Cleaning extends PApplet {
     }
 
     // Prepare bot response for output
-    public static void output(String out, int src) {
-        if (src != 1)
-            out = preProcessOutput(out);
+    public static void output(String out) {
         if (out != null) {
             bOutput = initCap(out);
             RepeatCheck.saveResponse(bOutput);
-            //System.out.println(bOutput);
-            System.out.println("Output = " + bOutput);
+            Visual.OST.get(1).content = bOutput;
 
-//            Visual.OST.get(1).content = bOutput;
+            Visual.presentCheck = false;
+            Visual.presentCounter = 0;
+            Visual.exitCounter = 0;
 
-//            Visual.presentCheck = false;
-//            Visual.presentCounter = 0;
-//            Visual.exitCounter = 0;
 //            speaking.speak(bOutput);
-
-            //outTextDisplay = bOutput;
         }
     }
 
@@ -84,7 +73,7 @@ public class Cleaning extends PApplet {
     }
 
     // Capitalise first letter of string
-    public static String initCap(String str) {
+    private static String initCap(String str) {
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
@@ -113,29 +102,5 @@ public class Cleaning extends PApplet {
 
     static String firstName(String name) {
         return ConvoContext.splitString(name, " ")[0];
-    }
-
-    private static String preProcessOutput(String resp) {
-        String subject = "";
-
-        if (resp.contains("*"))
-            subject = findSubject();
-
-        if (checkTruth(resp, subject))
-            return resp.replaceFirst("\\*", " " + subject);
-
-        return null;
-    }
-
-    // Find subject within user input, for use in output
-    private static String findSubject() {
-        String subject = "";
-
-        int keyPos = uInput.indexOf(keyWord);
-
-        if (keyPos != -1)
-            subject = uInput.substring(keyPos + keyWord.length() + 1, uInput.length());
-
-        return subject;
     }
 }
