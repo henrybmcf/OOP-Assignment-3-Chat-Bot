@@ -6,8 +6,11 @@ import ddf.minim.AudioInput;
 import ddf.minim.Minim;
 import ddf.minim.analysis.FFT;
 import processing.core.PApplet;
+import processing.core.PFont;
 import processing.core.PVector;
+import controlP5.*;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -45,7 +48,6 @@ public class Visual extends PApplet {
     private PVector[] outCoordinates;
     private PVector[] inCoordinates;
 
-
     // Text Visuals
     public static String capturedText = "";
     public static boolean waitingIn = true;
@@ -59,10 +61,16 @@ public class Visual extends PApplet {
     private int typeTimer = 0;
     private float xCo;
 
+    ControlP5 cp5;
+
     public void settings() {
         size(800, 600);
         //fullScreen();
         smooth(8);
+    }
+
+    public void setup() {
+        PFont font = createFont("Data" + File.separator + "DigiFont.TTF",20);
 
         // Fullscreen
         //float scrWidth = displayWidth;
@@ -118,9 +126,24 @@ public class Visual extends PApplet {
         // Text Visuals
         dist = radius * 0.6f;
         xCo = centX - (radius * 0.8f);
-        OST.add(new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
+        //OST.add(new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
+        OST.add(new OnScreenText("....", new PVector(xCo, centY + dist)));
         OST.add(new OnScreenText("...", new PVector(xCo, centY)));
-        OST.add(new OnScreenText("", new PVector(xCo, centY - dist)));
+        OST.add(new OnScreenText("..", new PVector(xCo, centY - dist)));
+
+        cp5 = new ControlP5(this);
+
+        cp5.addTextfield("")
+                .setPosition(centX - dist, centY + (dist * 0.75f))
+                .setSize((int)(radius * 1.2f), (int)(radius * 0.2f))
+                .setFont(font)
+                .setFocus(true)
+        ;
+        cp5.setColorForeground(0);
+        cp5.setColorBackground(0);
+        cp5.setColorActive(0);
+
+        textFont(font);
     }
 
     public void draw() {
@@ -158,19 +181,75 @@ public class Visual extends PApplet {
             captureInput = true;
         }
 
-        if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
-            try {
-                Thread.sleep((long) abs(map(outTextDisplay.length(), 10, 50, 10, 1)));
-                outCount++;
-                OST.set(1, new OnScreenText(outTextDisplay.substring(0, outCount), new PVector(xCo, OST.get(1).position.y)));
-            } catch (InterruptedException e) { e.printStackTrace(); }
-        }
-        else {
-            outTextDisplay = "";
-            outCount = 0;
+//        if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
+//            try {
+//                Thread.sleep((long) abs(map(outTextDisplay.length(), 10, 50, 10, 1)));
+//                outCount++;
+//                OST.set(1, new OnScreenText(outTextDisplay.substring(0, outCount), new PVector(xCo, OST.get(1).position.y)));
+//            } catch (InterruptedException e) { e.printStackTrace(); }
+//        }
+//        else {
+//            outTextDisplay = "";
+//            outCount = 0;
+//        }
+
+        typingLine();
+        writeText();
+    }
+
+    public void keyPressed() {
+        presentCheck = true;
+        presentCounter = 0;
+        exitCounter = 0;
+
+//        if (captureInput && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && keyCode != ENTER && keyCode != RETURN && keyCode != BACKSPACE) {
+//            capturedText = Cleaning.initCap(capturedText + key);
+//            OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
+//        }
+//        else if (keyCode == BACKSPACE && capturedText.length() > 0) {
+//            capturedText = capturedText.substring(0, capturedText.length() - 1);
+//            OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
+//        }
+        //else
+        if ((keyCode == ENTER || keyCode == RETURN) && capturedText.length() > 0) {
+//            captureInput = false;
+//            ChatBot.uInput = Cleaning.cleanInput(capturedText);
+
+//            OST.set(0, new OnScreenText(cp5.get(Textfield.class,"").getText(), new PVector(xCo, centY + dist)));
+            System.out.println("Content = " + OST.get(0).content);
+            ChatBot.uInput = Cleaning.cleanInput(cp5.get(Textfield.class,"").getText());
+            waitingIn = false;
+//            moveText = true;
+
+//            OST.get(2).content = OST.get(0).content;
+//            prevPos = centY + dist;
+//
+//            OST.get(0).content = "";
+//            OST.get(1).content = "";
+//
+//            OST.get(2).position.y = centY + dist;
+//            OST.get(1).position.y = centY + (dist * 2.0f);
+
+            capturedText = "";
+
+            cp5.get(Textfield.class,"").clear();
+
+            System.out.println(ChatBot.uInput);
         }
 
-        // Flashing typing line
+        // Prevent exit via escape key
+//        if (key == ESC) key = 0;
+    }
+
+    private void writeText() {
+        fill(255);
+        textAlign(CENTER);
+
+        OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.8f)).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
+    }
+
+    // Flashing typing line
+    private void typingLine() {
         stroke(255);
         strokeWeight(1);
         float tw = textWidth(capturedText) * 0.55f;
@@ -180,45 +259,6 @@ public class Visual extends PApplet {
                 typeTimer = 0;
         }
         typeTimer++;
-
-        writeText();
-    }
-
-    public void keyPressed() {
-        presentCheck = true;
-        presentCounter = 0;
-        exitCounter = 0;
-
-        if (captureInput && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && keyCode != ENTER && keyCode != RETURN && keyCode != BACKSPACE) {
-            capturedText = Cleaning.initCap(capturedText + key);
-            OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
-        }
-        else if (keyCode == BACKSPACE && capturedText.length() > 0) {
-            capturedText = capturedText.substring(0, capturedText.length() - 1);
-            OST.set(0, new OnScreenText(capturedText, new PVector(xCo, centY + dist)));
-        }
-        else if ((keyCode == ENTER || keyCode == RETURN) && capturedText.length() > 0) {
-            captureInput = false;
-            ChatBot.uInput = Cleaning.cleanInput(capturedText);
-            waitingIn = false;
-            moveText = true;
-
-            OST.get(2).content = OST.get(0).content;
-            prevPos = centY + dist;
-
-            OST.get(0).content = "";
-            OST.get(1).content = "";
-
-            OST.get(2).position.y = centY + dist;
-            OST.get(1).position.y = centY + (dist * 2.0f);
-        }
-    }
-
-    private void writeText() {
-        fill(255);
-        textAlign(CENTER);
-
-        OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.8f)).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
     }
 
     private static String stillThereMessage() {

@@ -10,5 +10,6 @@
     <orderEntry type="library" name="Text-To-Speech" level="project" />
     <orderEntry type="library" name="Processing" level="project" />
     <orderEntry type="library" name="Minim" level="application" />
+    <orderEntry type="library" name="controlP5" level="application" />
   </component>
 </module>

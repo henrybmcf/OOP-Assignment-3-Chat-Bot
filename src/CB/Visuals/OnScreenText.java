@@ -4,7 +4,7 @@ import processing.core.PApplet;
 import processing.core.PVector;
 
 public class OnScreenText extends PApplet {
-    String content;
+    public String content;
     PVector position;
 
     private float moving;

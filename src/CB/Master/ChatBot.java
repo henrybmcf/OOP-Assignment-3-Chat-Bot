@@ -59,7 +59,7 @@ public class ChatBot extends PApplet {
 
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
-//       PApplet.main(Visual.class.getName());
+       PApplet.main(Visual.class.getName());
 //        TextSpeech speaking = new TextSpeech("kevin16");
 //        String date = new Date().toString().replace(":", "_");
 //        File log = new File("Conversation Logs" + File.separator + date + ".txt");
@@ -69,31 +69,28 @@ public class ChatBot extends PApplet {
 //            conLog.write("Start:\t" + date + "\n\n");
 //        }
 //        catch (IOException e) { e.printStackTrace(); }
-//        prepOutput("Hello, what is your full name?", 1);
+//        output("Hello, what is your full name?", 1);
+//
+//          waiting();
 
         // Write the bot's response to the conversation log file
 //        saveLog(conLog, botLogName, bOutput);
 
 //        System.out.print("> ");
-        Scanner scanner = new Scanner(System.in);
+ //       Scanner scanner = new Scanner(System.in);
 //        uInput = Cleaning.cleanInput(scanner.nextLine());
-//        name = Cleaning.toName(uInput);
-//        String firstName = Cleaning.firstName(name);
+ //       name = Cleaning.toName(uInput);
+   //     String firstName = Cleaning.firstName(name);
 //
 //        //saveLog(conLog, firstName, uInput);
 //
 //        File prof = new File("Profiles" + File.separator + name + ".txt");
 //
-//        boolean prevProf = true;
-//
 //        if (prof.exists() && !prof.isDirectory())
 //            bOutput = "Welcome back " + firstName + ", " + assignSalutation();
 //        else {
 //            bOutput = "Oo, a new person! Hello " + firstName + ", " + assignSalutation();
-//            prevProf = false;
-//        }
 //
-//        if (!prevProf) {
 //            try {
 //                FileWriter profile = new FileWriter(prof, true);
 //                profile.write("Profile:\t" + name + "\n*");
@@ -102,18 +99,19 @@ public class ChatBot extends PApplet {
 //            } catch (IOException ex) { fileErrorMessage(); }
 //        }
 //
-//        prepOutput(bOutput, 1);
-        //saveLog(conLog, botLogName, bOutput);
-        do {
-            System.out.print("> ");
+//        output(bOutput, 1);
+//
+//        Visual.waitingIn = true;
 
-//            while (Visual.waitingIn) {
-//                try { Thread.sleep(500); }
-//                catch (InterruptedException e) { e.printStackTrace(); }
-//            }
+        //saveLog(conLog, botLogName, bOutput);
+
+        do {
+            //System.out.print("> ");
+
+            waiting();
 
             // Remove unwanted white space and punctuation and convert to lower case from read in line
-            uInput = Cleaning.cleanInput(scanner.nextLine());
+           // uInput = Cleaning.cleanInput(scanner.nextLine());
 
             // Write the user's response to the conversation log file
 //            saveLog(conLog, firstName, uInput);
@@ -122,6 +120,7 @@ public class ChatBot extends PApplet {
                 // Check if user is repeating, choose relevant message
                 if (RepeatCheck.checkUserRepetition())
                     assignResponse(userRepetition);
+
                 // Check if user is repeating bot
                 // Check user isn't talking in context to favourite
                 // Check if user is asking for date, favourite or being aggressive
@@ -330,5 +329,12 @@ public class ChatBot extends PApplet {
             bOutput = Cleaning.cleanOutput();
 
         checkFutureContext = false;
+    }
+
+    static void waiting() {
+        while (Visual.waitingIn) {
+            try { Thread.sleep(500); }
+            catch (InterruptedException e) { e.printStackTrace(); }
+        }
     }
 }

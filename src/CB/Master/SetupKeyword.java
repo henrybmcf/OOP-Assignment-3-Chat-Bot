@@ -1,26 +1,39 @@
 package CB.Master;
 
+import CB.Visuals.Visual;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static CB.Master.ChatBot.uInput;
+import static CB.Master.Cleaning.output;
+import static CB.Master.ChatBot.waiting;
+
 class SetupKeyword {
     static void setupNewKeyword() throws IOException {
-        System.out.println("Hmm, I don't think I know this keyword.\nCould you give me a few example phrases and responses so I know in the future?");
-        System.out.print("Yes or no will do\n> ");
-        Scanner scanner = new Scanner(System.in);
+        output("Hmm, I don't think I know this keyword.\nCould you give me a few example phrases and responses so I know in the future?\nYes or no will do", 1);
+        //System.out.println("Hmm, I don't think I know this keyword.\nCould you give me a few example phrases and responses so I know in the future?");
+//        System.out.print("Yes or no will do\n> ");
+        //Scanner scanner = new Scanner(System.in);
+
+        waiting();
+
         ArrayList<String> keys = new ArrayList<>();
         ArrayList<String> responses = new ArrayList<>();
         String confirm = checkConfirm();
 
+        System.out.println(confirm);
+
         if (confirm.equalsIgnoreCase("yes")) {
             do {
-                System.out.print("What would be a typical phrase/question?\n> ");
-                keys.add(Cleaning.cleanInput(scanner.nextLine()));
+                output("What would be a typical phrase/question?", 1);
+                //System.out.print("What would be a typical phrase/question?\n> ");
+            //    keys.add(Cleaning.cleanInput(scanner.nextLine()));
                 System.out.print("And a response?\n> ");
-                responses.add(Cleaning.cleanInput(scanner.nextLine()));
+             //   responses.add(Cleaning.cleanInput(scanner.nextLine()));
                 System.out.print("Anymore?\n> ");
 
                 confirm = checkConfirm();
@@ -46,12 +59,20 @@ class SetupKeyword {
     }
 
     private static String checkConfirm() {
-        Scanner scanner = new Scanner(System.in);
-        String check = scanner.nextLine();
-        while(!check.equalsIgnoreCase("yes") && !check.equalsIgnoreCase("no")) {
-            System.out.print("No comprende amigo. Yes or no please.\n> ");
-            check = scanner.nextLine();
-        }
+        //Scanner scanner = new Scanner(System.in);
+        //waiting();
+        //String check = scanner.nextLine();
+        String check = uInput;
+//        while(!check.equalsIgnoreCase("yes") && !check.equalsIgnoreCase("no")) {
+//            //System.out.print("No comprende amigo. Yes or no please.\n> ");
+//            output("No comprende amigo. Yes or no please.", 1);
+//            waiting();
+//            check = uInput;
+//            //check = scanner.nextLine();
+//        }
+//
+//        Visual.waitingIn = true;
+
         return check;
     }
 }
