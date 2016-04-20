@@ -1,4 +1,5 @@
 # OOP-Assignment-3-Chat-Bot
+#### Team Name: Team China
 #### Team Members: Henry Ballinger McFarlane (ChatBot code) & Lok-Woon Wan (Visual code)
 #### Student Numbers: C14489558 & C14357716
 
