@@ -11,6 +11,7 @@ import java.util.Date;
 
 import static CB.FileCode.FileMethods.fileErrorMessage;
 import static CB.Master.ChatBot.*;
+import static CB.Master.Cleaning.splitString;
 
 class Checks {
     // List of possible user inputs to end the conversation
@@ -66,7 +67,7 @@ class Checks {
             int wordCount = 0;
 
             // Split input on spaces ("The sky is blue" -> {"the", "sky", "is", "blue"})
-            String[] tokens = ConvoContext.splitString(uInput, " ");
+            String[] tokens = splitString(uInput, " ");
 
             // Load list of English words
             FileReader fileReader = new FileReader("Data" + File.separator + "Words.txt");

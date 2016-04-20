@@ -7,7 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" afterPath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Checks.java" afterPath="$PROJECT_DIR$/src/CB/Master/Checks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Visuals/Visual.java" afterPath="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
     </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +32,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -46,7 +48,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepeatCheck.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Checks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/Checks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="22" selection-end-column="20" />
+              <folding>
+                <element signature="method#checkDate#0;class#Checks#0" expanded="false" />
+                <element signature="method#checkFavourite#0;class#Checks#0" expanded="false" />
+                <element signature="method#aggressiveCheck#0;class#Checks#0" expanded="false" />
+                <element signature="method#exitCheck#0;class#Checks#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RepeatCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -56,6 +73,22 @@
                 <element signature="method#checkUserRepetition#0;class#RepeatCheck#0" expanded="false" />
                 <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
                 <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Visual.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CB/Visuals/Visual.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2310">
+              <caret line="157" column="37" selection-start-line="157" selection-start-column="37" selection-end-line="157" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#settings#0;class#Visual#0" expanded="false" />
+                <element signature="method#drawCorners#0;class#Visual#0" expanded="false" />
+                <element signature="method#drawCenterCurve#0;class#Visual#0" expanded="false" />
+                <element signature="method#FFTFreq#0;class#Visual#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -108,9 +141,7 @@
         <option value="$PROJECT_DIR$/Data/KnowledgeBase.txt" />
         <option value="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" />
         <option value="$PROJECT_DIR$/src/CB/Speech/TextSpeech.java" />
-        <option value="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
         <option value="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/Checks.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/ConvoContext.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/Favourites.java" />
@@ -120,6 +151,8 @@
         <option value="$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/Checks.java" />
+        <option value="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
       </list>
     </option>
   </component>
@@ -215,6 +248,28 @@
               <option name="myItemId" value="CB" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Visuals" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chatbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChatBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -251,7 +306,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="89" />
@@ -768,7 +823,7 @@
       <workItem from="1460969323003" duration="52792000" />
       <workItem from="1461109603266" duration="11000" />
       <workItem from="1461110169615" duration="10986000" />
-      <workItem from="1461153928315" duration="582000" />
+      <workItem from="1461153928315" duration="1430000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -837,7 +892,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204659000" />
+    <option name="totallyTimeSpent" value="205507000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -854,11 +909,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21912351" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23240373" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28628495" sideWeight="0.50646204" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262317" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2623169" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -868,14 +925,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39946738" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39946738" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23302263" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2623169" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756326" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -960,7 +1015,7 @@
         <state relative-caret-position="570">
           <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
             <element signature="method#output#0;class#Cleaning#0" expanded="false" />
             <element signature="method#apostropheReplace#0;class#Cleaning#0" expanded="false" />
@@ -1034,7 +1089,7 @@
         <state relative-caret-position="225">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#checkLoadFavourite#0;class#Favourites#0" expanded="false" />
             <element signature="method#saveNewFeel#0;class#Favourites#0" expanded="false" />
           </folding>
@@ -1073,7 +1128,7 @@
         <state relative-caret-position="0">
           <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
             <element signature="method#output#0;class#Cleaning#0" expanded="false" />
             <element signature="method#apostropheReplace#0;class#Cleaning#0" expanded="false" />
@@ -1147,7 +1202,7 @@
         <state relative-caret-position="0">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#checkLoadFavourite#0;class#Favourites#0" expanded="false" />
             <element signature="method#saveNewFeel#0;class#Favourites#0" expanded="false" />
           </folding>
@@ -1166,7 +1221,7 @@
         <state relative-caret-position="0">
           <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
             <element signature="method#output#0;class#Cleaning#0" expanded="false" />
             <element signature="method#apostropheReplace#0;class#Cleaning#0" expanded="false" />
@@ -1304,20 +1359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Visuals/Visual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#settings#0;class#Visual#0" expanded="false" />
-            <element signature="method#drawCorners#0;class#Visual#0" expanded="false" />
-            <element signature="method#drawCenterCurve#0;class#Visual#0" expanded="false" />
-            <element signature="method#FFTFreq#0;class#Visual#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/EditDist/EditDistance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1336,26 +1377,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/Checks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="75" column="58" selection-start-line="75" selection-start-column="58" selection-end-line="75" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#checkDate#0;class#Checks#0" expanded="false" />
-            <element signature="method#checkFavourite#0;class#Checks#0" expanded="false" />
-            <element signature="method#aggressiveCheck#0;class#Checks#0" expanded="false" />
-            <element signature="method#exitCheck#0;class#Checks#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
             <element signature="method#output#0;class#Cleaning#0" expanded="false" />
             <element signature="method#apostropheReplace#0;class#Cleaning#0" expanded="false" />
@@ -1382,7 +1409,7 @@
         <state relative-caret-position="225">
           <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#checkLoadFavourite#0;class#Favourites#0" expanded="false" />
             <element signature="method#saveNewFeel#0;class#Favourites#0" expanded="false" />
           </folding>
@@ -1420,6 +1447,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1427,19 +1455,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/Visuals/Visual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state relative-caret-position="2310">
+          <caret line="157" column="37" selection-start-line="157" selection-start-column="37" selection-end-line="157" selection-end-column="37" />
           <folding>
-            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#grabResponses#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
-            <element signature="method#waiting#0;class#ChatBot#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#settings#0;class#Visual#0" expanded="false" />
+            <element signature="method#drawCorners#0;class#Visual#0" expanded="false" />
+            <element signature="method#drawCenterCurve#0;class#Visual#0" expanded="false" />
+            <element signature="method#FFTFreq#0;class#Visual#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1453,6 +1482,33 @@
             <element signature="method#checkUserRepetition#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/Checks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="22" selection-end-column="20" />
+          <folding>
+            <element signature="method#checkDate#0;class#Checks#0" expanded="false" />
+            <element signature="method#checkFavourite#0;class#Checks#0" expanded="false" />
+            <element signature="method#aggressiveCheck#0;class#Checks#0" expanded="false" />
+            <element signature="method#exitCheck#0;class#Checks#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding>
+            <element signature="method#main#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#searchKeyword#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#grabResponses#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
+            <element signature="method#waiting#0;class#ChatBot#0" expanded="false" />
           </folding>
         </state>
       </provider>

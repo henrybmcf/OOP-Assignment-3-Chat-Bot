@@ -1,7 +1,17 @@
 # OOP-Assignment-3-Chat-Bot
+## Team Members: Henry Ballinger McFarlane (ChatBot code) & Rachel Wan (Visual code)
 
-### Basic Step-by-Step Plan
+### Notes:
+- Bundling into a jar file gave a whole bucket load of null pointer excepetions for some reason. So, the project will have to be run through IntelliJ, this will require importing the necessary libraries before it can run. These are all stored in the lib folder. In IntelliJ (on Mac), it can be done through 'File' -> 'Project Structure' -> 'Libraries'.
+- The bot does talk, so please turn up your volume.
 
+### Bot Execution
+
+1. The first thing the bot will ask is what your name is. Here you must put in your full name, this is used to create your profile file (In this, the bot will remember any favourites that you tell it about)
+2. After this, you are free to talk to the bot.
+3. To exit the program, please use one of the following phrases: "bye", "goodbye", "see you later", "i have to go", "see ya".
+
+### Orginal Basic Step-by-Step Plan
 #### Increasing complexity of chat bot conversational abilities per step
 
 1. Simplest implementation of a chat bot, to simply have a list of predefined responses. Select a response randomly from this list. This gives no conversation between the user and bot, simply a random response.
