@@ -9,6 +9,8 @@ public class GraphicLines extends PApplet {
     private float incSize;
     private float decSize;
 
+    //Constructor
+    //line increment or decrement
     GraphicLines(float startX, float startY, float lineLength) {
         loc = new PVector(startX, startY);
         this.lineLength = lineLength;
@@ -17,7 +19,7 @@ public class GraphicLines extends PApplet {
         decSize = 0.95f;
     }
 
-    // Increase or decrease to desired length
+    // Increase or decrease to desired length if line is not ideal
     void lineChange(float desLength) {
         if (lineLength < desLength)
             lineLength *= incSize;

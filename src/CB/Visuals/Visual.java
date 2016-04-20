@@ -32,7 +32,8 @@ public class Visual extends PApplet {
     private FFT fft;
 
     // Corner Visuals
-    private int index = 4;
+    //declaring
+    private int index = 4; //4 colours for the corners
     private int[] colours = new int[index];
     private float[] frequencies = {
             256f, 293f, 1468f, 1566f,
@@ -44,6 +45,7 @@ public class Visual extends PApplet {
     private float scrHeight;
 
     // Center Visual
+    //declaring
     private static float centX;
     private static float centY;
     private static float radius;
@@ -91,27 +93,32 @@ public class Visual extends PApplet {
         fft = new FFT(frameSize, sampleRate);
 
         // Corner Visuals
+        //setting colours into array
         colours[0] = color(204, 102, 0);
         colours[1] = color(150, 250, 50);
         colours[2] = color(50, 50, 200);
         colours[3] = color(204, 0, 204);
 
+        //desired diameter = 30% of screen
         desDiameter[0] = scrHeight * 0.3f;
+        //positioning and colours of each arc at each corner
         arcs[0] = new CornerArc(0, 0, desDiameter[0], colours[0]);
         arcs[1] = new CornerArc(scrWidth, 0, desDiameter[0], colours[1]);
         arcs[2] = new CornerArc(scrWidth, scrHeight, desDiameter[0], colours[2]);
         arcs[3] = new CornerArc(0, scrHeight, desDiameter[0], colours[3]);
 
         // Center Visual
+
         radius = 200.0f;
-        step = TWO_PI / (fft.specSize() * 0.5f);
+        step = TWO_PI / (fft.specSize() * 0.5f); // gap between each line
         int arraySize = (int) (TWO_PI / step) + 1;
-        outLineLengths = new Float[arraySize];
-        outLines = new GraphicLines[arraySize];
-        outCoordinates = new PVector[arraySize];
-        inCoordinates = new PVector[arraySize];
+        outLineLengths = new Float[arraySize]; //line length
+        outLines = new GraphicLines[arraySize]; //actual line
+        outCoordinates = new PVector[arraySize]; //outside coordinates
+        inCoordinates = new PVector[arraySize]; //inside coordinates
 
         int i = 0;
+        //set coordinates for start of outside lines
         for (float alpha = 0.0f; alpha < TWO_PI; alpha += step, i++)
             outLines[i] = new GraphicLines(radius * sin(alpha) + centX, radius * cos(alpha) + centY, 10.0f);
 
@@ -149,9 +156,9 @@ public class Visual extends PApplet {
             exit();
 
         presentCounter++;
-        exitCounter++;
+        exitCounter ++;
         // After 10 seconds, display message checking is the user is still there
-        if (presentCounter == frames * 10.0f && !presentCheck)
+        if (presentCounter == 300 && !presentCheck)
             output(stillThereMessage());
         // After two minutes, if no response from user, exit
         if (exitCounter == minute * 2.0f) {
@@ -185,7 +192,7 @@ public class Visual extends PApplet {
             try {
                 Thread.sleep(5);
                 outCount++;
-                OST.set(1, new OnScreenText(outTextDisplay.substring(0, outCount), new PVector(xCo, OST.get(1).position.y)));
+\                OST.set(1, new OnScreenText(outTextDisplay.substring(0, outCount), new PVector(xCo, OST.get(1).position.y)));
             } catch (InterruptedException e) { e.printStackTrace(); }
         }
         else {
@@ -243,13 +250,16 @@ public class Visual extends PApplet {
     private void drawCorners() {
         strokeWeight(10);
         float[][] range = new float[index][2];
+        //taking one freq to another to make range
         for (int i = 0; i < index; i++) {
             range[i][0] = frequencies[i * index];
             range[i][1] = frequencies[i * index + (index - 1)];
         }
 
+        //detecting frequencies
         float freq = FFTFreq();
 
+        //checks which range it belongs to, which corner
         for (int i = 0; i < index; i++) {
             for (int j = i * index; j < (i + 1) * index; j++) {
                 int k = j + 1;
@@ -257,7 +267,7 @@ public class Visual extends PApplet {
                 // Prevent array out of bounds exception
                 if (k == 16)
                     k--;
-
+                //maps freq to get desired freq if needed
                 if (checkFreq(freq, frequencies[j], frequencies[k])) {
                     float mapped = map(freq, range[i][0], range[i][1], scrHeight * 0.3f, scrHeight);
                     if (mapped < desDiameter[i] * 0.7f || mapped > desDiameter[i] * 1.3f)
@@ -267,17 +277,22 @@ public class Visual extends PApplet {
         }
 
         // Top Left, Top Right, Bottom Right, Bottom Left
+
+        //
         for (int j = 0; j < arcs.length; j++ ) {
             CornerArc arcy = arcs[j];
-            arcy.sizeMatch(desDiameter[j]);
+            arcy.sizeMatch(desDiameter[j]); //increment + decrement arcs
 
+            //set location, position and colour
             PVector pos = arcy.loc;
             float diam = arcy.diameter;
             int colour = arcy.colour;
             int black = color(0);
 
+            //translate to arc positions (corners)
             pushMatrix();
             translate(pos.x, pos.y);
+            //larger diameter = darker, smaller diameter = lighter
             for (float i = diam; i >= 0; i -= 2.5f) {
                 float inter = map(i, 0, diam, 0, 1);
                 stroke(lerpColor(colour, black, inter));
@@ -290,6 +305,7 @@ public class Visual extends PApplet {
     private void drawCenter() {
         int bandReset = 16;
         int k = 0;
+        //repeat bandReset till it finishes circle
         for (int i = 0; i < bandReset; i ++) {
             for (int j = i; j < fft.specSize() * 0.5f; j += bandReset, k++) {
                 outLineLengths[k] = map(fft.getBand(j) * 150, 0.0f, centX * 0.6f, 30.0f, centX * 0.08f);
@@ -303,20 +319,24 @@ public class Visual extends PApplet {
         strokeWeight(1.5f);
 
         int i = 0;
+        //going thru each step to change lengths and coordinates of line
         for (float alpha = 0.0f; alpha < TWO_PI; alpha += step, i++) {
             GraphicLines outLiney = outLines[i];
             outLiney.lineChange(outLineLengths[i]);
             PVector pos = outLiney.loc;
+            //new coordinates for inside and outside line
             float outSize = outLiney.lineLength;
             float inSize = -outLiney.lineLength * 0.3f;
             PVector outEnd = new PVector(outSize * sin(alpha), outSize * cos(alpha));
             PVector inEnd = new PVector(inSize * sin(alpha), inSize * cos(alpha));
 
+            //push and pop to new position
             pushMatrix();
             translate(pos.x, pos.y);
             line(0, 0, outEnd.x, outEnd.y);
             popMatrix();
 
+            //new coordinates
             outCoordinates[i] = new PVector(outEnd.x + pos.x, outEnd.y + pos.y);
             inCoordinates[i] = new PVector(inEnd.x + pos.x, inEnd.y + pos.y);
         }
@@ -324,20 +344,25 @@ public class Visual extends PApplet {
         drawCenterCurve(outCoordinates);
         drawCenterCurve(inCoordinates);
 
+        //circle for amplitude
         strokeWeight(3);
         ellipse(centX, centY, radius * 2.0f, radius * 2.0f);
+        //circle for text display
         fill(0);
         noStroke();
         ellipse(centX, centY, radius * 1.2f, radius * 1.2f);
     }
 
     private void drawCenterCurve(PVector[] coordinates) {
+        //drawing curve between all the lines
         beginShape();
+        //filling in gaps
         curveVertex(coordinates[coordinates.length - 1].x, coordinates[coordinates.length - 1].y);
         for (PVector coordinate : coordinates)
             curveVertex(coordinate.x, coordinate.y);
         curveVertex(coordinates[0].x, coordinates[0].y);
         curveVertex(coordinates[1].x, coordinates[1].y);
+        //draws curve
         endShape();
     }
 

@@ -10,6 +10,7 @@ class CornerArc {
     private float decSize;
 
     // Constructor
+    //arc increment or decrement
     CornerArc(float xCo, float yCo, float diameter, int colour) {
         loc = new PVector(xCo, yCo);
         this.diameter = diameter;
@@ -19,7 +20,7 @@ class CornerArc {
         decSize = 0.99f;
     }
 
-    // Increase or decrease to desired diameter
+    // Increase or decrease to desired diameter if arc is not ideal
     void sizeMatch(float desDiam) {
         if (diameter < desDiam)
             diameter *= incSize;
