@@ -4,13 +4,7 @@ import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 
 public class TextSpeech {
-    private String text;
-
-    public TextSpeech(String text) {
-        this.text = text;
-    }
-
-    public void speak() {
+    public void speak(String text) {
         Voice voice;
         VoiceManager voiceManager = VoiceManager.getInstance();
         voice = voiceManager.getVoice("kevin16");

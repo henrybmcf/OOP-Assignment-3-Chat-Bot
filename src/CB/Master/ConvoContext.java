@@ -1,18 +1,22 @@
 package CB.Master;
 
-import CB.FileCode.FileMethods;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import CB.FileCode.FileMethods;
+
+import static CB.Master.ChatBot.bOutput;
+import static CB.Master.ChatBot.uInput;
+import static CB.Master.Cleaning.splitString;
 import static CB.Master.RepeatCheck.userPrevious;
 
 class ConvoContext {
     private final static String context = "Why like";
     private final static String contextSubj = "it this that them that";
 
+    // Check if user is talking in context to a previously mentioned favourite
     static boolean favouriteContextChecks() {
         if (checkContextWordMatch()) {
             inContext();
@@ -21,10 +25,11 @@ class ConvoContext {
         return false;
     }
 
+    // Check is user input contains enough matches to context strings
     private static boolean checkContextWordMatch() {
         int matchCounter = 0;
         int subCounter = 0;
-        String[] inTokens = splitString(ChatBot.uInput, " ");
+        String[] inTokens = splitString(uInput, " ");
         String[] conTokens = splitString(context, " ");
         String[] subTokens = splitString(contextSubj, " ");
         for (String conToken : conTokens) {
@@ -44,6 +49,7 @@ class ConvoContext {
         return matchCounter == 2 && subCounter >= 1;
     }
 
+    // Check if user is talking in context
     private static void inContext() {
         if (userPrevious.contains("favourite")) {
             String line;
@@ -56,7 +62,7 @@ class ConvoContext {
                     if (userPrevious.contains(line)) {
                         buffRead.readLine();
                         buffRead.readLine();
-                        ChatBot.bOutput = buffRead.readLine().substring(1);
+                        bOutput = buffRead.readLine().substring(1);
                         return;
                     }
                 }
@@ -64,10 +70,6 @@ class ConvoContext {
             catch (IOException ex) { FileMethods.fileErrorMessage(); }
         }
 
-        ChatBot.bOutput = "What are you talking about??";
-    }
-
-    static String[] splitString(String str, String splitter) {
-        return str.split(splitter);
+        bOutput = "What are you talking about??";
     }
 }

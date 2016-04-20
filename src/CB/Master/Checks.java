@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static CB.FileCode.FileMethods.fileErrorMessage;
-import static CB.Master.ChatBot.uInput;
-import static CB.Master.ChatBot.bOutput;
-import static CB.Master.ChatBot.understand;
+import static CB.Master.ChatBot.*;
 
 class Checks {
     // List of possible user inputs to end the conversation
@@ -24,8 +22,8 @@ class Checks {
             "see ya"
     };
 
+    // Checks for user asking for date, favourite or being aggressive
     static boolean inputChecks() { return checkDate() || checkFavourite() || aggressiveCheck(); }
-
     private static boolean checkDate() {
         if (uInput.contains("date") || uInput.contains("time") || uInput.contains("day")) {
             bOutput = "The date and time is " + new Date().toString().substring(0, 19);
@@ -33,21 +31,19 @@ class Checks {
         }
         return false;
     }
-
     private static boolean checkFavourite() {
         if (uInput.contains("favourite")) {
-            ChatBot.searchKeyword("Favourites", 2);
+            searchKeyword("Favourites", 2);
             return true;
         }
         return false;
     }
-
     private static boolean aggressiveCheck() {
-        int line = ChatBot.searchKeyword("Aggressive", 1);
+        int line = searchKeyword("Aggressive", 1);
 
         if (line > 0 && understand) {
-                ChatBot.grabResponses("Aggressive", line);
-                return true;
+            grabResponses("Aggressive", line);
+            return true;
         }
         return false;
     }
@@ -63,9 +59,9 @@ class Checks {
         return false;
     }
 
+    // Loop through words file, to see if input is a word
+    // If so, setup new keyword
     static void checkWordValidity() {
-        // Loop through words file, to see if input is a word
-        // If so, setup new keyword
         try {
             int wordCount = 0;
 
@@ -78,9 +74,6 @@ class Checks {
             String word;
 
             while ((word = buffRead.readLine()) != null) {
-               // System.out.println(word);
-                // If match found, call function to get user to input phrases and responses
-
                 // Loop through tokens to check if each is a word, if so, increment counter
                 for (String token : tokens) {
                     if (word.equalsIgnoreCase(token))
@@ -100,10 +93,10 @@ class Checks {
         } catch (IOException ex) { fileErrorMessage(); }
     }
 
+    // Assign default response (for when bot doesn't understand user)
     private static void assignDefault() {
         ArrayList<String> responses = new ArrayList<>();
 
-        // Assign default response (for when bot doesn't understand user)
         try {
             FileReader fileReader = new FileReader("Data" + File.separator + "Default Responses.txt");
             BufferedReader buffRead = new BufferedReader(fileReader);
@@ -117,6 +110,6 @@ class Checks {
             buffRead.close();
         } catch (IOException ex) { fileErrorMessage(); }
 
-        ChatBot.assignResponse(responses);
+        assignResponse(responses);
     }
 }

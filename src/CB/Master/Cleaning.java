@@ -13,8 +13,8 @@ import static CB.Master.RepeatCheck.saveResponse;
 public class Cleaning extends PApplet {
     // List of punctuations marks
     private final static String punctuation = "?!.;";
-
-    //private static TextSpeech speaking = new TextSpeech();
+    // Text-to-Speech
+    private static TextSpeech speaking = new TextSpeech();
 
     // Clean up user input: Remove white space and punctuation & convert to lower case
     public static String cleanInput(String str) {
@@ -38,7 +38,7 @@ public class Cleaning extends PApplet {
         return str;
     }
 
-    // Prepare bot response for output
+    // Prepare and output bot response
     public static void output(String out) {
         assert out != null;
         bOutput = initCap(out);
@@ -47,14 +47,15 @@ public class Cleaning extends PApplet {
         presentCheck = false;
         presentCounter = 0;
         exitCounter = 0;
-        TextSpeech speaking = new TextSpeech(bOutput);
-        speaking.speak();
+        speaking.speak(bOutput);
     }
 
+    // Remove first character of output ('R' for response)
     static String cleanOutput() {
         return bOutput.substring(1);
     }
 
+    // Replace apostrophes in user input ('s -> is, 'm -> am)
     private static String apostropheReplace(String str) {
         StringBuilder strBuild = new StringBuilder(str.length());
 
@@ -85,10 +86,11 @@ public class Cleaning extends PApplet {
         return punctuation.indexOf(ch) != -1;
     }
 
+    // Convert input to name (capitalise each word)
     static String toName(String str) {
         StringBuilder convert = new StringBuilder(str.length());
 
-        String[] tokens = ConvoContext.splitString(str, " ");
+        String[] tokens = splitString(str, " ");
 
         for (int i = 0; i < tokens.length; i++) {
             tokens[i] = initCap(tokens[i]);
@@ -102,7 +104,13 @@ public class Cleaning extends PApplet {
         return str;
     }
 
+    // Convert to first name (take first word of name)
     static String firstName(String name) {
-        return ConvoContext.splitString(name, " ")[0];
+        return splitString(name, " ")[0];
+    }
+
+    // Split string on passed on splitter
+    static String[] splitString(String str, String splitter) {
+        return str.split(splitter);
     }
 }

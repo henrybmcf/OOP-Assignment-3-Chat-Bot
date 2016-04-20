@@ -7,14 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_21_04 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_21_25 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_28_04 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_28_28 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_29_46 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hs_err_pid84044.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_34_27 IST 2016.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ChatBot_jar/ChatBot.jar" afterPath="$PROJECT_DIR$/out/artifacts/ChatBot_jar/ChatBot.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Cleaning.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Cleaning.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Speech/TextSpeech.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Speech/TextSpeech.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" afterPath="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" afterPath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Checks.java" afterPath="$PROJECT_DIR$/src/CB/Master/Checks.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" afterPath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/ConvoContext.java" afterPath="$PROJECT_DIR$/src/CB/Master/ConvoContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Speech/TextSpeech.java" afterPath="$PROJECT_DIR$/src/CB/Speech/TextSpeech.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Visuals/Visual.java" afterPath="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
     </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +44,8 @@
       <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+            <state relative-caret-position="285">
+              <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,30 +53,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cleaning.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
+      <file leaf-file-name="ConvoContext.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/ConvoContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+            <state relative-caret-position="330">
+              <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
-                <element signature="method#apostropheReplace#0;class#Cleaning#0" expanded="false" />
-                <element signature="method#toName#0;class#Cleaning#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextSpeech.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#189#190#0" expanded="true" />
-                <element signature="e#221#222#0" expanded="true" />
+                <element signature="method#favouriteContextChecks#0;class#ConvoContext#0" expanded="false" />
+                <element signature="method#checkContextWordMatch#0;class#ConvoContext#0" expanded="false" />
+                <element signature="method#inContext#0;class#ConvoContext#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -119,24 +109,24 @@
         <option value="$PROJECT_DIR$/Testing/ProcessingChatBot.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/Gradient.java" />
         <option value="$PROJECT_DIR$/src/CB/EditDist/Matrix.java" />
-        <option value="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/CornerArc.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/GraphicLines.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/ConvoContext.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java" />
         <option value="$PROJECT_DIR$/Data/Favourites.txt" />
         <option value="$PROJECT_DIR$/Profiles/Jane Doe.txt" />
         <option value="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/Hi.java" />
         <option value="$PROJECT_DIR$/Data/KnowledgeBase.txt" />
-        <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/Checks.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/Favourites.java" />
         <option value="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" />
-        <option value="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
         <option value="$PROJECT_DIR$/src/CB/Speech/TextSpeech.java" />
+        <option value="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
+        <option value="$PROJECT_DIR$/src/CB/FileCode/FileMethods.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/Checks.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/ConvoContext.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
       </list>
     </option>
   </component>
@@ -882,7 +872,7 @@
       <workItem from="1460935613297" duration="2324000" />
       <workItem from="1460969323003" duration="52792000" />
       <workItem from="1461109603266" duration="11000" />
-      <workItem from="1461110169615" duration="6671000" />
+      <workItem from="1461110169615" duration="10325000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -951,7 +941,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199762000" />
+    <option name="totallyTimeSpent" value="203416000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -974,7 +964,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28628495" sideWeight="0.50646204" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262317" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33155793" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2623169" sideWeight="0.49353796" order="6" side_tool="false" content_ui="combo" x="70" y="307" width="368" height="437" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1019,7 +1009,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1067,7 +1057,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1167,7 +1157,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1253,7 +1243,7 @@
         <state relative-caret-position="0">
           <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="70" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1383,34 +1373,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/KnowledgeBase.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/Checks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="67" column="11" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
-          <folding>
-            <element signature="method#checkDate#0;class#Checks#0" expanded="false" />
-            <element signature="method#aggressiveCheck#0;class#Checks#0" expanded="false" />
-            <element signature="method#exitCheck#0;class#Checks#0" expanded="false" />
-            <element signature="method#assignDefault#0;class#Checks#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1422,14 +1389,6 @@
             <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/ConvoContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="13" column="71" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1451,14 +1410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/EditDist/EditDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/EditDist/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1469,8 +1420,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Visuals/Visual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="138" column="46" selection-start-line="138" selection-start-column="46" selection-end-line="138" selection-end-column="46" />
+        <state relative-caret-position="175">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#settings#0;class#Visual#0" expanded="false" />
@@ -1481,37 +1432,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+        <state relative-caret-position="75">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/EditDist/EditDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/FileCode/FileMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/Checks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="75" column="58" selection-start-line="75" selection-start-column="58" selection-end-line="75" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#checkDate#0;class#Checks#0" expanded="false" />
+            <element signature="method#checkFavourite#0;class#Checks#0" expanded="false" />
+            <element signature="method#aggressiveCheck#0;class#Checks#0" expanded="false" />
+            <element signature="method#exitCheck#0;class#Checks#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        <state relative-caret-position="453">
+          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
+            <element signature="method#output#0;class#Cleaning#0" expanded="false" />
             <element signature="method#apostropheReplace#0;class#Cleaning#0" expanded="false" />
             <element signature="method#toName#0;class#Cleaning#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        <state relative-caret-position="285">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#221#222#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/ConvoContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#favouriteContextChecks#0;class#ConvoContext#0" expanded="false" />
+            <element signature="method#checkContextWordMatch#0;class#ConvoContext#0" expanded="false" />
+            <element signature="method#inContext#0;class#ConvoContext#0" expanded="false" />
           </folding>
         </state>
       </provider>

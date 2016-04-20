@@ -10,10 +10,10 @@ import processing.core.PFont;
 import processing.core.PVector;
 import controlP5.*;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static CB.Master.ChatBot.uInput;
 import static CB.Master.Cleaning.output;
 
 public class Visual extends PApplet {
@@ -209,21 +209,16 @@ public class Visual extends PApplet {
         while(input.charAt(0) == ' ')
             input = input.substring(1);
 
-        ChatBot.uInput = Cleaning.cleanInput(input);
+        uInput = Cleaning.cleanInput(input);
 
         waitingIn = false;
-
         moveText = true;
-
         prevPos = centY + dist;
 
         OST.get(0).content = "";
         OST.get(1).content = "";
 
-        //OST.get(2).position.y = centY + dist;
         OST.get(1).position.y = centY + (dist * 2.0f);
-
-        //OST.set(2, new OnScreenText(input, new PVector(xCo, centY + (dist * 0.75f) + (int)(radius * 0.05f))));
         OST.set(2, new OnScreenText(input, new PVector(xCo, centY + dist)));
     }
 
