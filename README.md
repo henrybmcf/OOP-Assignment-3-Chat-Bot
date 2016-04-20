@@ -1,5 +1,5 @@
 # OOP-Assignment-3-Chat-Bot
-## Team Members: Henry Ballinger McFarlane (ChatBot code) & Rachel Wan (Visual code)
+#### Team Members: Henry Ballinger McFarlane (ChatBot code) & Rachel Wan (Visual code)
 
 ### Notes:
 - Bundling into a jar file gave a whole bucket load of null pointer excepetions for some reason. So, the project will have to be run through IntelliJ, this will require importing the necessary libraries before it can run. These are all stored in the lib folder. In IntelliJ (on Mac), it can be done through 'File' -> 'Project Structure' -> 'Libraries'.
