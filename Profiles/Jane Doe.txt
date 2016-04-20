@@ -5,3 +5,4 @@ sport,cycling
 hobby,reading
 food,pasta
 album,wilder mind
+place,paris

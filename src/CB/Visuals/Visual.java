@@ -150,7 +150,6 @@ public class Visual extends PApplet {
 
         presentCounter++;
         exitCounter++;
-        System.out.println(exitCounter);
         // After 10 seconds, display message checking is the user is still there
         if (presentCounter == frames * 10.0f && !presentCheck)
             output(stillThereMessage());
