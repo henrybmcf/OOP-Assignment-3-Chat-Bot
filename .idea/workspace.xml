@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="" />
+    <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" afterPath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
+    </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,7 +30,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -39,6 +41,21 @@
                 <element signature="method#grabResponses#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
                 <element signature="method#waiting#0;class#ChatBot#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RepeatCheck.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#checkUserRepetition#0;class#RepeatCheck#0" expanded="false" />
+                <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
+                <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -97,12 +114,12 @@
         <option value="$PROJECT_DIR$/src/CB/Master/ConvoContext.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/Favourites.java" />
-        <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/SetupKeyword.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/GraphicLines.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/CornerArc.java" />
         <option value="$PROJECT_DIR$/src/CB/Visuals/OnScreenText.java" />
         <option value="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
+        <option value="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
       </list>
     </option>
   </component>
@@ -196,6 +213,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chatbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChatBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -729,7 +768,7 @@
       <workItem from="1460969323003" duration="52792000" />
       <workItem from="1461109603266" duration="11000" />
       <workItem from="1461110169615" duration="10986000" />
-      <workItem from="1461153928315" duration="338000" />
+      <workItem from="1461153928315" duration="582000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -798,7 +837,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204415000" />
+    <option name="totallyTimeSpent" value="204659000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -811,7 +850,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21912351" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -823,7 +862,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17770597" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17770597" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2253635" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -909,7 +948,6 @@
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#saveResponse#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#checkUserRepetition#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
@@ -984,7 +1022,7 @@
         <state relative-caret-position="1065">
           <caret line="71" column="58" selection-start-line="71" selection-start-column="58" selection-end-line="71" selection-end-column="58" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#setupNewKeyword#0;class#SetupKeyword#0" expanded="false" />
             <element signature="method#checkConfirm#0;class#SetupKeyword#0" expanded="false" />
           </folding>
@@ -1023,7 +1061,6 @@
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#saveResponse#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#checkUserRepetition#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
@@ -1098,7 +1135,7 @@
         <state relative-caret-position="0">
           <caret line="71" column="58" selection-start-line="71" selection-start-column="58" selection-end-line="71" selection-end-column="58" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#setupNewKeyword#0;class#SetupKeyword#0" expanded="false" />
             <element signature="method#checkConfirm#0;class#SetupKeyword#0" expanded="false" />
           </folding>
@@ -1157,7 +1194,6 @@
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#saveResponse#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#checkUserRepetition#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
             <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
@@ -1305,7 +1341,7 @@
         <state relative-caret-position="48">
           <caret line="75" column="58" selection-start-line="75" selection-start-column="58" selection-end-line="75" selection-end-column="58" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#checkDate#0;class#Checks#0" expanded="false" />
             <element signature="method#checkFavourite#0;class#Checks#0" expanded="false" />
             <element signature="method#aggressiveCheck#0;class#Checks#0" expanded="false" />
@@ -1353,26 +1389,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#saveResponse#0;class#RepeatCheck#0" expanded="false" />
-            <element signature="method#checkUserRepetition#0;class#RepeatCheck#0" expanded="false" />
-            <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
-            <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/SetupKeyword.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#setupNewKeyword#0;class#SetupKeyword#0" expanded="false" />
             <element signature="method#checkConfirm#0;class#SetupKeyword#0" expanded="false" />
           </folding>
@@ -1418,6 +1440,19 @@
             <element signature="method#grabResponses#0;class#ChatBot#0" expanded="false" />
             <element signature="method#assignResponse#0;class#ChatBot#0" expanded="false" />
             <element signature="method#waiting#0;class#ChatBot#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Master/RepeatCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkUserRepetition#0;class#RepeatCheck#0" expanded="false" />
+            <element signature="method#checkUserBotSame#0;class#RepeatCheck#0" expanded="false" />
+            <element signature="method#setURepeat#0;class#RepeatCheck#0" expanded="false" />
           </folding>
         </state>
       </provider>

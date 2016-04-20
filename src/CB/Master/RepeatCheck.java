@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import CB.EditDist.EditDistance;
 import static CB.Master.ChatBot.bOutput;
-import static CB.Master.ChatBot.transposition;
 import static CB.Master.ChatBot.uInput;
 import static CB.Master.ChatBot.understand;
 
@@ -21,7 +20,6 @@ class RepeatCheck {
     static void saveResponse(String botCurrent) {
         botPrevious = botCurrent;
         understand = false;
-        transposition = false;
     }
 
     // Return true is previous bot response exists and is same as current response
