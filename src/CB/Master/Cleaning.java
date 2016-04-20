@@ -14,7 +14,7 @@ public class Cleaning extends PApplet {
     // List of punctuations marks
     private final static String punctuation = "?!.;";
 
-    private static TextSpeech speaking = new TextSpeech();
+    //private static TextSpeech speaking = new TextSpeech();
 
     // Clean up user input: Remove white space and punctuation & convert to lower case
     public static String cleanInput(String str) {
@@ -47,8 +47,8 @@ public class Cleaning extends PApplet {
         presentCheck = false;
         presentCounter = 0;
         exitCounter = 0;
-        System.out.println(bOutput);
-        speaking.speak(bOutput);
+        TextSpeech speaking = new TextSpeech(bOutput);
+        speaking.speak();
     }
 
     static String cleanOutput() {

@@ -7,52 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391b5f44-2b29-4b63-8794-5b3c5f055994" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/ChatBot_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_05_00 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_06_26 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_07_50 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_10_17 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_10_28 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_10_59 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_11_24 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_11_33 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_12_17 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_12_33 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_12_58 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_13_22 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_14_12 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_15_41 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_16_03 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_16_13 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_16_55 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_17_50 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_21_20 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_25_55 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_26_56 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_27_11 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_28_00 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_28_53 IST 2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_29_26 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 10_29_47 IST 2016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/DigiFont.TTF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/EditDist/EditDistance.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/EditDist/EditDistance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/ChatBot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Checks.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Checks.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Cleaning.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Cleaning.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Favourites.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/Favourites.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/RepeatCheck.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Master/RepeatCheck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Speech/TextSpeech.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Speech/TextSpeech.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatBot/CB/Visuals/Visual.class" afterPath="$PROJECT_DIR$/out/production/ChatBot/CB/Visuals/Visual.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" afterPath="$PROJECT_DIR$/src/CB/EditDist/EditDistance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" afterPath="$PROJECT_DIR$/src/CB/Master/ChatBot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Checks.java" afterPath="$PROJECT_DIR$/src/CB/Master/Checks.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_21_04 IST 2016.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_21_25 IST 2016.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_28_04 IST 2016.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_28_28 IST 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation Logs/Wed Apr 20 11_29_46 IST 2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hs_err_pid84044.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" afterPath="$PROJECT_DIR$/src/CB/Master/Cleaning.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/Favourites.java" afterPath="$PROJECT_DIR$/src/CB/Master/Favourites.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" afterPath="$PROJECT_DIR$/src/CB/Master/RepeatCheck.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Speech/TextSpeech.java" afterPath="$PROJECT_DIR$/src/CB/Speech/TextSpeech.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CB/Visuals/Visual.java" afterPath="$PROJECT_DIR$/src/CB/Visuals/Visual.java" />
     </list>
     <ignored path="Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cleaning.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Cleaning.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+            <state relative-caret-position="408">
+              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
@@ -102,13 +64,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextSpeech.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TextSpeech.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            <state relative-caret-position="225">
+              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#189#190#0" expanded="true" />
+                <element signature="e#221#222#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -918,7 +882,7 @@
       <workItem from="1460935613297" duration="2324000" />
       <workItem from="1460969323003" duration="52792000" />
       <workItem from="1461109603266" duration="11000" />
-      <workItem from="1461110169615" duration="6306000" />
+      <workItem from="1461110169615" duration="6671000" />
     </task>
     <task id="LOCAL-00001" summary="Working on transposition.">
       <created>1456744836536</created>
@@ -987,7 +951,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199397000" />
+    <option name="totallyTimeSpent" value="199762000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1527,25 +1491,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CB/Master/Cleaning.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+        <state relative-caret-position="408">
+          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#cleanInput#0;class#Cleaning#0" expanded="false" />
             <element signature="method#apostropheReplace#0;class#Cleaning#0" expanded="false" />
             <element signature="method#toName#0;class#Cleaning#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CB/Speech/TextSpeech.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
           </folding>
         </state>
       </provider>
