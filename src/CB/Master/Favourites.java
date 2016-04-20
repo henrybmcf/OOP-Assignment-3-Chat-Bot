@@ -4,7 +4,10 @@ import java.io.*;
 
 import static CB.FileCode.FileMethods.fileErrorMessage;
 import static CB.FileCode.FileMethods.saveLog;
-import static CB.Master.ChatBot.*;
+import static CB.Master.ChatBot.conLog;
+import static CB.Master.ChatBot.name;
+import static CB.Master.ChatBot.userName;
+import static CB.Master.ChatBot.uInput;
 
 class Favourites {
     static Object checkLoadFavourite(String favouriteTopic, int source) {

@@ -57,11 +57,10 @@ public class Visual extends PApplet {
     public static boolean waitingIn;
     private float dist;
     private static boolean moveText;
-    public static ArrayList<OnScreenText> OST;
+    private static ArrayList<OnScreenText> OST;
     private float prevPos;
     public static String outTextDisplay = "";
     private int outCount = 0;
-    private int typeTimer = 0;
     private float xCo;
     private ControlP5 cp5;
     private int colourTimer = 0;
@@ -127,7 +126,7 @@ public class Visual extends PApplet {
         OST.add(new OnScreenText("..", new PVector(xCo, centY - dist)));
 
         cp5 = new ControlP5(this);
-        PFont font = createFont("Data" + File.separator + "DigiFont.TTF", 16);
+        PFont font = createFont("DigiFont.TTF", 16);
         textAlign(CENTER);
         cp5.addTextfield("input")
                 .setPosition(centX - dist, centY + (radius * 0.45f))
@@ -184,7 +183,6 @@ public class Visual extends PApplet {
 
         if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
             try {
-                //Thread.sleep((long) abs(map(outTextDisplay.length(), 10, 50, 10, 1)));
                 Thread.sleep(5);
                 outCount++;
                 OST.set(1, new OnScreenText(outTextDisplay.substring(0, outCount), new PVector(xCo, OST.get(1).position.y)));

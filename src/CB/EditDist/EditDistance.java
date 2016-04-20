@@ -22,10 +22,8 @@ public class EditDistance {
         for (int i = 0; i < hayLen; i++)
             med.setElement(0, i, i);
 
-        for (int row = 1; row < needLen; row++)
-        {
-            for (int col = 1; col < hayLen; col++)
-            {
+        for (int row = 1; row < needLen; row++) {
+            for (int col = 1; col < hayLen; col++) {
                 int bRow = row - 1;
                 int bCol = col - 1;
 

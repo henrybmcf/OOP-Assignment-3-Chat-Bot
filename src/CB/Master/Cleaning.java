@@ -1,16 +1,20 @@
 package CB.Master;
 
 import CB.Speech.TextSpeech;
-import CB.Visuals.Visual;
 import processing.core.PApplet;
 
 import static CB.Master.ChatBot.bOutput;
+import static CB.Visuals.Visual.outTextDisplay;
+import static CB.Visuals.Visual.presentCheck;
+import static CB.Visuals.Visual.presentCounter;
+import static CB.Visuals.Visual.exitCounter;
+import static CB.Master.RepeatCheck.saveResponse;
 
 public class Cleaning extends PApplet {
     // List of punctuations marks
     private final static String punctuation = "?!.;";
 
-    private static TextSpeech speaking = new TextSpeech("kevin16");
+    private static TextSpeech speaking = new TextSpeech();
 
     // Clean up user input: Remove white space and punctuation & convert to lower case
     public static String cleanInput(String str) {
@@ -38,11 +42,12 @@ public class Cleaning extends PApplet {
     public static void output(String out) {
         assert out != null;
         bOutput = initCap(out);
-        RepeatCheck.saveResponse(bOutput);
-        Visual.outTextDisplay = bOutput;
-        Visual.presentCheck = false;
-        Visual.presentCounter = 0;
-        Visual.exitCounter = 0;
+        saveResponse(bOutput);
+        outTextDisplay = bOutput;
+        presentCheck = false;
+        presentCounter = 0;
+        exitCounter = 0;
+        System.out.println(bOutput);
         speaking.speak(bOutput);
     }
 

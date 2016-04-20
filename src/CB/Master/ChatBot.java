@@ -7,18 +7,15 @@ package CB.Master;
 
 import CB.EditDist.EditDistance;
 import CB.Visuals.Visual;
-
-import java.util.*;
-import java.io.*;
-
-import processing.core.PApplet;
-
 import static CB.FileCode.FileMethods.fileErrorMessage;
 import static CB.FileCode.FileMethods.saveLog;
 import static CB.FileCode.FileMethods.zipLog;
 import static CB.Master.Checks.exitCheck;
 import static CB.Master.Cleaning.output;
 
+import java.util.*;
+import java.io.*;
+import processing.core.PApplet;
 
 @SuppressWarnings("serial")
 public class ChatBot extends PApplet {

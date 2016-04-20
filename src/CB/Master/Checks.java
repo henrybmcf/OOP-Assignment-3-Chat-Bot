@@ -63,66 +63,9 @@ class Checks {
         return false;
     }
 
-    // Check to see if bot is repeating itself
     static void checkWordValidity() {
-//            // TODO split string when substring found, replace substring, concat string back together
-//            // TODO loop through string, splitting into number of elements of string to be replaced (i.e. You = 3), see if these match the string.
-//            // TODO then do the split and concat
-//
-//            // Need this?
-////            uInputBackup = uInput;
-////
-////            checkWithin:
-////            for (int i = 0; i < transposeList.length; i++) {
-////                // Split input backup when match to transpose list item found
-////                // TODO Need to change to make sure ' ' (space) before and after transposition
-////
-////                StringBuilder checking = new StringBuilder(transposeList[i][0].length());
-////
-////                // Add space at start
-////                checking.insert(0, " ");
-////                // Add space at end
-//////                checking.insert(checking.length() + 1, " ");
-////
-////                for (int j = 0; j < uInputBackup.length(); j++) {
-////
-////                    if (j + transposeList[i][0].length() + 2 < uInputBackup.length()) {
-////                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length()));
-////
-////                        // checking.insert(checking.length() + 1, " ");
-////
-////                        // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 2);
-////                    }
-//////                    else if (j + transposeList[i][0].length() + 1 < uInputBackup.length()) {
-//////                        checking.insert(1, uInputBackup.substring(j, j + transposeList[i][0].length() + 1));
-//////
-//////                        checking.insert(checking.length() + 1, " ");
-//////                       // check = uInputBackup.substring(j, j + transposeList[i][0].length() + 1);
-//////                    }
-////                    else if (j + transposeList[i][0].length() > uInputBackup.length()) {
-////                        break;
-////                    }
-////
-////                    // Convert back to string to check if contains transposeList item
-////                    String check = checking.toString();
-////
-////                    // Trim removes white space at start and end
-////                    if (check.trim().equals(transposeList[i][0])) {
-////                        // If contains, then call function to split up input.
-////
-////                        // j is position within input
-////
-////                        splitInput(uInputBackup, i);
-////                        break checkWithin;
-////                    }
-////                }
-////            }
-//
-//            // If input hasn't been transposed
-
-       // if (!transposing()) {
-            // Loop through words file, to see if input is a word
-            // If so, setup new keyword
+        // Loop through words file, to see if input is a word
+        // If so, setup new keyword
         try {
             int wordCount = 0;
 
