@@ -4,12 +4,13 @@ import java.io.*;
 
 import static CB.FileCode.FileMethods.fileErrorMessage;
 import static CB.FileCode.FileMethods.saveLog;
-import static CB.Master.ChatBot.conLog;
-import static CB.Master.ChatBot.name;
-import static CB.Master.ChatBot.userName;
-import static CB.Master.ChatBot.uInput;
+import static CB.Master.ChatBot.*;
+import static CB.Master.Cleaning.output;
+import static CB.Master.Cleaning.splitString;
 
 class Favourites {
+    // Method for both checking if favourite exists and for returning that favourite
+    // Object can return boolean or String, so is adaptable for both uses
     static Object checkLoadFavourite(String favouriteTopic, int source) {
         try {
             BufferedReader buffRead = new BufferedReader(new FileReader("Profiles" + File.separator + name + ".txt"));
@@ -19,7 +20,7 @@ class Favourites {
             buffRead.readLine();
 
             while ((line = buffRead.readLine()) != null) {
-                String splitLine[] = ConvoContext.splitString(line, ",");
+                String splitLine[] = splitString(line, ",");
 
                 if (splitLine[0].equalsIgnoreCase(favouriteTopic)) {
                     if (source == 0)
@@ -37,8 +38,9 @@ class Favourites {
             return null;
     }
 
+    // Save user favourite to their profile file
     static void saveNewFeel(String faveObject) {
-        ChatBot.waiting();
+        waiting();
         saveLog(conLog, userName, uInput);
 
         try {
@@ -47,7 +49,7 @@ class Favourites {
             profile.flush();
             profile.close();
 
-            Cleaning.output("Okay, I'll remember that..");
+            output("Okay, I'll remember that..");
         }
         catch (IOException ex) { fileErrorMessage(); }
     }

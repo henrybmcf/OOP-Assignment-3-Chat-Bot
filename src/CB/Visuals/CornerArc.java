@@ -6,7 +6,6 @@ class CornerArc {
     PVector loc;
     float diameter;
     int colour;
-
     private float incSize;
     private float decSize;
 

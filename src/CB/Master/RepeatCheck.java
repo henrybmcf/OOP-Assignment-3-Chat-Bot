@@ -12,6 +12,7 @@ class RepeatCheck {
     private static String botPrevious = "";
     static String userPrevious = "";
 
+    // Save user input for checking if repeating
     static void saveUserResponse(String userCurrent) {
         userPrevious = userCurrent;
     }
@@ -28,10 +29,12 @@ class RepeatCheck {
         return botPrevious.length() > 0 && bOutput.equalsIgnoreCase(botPrevious);
     }
 
+    // Return true is previous bot response exists and is same/similar as current response
     static boolean checkUserRepetition() {
         return userPrevious.length() > 0 && EditDistance.MinimumEditDistance(uInput, userPrevious) <= 2;
     }
 
+    // Check is user is repeating what bot is saying
     static boolean checkUserBotSame() {
         if (uInput.equalsIgnoreCase(bOutput)) {
             bOutput = "That's what I said";
@@ -40,6 +43,7 @@ class RepeatCheck {
         return false;
     }
 
+    // Setup Array list of responses for when user is repeating
     static ArrayList<String> setURepeat() {
         ArrayList<String> list = new ArrayList<>();
         list.add("Why are you repeating yourself?");

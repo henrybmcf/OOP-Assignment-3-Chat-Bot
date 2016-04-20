@@ -5,7 +5,6 @@ import java.util.*;
 import processing.core.PApplet;
 
 import CB.Visuals.Visual;
-
 import static CB.EditDist.EditDistance.MinimumEditDistance;
 import static CB.FileCode.FileMethods.fileErrorMessage;
 import static CB.FileCode.FileMethods.saveLog;
@@ -18,22 +17,21 @@ import static CB.Master.Favourites.checkLoadFavourite;
 import static CB.Master.Favourites.saveNewFeel;
 import static CB.Master.RepeatCheck.botRepeating;
 import static CB.Master.RepeatCheck.saveUserResponse;
+import static CB.Master.RepeatCheck.setURepeat;
+import static CB.Visuals.Visual.waitingIn;
 
 @SuppressWarnings("serial")
 public class ChatBot {
     public static String uInput;
     public static String bOutput = "";
     static boolean understand;
-    static boolean transposition = false;
+    static FileWriter conLog = null;
     static String name;
+    static String userName;
     private final static String botLogName = "Bot:\t";
     private final static String[] salutations = {"great to see you!", "such a nice day today!"};
-    private final static ArrayList<String> userRepetition = RepeatCheck.setURepeat();
-
+    private final static ArrayList<String> userRepetition = setURepeat();
     public static boolean exit = false;
-
-    static String userName;
-    static FileWriter conLog = null;
 
     @SuppressWarnings({"unchecked", "deprecation"})
     public static void main(String[] args) {
@@ -279,11 +277,12 @@ public class ChatBot {
             bOutput = cleanOutput();
     }
 
+    // Waiting for user input
     static void waiting() {
-        while (Visual.waitingIn) {
+        while (waitingIn) {
             try { Thread.sleep(500); }
             catch (InterruptedException e) { e.printStackTrace(); }
         }
-        Visual.waitingIn = true;
+        waitingIn = true;
     }
 }

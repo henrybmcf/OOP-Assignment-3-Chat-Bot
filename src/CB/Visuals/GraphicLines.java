@@ -17,6 +17,7 @@ public class GraphicLines extends PApplet {
         decSize = 0.95f;
     }
 
+    // Increase or decrease to desired length
     void lineChange(float desLength) {
         if (lineLength < desLength)
             lineLength *= incSize;
