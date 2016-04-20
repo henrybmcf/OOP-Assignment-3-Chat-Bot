@@ -23,9 +23,14 @@ public class Visual extends PApplet {
     private static String prevMess;
     private static int frames;
     private static int minute;
-    private final static String[] userPresent = {"are you still there?", "you take a long time to reply..", "kind of getting bored here..", "hello..?" };
+    private final static String[] userPresent = {
+            "are you still there?",
+            "you take a long time to reply..",
+            "kind of getting bored here..",
+            "hello..?" };
     private AudioInput in;
     private FFT fft;
+
     // Corner Visuals
     private int index = 4;
     private int[] colours = new int[index];
@@ -49,52 +54,36 @@ public class Visual extends PApplet {
     private PVector[] inCoordinates;
 
     // Text Visuals
-    public static String capturedText = "";
-    public static boolean waitingIn = true;
+    public static boolean waitingIn;
     private float dist;
-    private static boolean moveText = false;
-    public static ArrayList<OnScreenText> OST = new ArrayList<>();
+    private static boolean moveText;
+    public static ArrayList<OnScreenText> OST;
     private float prevPos;
     public static String outTextDisplay = "";
     private int outCount = 0;
     private int typeTimer = 0;
     private float xCo;
-
-
+    private ControlP5 cp5;
     private int colourTimer = 0;
     private boolean colourSwitch = true;
 
-    private ControlP5 cp5;
-    private String input;
-
     public void settings() {
-        size(800, 600);
-        //fullScreen();
+        fullScreen();
         smooth(8);
     }
 
     public void setup() {
-        PFont font = createFont("Data" + File.separator + "DigiFont.TTF", 16);
-
-        // Fullscreen
-        //float scrWidth = displayWidth;
+        float scrWidth = displayWidth;
         scrHeight = displayHeight;
         centX = displayWidth * 0.5f;
         centY = displayHeight * 0.5f;
-        centX = width * 0.5f;
-        centY = height * 0.5f;
-
-        // Windowed
-        float scrWidth = width;
-        scrHeight = height;
 
         presentCounter = 0;
         exitCounter = 0;
         presentCheck = false;
         prevMess = "";
-        //frames = 60;
         frames = 30;
-        minute = frames * 2 * 60;
+        minute = frames * 60;
 
         int frameSize = 1024;
         int sampleRate = 44100;
@@ -128,18 +117,20 @@ public class Visual extends PApplet {
             outLines[i] = new GraphicLines(radius * sin(alpha) + centX, radius * cos(alpha) + centY, 10.0f);
 
         // Text Visuals
+        waitingIn = true;
+        moveText = false;
         dist = radius * 0.6f;
         xCo = centX - (radius * 0.8f);
-
+        OST = new ArrayList<>();
         OST.add(new OnScreenText("..", new PVector(xCo, centY + dist)));
         OST.add(new OnScreenText("..", new PVector(xCo, centY)));
         OST.add(new OnScreenText("..", new PVector(xCo, centY - dist)));
 
         cp5 = new ControlP5(this);
-
+        PFont font = createFont("Data" + File.separator + "DigiFont.TTF", 16);
         textAlign(CENTER);
         cp5.addTextfield("input")
-                .setPosition(centX - dist, centY + (dist * 0.75f))
+                .setPosition(centX - dist, centY + (radius * 0.45f))
                 .setSize((int)(radius * 1.2f), (int)(radius * 0.2f))
                 .setFont(font)
                 .setFocus(true)
@@ -148,7 +139,6 @@ public class Visual extends PApplet {
         cp5.setColorForeground(0);
         cp5.setColorBackground(color(0, 100));
         cp5.setColorActive(color(0, 0, 100));
-
         textFont(font);
     }
 
@@ -156,19 +146,13 @@ public class Visual extends PApplet {
         frameRate(frames);
         background(0);
 
-        // Pulsating colours for text box
-        if (colourSwitch) colourTimer++;
-        else colourTimer--;
-        if (colourTimer == 45 || colourTimer == 0) colourSwitch =! colourSwitch;
-        cp5.setColorActive(color(0, colourTimer * 3, colourTimer * 4));
-
         if (ChatBot.exit && !moveText)
             exit();
 
         presentCounter++;
         exitCounter ++;
         // After 10 seconds, display message checking is the user is still there
-        if (presentCounter == 600 && !presentCheck)
+        if (presentCounter == 300 && !presentCheck)
             output(stillThereMessage());
         // After two minutes, if no response from user, exit
         if (exitCounter == minute * 2.0f) {
@@ -183,6 +167,13 @@ public class Visual extends PApplet {
         drawCenter();
 
         // Text Visuals
+        // Pulsating colours for text box
+        if (colourSwitch) colourTimer++;
+        else colourTimer--;
+        if (colourTimer == 45 || colourTimer == 0) colourSwitch =! colourSwitch;
+        cp5.setColorActive(color(0, colourTimer * 3, colourTimer * 4));
+
+        // Text motion
         float pos = OST.get(2).position.y;
         if (moveText && (prevPos - pos) < dist * 2.0f) {
             for (int i = 1; i < OST.size(); i++)
@@ -191,17 +182,18 @@ public class Visual extends PApplet {
         else
             moveText = false;
 
-//        if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
-//            try {
-//                Thread.sleep((long) abs(map(outTextDisplay.length(), 10, 50, 10, 1)));
-//                outCount++;
-//                OST.set(1, new OnScreenText(outTextDisplay.substring(0, outCount), new PVector(xCo, OST.get(1).position.y)));
-//            } catch (InterruptedException e) { e.printStackTrace(); }
-//        }
-//        else {
-//            outTextDisplay = "";
-//            outCount = 0;
-//        }
+        if (outTextDisplay.length() > 0 && outCount != outTextDisplay.length()) {
+            try {
+                //Thread.sleep((long) abs(map(outTextDisplay.length(), 10, 50, 10, 1)));
+                Thread.sleep(5);
+                outCount++;
+                OST.set(1, new OnScreenText(outTextDisplay.substring(0, outCount), new PVector(xCo, OST.get(1).position.y)));
+            } catch (InterruptedException e) { e.printStackTrace(); }
+        }
+        else {
+            outTextDisplay = "";
+            outCount = 0;
+        }
 
         writeText();
     }
@@ -215,9 +207,7 @@ public class Visual extends PApplet {
         if (key == ESC) key = 0;
     }
 
-
     public void input(String input) {
-        this.input = input;
         while(input.charAt(0) == ' ')
             input = input.substring(1);
 
@@ -227,18 +217,17 @@ public class Visual extends PApplet {
 
         moveText = true;
 
-        OST.get(2).content = OST.get(0).content;
         prevPos = centY + dist;
 
         OST.get(0).content = "";
         OST.get(1).content = "";
 
-        OST.get(2).position.y = centY + dist;
-        OST.get(1).position.y = centY + (dist * 1.95f);
+        //OST.get(2).position.y = centY + dist;
+        OST.get(1).position.y = centY + (dist * 2.0f);
 
-        OST.set(2, new OnScreenText(input, new PVector(xCo, centY + (dist * 0.75f) + (int)(radius * 0.05f))));
+        //OST.set(2, new OnScreenText(input, new PVector(xCo, centY + (dist * 0.75f) + (int)(radius * 0.05f))));
+        OST.set(2, new OnScreenText(input, new PVector(xCo, centY + dist)));
     }
-
 
     private void writeText() {
         fill(255);
@@ -246,7 +235,6 @@ public class Visual extends PApplet {
 
         OST.stream().filter(ost -> ost.position.y < centY + (radius * 0.6f)).filter(ost -> ost.content.length() != 0).forEach(ost -> text(ost.content, ost.position.x, ost.position.y, radius * 1.6f, radius));
     }
-
 
     private static String stillThereMessage() {
         Random rand = new Random();
@@ -285,7 +273,7 @@ public class Visual extends PApplet {
             }
         }
 
-//         Top Left, Top Right, Bottom Right, Bottom Left
+        // Top Left, Top Right, Bottom Right, Bottom Left
         for (int j = 0; j < arcs.length; j++ ) {
             CornerArc arcy = arcs[j];
             arcy.sizeMatch(desDiameter[j]);
@@ -305,6 +293,7 @@ public class Visual extends PApplet {
             popMatrix();
         }
     }
+
     private void drawCenter() {
         int bandReset = 16;
         int k = 0;
@@ -339,8 +328,8 @@ public class Visual extends PApplet {
             inCoordinates[i] = new PVector(inEnd.x + pos.x, inEnd.y + pos.y);
         }
 
-        drawCurve(outCoordinates);
-        drawCurve(inCoordinates);
+        drawCenterCurve(outCoordinates);
+        drawCenterCurve(inCoordinates);
 
         strokeWeight(3);
         ellipse(centX, centY, radius * 2.0f, radius * 2.0f);
@@ -349,7 +338,7 @@ public class Visual extends PApplet {
         ellipse(centX, centY, radius * 1.2f, radius * 1.2f);
     }
 
-    private void drawCurve(PVector[] coordinates) {
+    private void drawCenterCurve(PVector[] coordinates) {
         beginShape();
         curveVertex(coordinates[coordinates.length - 1].x, coordinates[coordinates.length - 1].y);
         for (PVector coordinate : coordinates)
@@ -358,6 +347,7 @@ public class Visual extends PApplet {
         curveVertex(coordinates[1].x, coordinates[1].y);
         endShape();
     }
+
     private float FFTFreq() {
         float maxValue = Float.MIN_VALUE;
         int maxIndex = -1;
@@ -369,6 +359,7 @@ public class Visual extends PApplet {
         }
         return fft.indexToFreq(maxIndex);
     }
+
     private boolean checkFreq(float freq, float low, float high) {
         return freq > low && freq < high;
     }

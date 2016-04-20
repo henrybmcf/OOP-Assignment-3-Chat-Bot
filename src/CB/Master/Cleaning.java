@@ -36,17 +36,14 @@ public class Cleaning extends PApplet {
 
     // Prepare bot response for output
     public static void output(String out) {
-        if (out != null) {
-            bOutput = initCap(out);
-            RepeatCheck.saveResponse(bOutput);
-            Visual.OST.get(1).content = bOutput;
-
-            Visual.presentCheck = false;
-            Visual.presentCounter = 0;
-            Visual.exitCounter = 0;
-
-//            speaking.speak(bOutput);
-        }
+        assert out != null;
+        bOutput = initCap(out);
+        RepeatCheck.saveResponse(bOutput);
+        Visual.outTextDisplay = bOutput;
+        Visual.presentCheck = false;
+        Visual.presentCounter = 0;
+        Visual.exitCounter = 0;
+        speaking.speak(bOutput);
     }
 
     static String cleanOutput() {

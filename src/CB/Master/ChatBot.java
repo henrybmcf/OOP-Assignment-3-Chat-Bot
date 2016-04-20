@@ -6,7 +6,6 @@
 package CB.Master;
 
 import CB.EditDist.EditDistance;
-import CB.Speech.TextSpeech;
 import CB.Visuals.Visual;
 
 import java.util.*;
@@ -28,26 +27,7 @@ public class ChatBot extends PApplet {
     static boolean understand;
     static boolean transposition = false;
     static String name;
-    static String keyWord;
     private final static String botLogName = "Bot:\t";
-//    public final static String transposeList[][] = {
-//            {"i'm", "you're"},
-//            {"i am", "you are"},
-//            {"you are", "i am"},
-//            {"am", "are"},
-//            {"were", "was"},
-//            {"me", "you"},
-//            {"yours", "mine"},
-//            {"your", "my"},
-//            {"i've", "you've"},
-//            {"i", "you"},
-//            {"aren't", "am not"},
-//            {"weren't", "wasn't"},
-//            {"i'd", "you'd"},
-//            {"dad", "father"},
-//            {"mum", "mother"},
-//            {"myself", "yourself"}
-//    };
     private final static String[] salutations = {"great to see you!", "such a nice day today!"};
     private final static ArrayList<String> userRepetition = RepeatCheck.setURepeat();
 
@@ -135,8 +115,6 @@ public class ChatBot extends PApplet {
 
                 RepeatCheck.saveUserResponse(uInput);
                 uInput = "";
-                Visual.capturedText = "";
-                //Visual.waitingIn = true;
             }
             else {
                 output("Goodbye " + firstName + ", it was nice talking to you.");
@@ -198,11 +176,9 @@ public class ChatBot extends PApplet {
 
                                 // Check to see if user input contains the keyword
                                 if (uInput.contains(line)) {
-                                    keyWord = line;
                                     understand = true;
                                     return lineCount;
                                 }
-
                                 break;
 
                             case 2:
@@ -237,7 +213,6 @@ public class ChatBot extends PApplet {
             if ((EditDistance.MinimumEditDistance(uInput, smallest) <= 1) && !understand) {
                 // In case strings aren't the exact same, assign keyword to input to allow exact searching for repetition checking
                 uInput = smallest;
-                keyWord = smallest;
                 understand = true;
             }
 

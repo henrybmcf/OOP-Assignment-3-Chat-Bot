@@ -7,7 +7,6 @@
       <root url="jar://$PROJECT_DIR$/lib/freetts-jsapi10.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/freetts.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jsapi.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/mbrola.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
